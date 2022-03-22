@@ -1,0 +1,471 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2022-03-22T00:13:38.872257+00:00",
+  "repo": "tplooker/draft-looker-cose-bls-key-representations",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [
+    {
+      "number": 1,
+      "id": "I_kwDOGwQuwM5Co3kl",
+      "title": "Private key representation",
+      "url": "https://github.com/tplooker/draft-looker-cose-bls-key-representations/issues/1",
+      "state": "CLOSED",
+      "author": "tplooker",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Supply definition under the OKP key type for how the private key should be encoded",
+      "createdAt": "2022-01-29T02:59:36Z",
+      "updatedAt": "2022-02-11T04:11:45Z",
+      "closedAt": "2022-02-11T04:11:45Z",
+      "comments": [
+        {
+          "author": "tplooker",
+          "authorAssociation": "OWNER",
+          "body": "Fixed in recent update of draft",
+          "createdAt": "2022-02-11T04:11:45Z",
+          "updatedAt": "2022-02-11T04:11:45Z"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "id": "I_kwDOGwQuwM5Co3le",
+      "title": "Add example COSE and JOSE key representations",
+      "url": "https://github.com/tplooker/draft-looker-cose-bls-key-representations/issues/2",
+      "state": "OPEN",
+      "author": "tplooker",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-01-29T02:59:55Z",
+      "updatedAt": "2022-03-01T05:12:05Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "selfissued",
+          "authorAssociation": "NONE",
+          "body": "I agree that adding example key representations would improve the spec - particularly for developers.  That said, if time is an issue, I don't think adding them is necessary before submitting the -00 draft to the IETF.",
+          "createdAt": "2022-03-01T05:12:05Z",
+          "updatedAt": "2022-03-01T05:12:05Z"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "id": "I_kwDOGwQuwM5DJBrB",
+      "title": "Relation to existing draft?",
+      "url": "https://github.com/tplooker/draft-looker-cose-bls-key-representations/issues/3",
+      "state": "CLOSED",
+      "author": "quartzjer",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "I'm assuming this is a successor to https://datatracker.ietf.org/doc/html/draft-denhartog-pairing-curves-jose-cose-00#section-3.1 but only specifically for the BLS curve?",
+      "createdAt": "2022-02-07T20:04:23Z",
+      "updatedAt": "2022-02-23T21:28:02Z",
+      "closedAt": "2022-02-23T21:28:02Z",
+      "comments": [
+        {
+          "author": "tplooker",
+          "authorAssociation": "OWNER",
+          "body": "Yes you are correct, thanks for raising, hope to make it more clear with links to drafts etc.",
+          "createdAt": "2022-02-07T22:57:03Z",
+          "updatedAt": "2022-02-07T22:57:03Z"
+        },
+        {
+          "author": "tplooker",
+          "authorAssociation": "OWNER",
+          "body": "This old repository is now archived and pointing at this draft",
+          "createdAt": "2022-02-23T21:27:59Z",
+          "updatedAt": "2022-02-23T21:27:59Z"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "I_kwDOGwQuwM5DbKZO",
+      "title": "References needed for some cited related work",
+      "url": "https://github.com/tplooker/draft-looker-cose-bls-key-representations/issues/5",
+      "state": "CLOSED",
+      "author": "selfissued",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "The draft includes \"Further work on a similar scheme has also been progressed at the FIDO Alliance and W3C. Similarly Intel released (EPID) which provides a solution to remote hardware attestation for Intel Software Guard Extension (SGX) enabled environments.\"  IETF style guidelines say that if we're citing work, we should provide references to it.",
+      "createdAt": "2022-02-10T23:05:29Z",
+      "updatedAt": "2022-02-11T04:10:16Z",
+      "closedAt": "2022-02-11T04:10:15Z",
+      "comments": [
+        {
+          "author": "tplooker",
+          "authorAssociation": "OWNER",
+          "body": "Addressed in #6 ",
+          "createdAt": "2022-02-11T04:10:15Z",
+          "updatedAt": "2022-02-11T04:10:15Z"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "id": "I_kwDOGwQuwM5DdCrY",
+      "title": "Add some additional non-normative commentary on the applications of BLS12-381",
+      "url": "https://github.com/tplooker/draft-looker-cose-bls-key-representations/issues/7",
+      "state": "CLOSED",
+      "author": "tplooker",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Add examples of what cryptographic schemes are likely to be used in the near term e.g BBS Signatures and BLS Signatures",
+      "createdAt": "2022-02-11T04:26:47Z",
+      "updatedAt": "2022-03-01T07:05:36Z",
+      "closedAt": "2022-03-01T07:05:36Z",
+      "comments": [
+        {
+          "author": "selfissued",
+          "authorAssociation": "NONE",
+          "body": "Let's add a reference to https://json-web-proofs.github.io/json-web-proofs/draft-jmiller-json-proof-algorithms.html#name-bls-curve.",
+          "createdAt": "2022-02-23T18:06:41Z",
+          "updatedAt": "2022-02-23T18:06:41Z"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "id": "I_kwDOGwQuwM5Ec5CP",
+      "title": "Rename draft to conform to IETF naming conventions",
+      "url": "https://github.com/tplooker/draft-looker-cose-bls-key-representations/issues/9",
+      "state": "CLOSED",
+      "author": "selfissued",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "To submit to the COSE working group, the draft name must be of the form `draft-<lastname>-cose-<draftname>`.  I'd suggest the identifier `draft-looker-cose-bls-curves-representations` or something similar.\r\n\r\nNote that both the filename and the draft name in the markdown (which is currently `draft-looker-bls-jose-cose-00`) need to be changed.",
+      "createdAt": "2022-02-23T18:13:06Z",
+      "updatedAt": "2022-02-23T21:28:15Z",
+      "closedAt": "2022-02-23T21:28:15Z",
+      "comments": [
+        {
+          "author": "tplooker",
+          "authorAssociation": "OWNER",
+          "body": "Fixed in ed6cd3ad47070a4a6e793717837272e404710ef2",
+          "createdAt": "2022-02-23T21:28:15Z",
+          "updatedAt": "2022-02-23T21:28:15Z"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "id": "I_kwDOGwQuwM5F-yG0",
+      "title": "Are the JOSE registrations missing \"Key Type: OKP\"?",
+      "url": "https://github.com/tplooker/draft-looker-cose-bls-key-representations/issues/11",
+      "state": "OPEN",
+      "author": "quartzjer",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "It's in each of the COSE registrations, should it be in the JOSE ones too?",
+      "createdAt": "2022-03-18T22:36:04Z",
+      "updatedAt": "2022-03-20T00:19:22Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "tplooker",
+          "authorAssociation": "OWNER",
+          "body": "If by registration you mean the IANA section for each then the reason they key type is absent in the JOSE registrations is that it is not required for that IANA registry [see here](https://www.iana.org/assignments/jose/jose.xhtml#web-key-elliptic-curve), whereas with COSE the key type forms part of the registration [see here](https://www.iana.org/assignments/cose/cose.xhtml#elliptic-curves)",
+          "createdAt": "2022-03-20T00:19:22Z",
+          "updatedAt": "2022-03-20T00:19:22Z"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "id": "I_kwDOGwQuwM5F-0HQ",
+      "title": "Key identifier?",
+      "url": "https://github.com/tplooker/draft-looker-cose-bls-key-representations/issues/12",
+      "state": "OPEN",
+      "author": "quartzjer",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "I'm posing this as a question and not a direct suggestion.\r\n\r\nThe key identifiers are specifically for only one subgroup (the `G1` on `Bls48581G1 ` for example) on the defined pairing curve, and in practice an implementation will use that single group identifier to first identify the pairing curve itself, caring only about the `Bls48581` prefix.  Would it make sense to add a separator character such as `_`, `-`, or `+` like in other JOSE/COSE identifiers?\r\n\r\nIn fact, one could argue that `Bls48581` is technically the curve name and the group could be identified via a separate element, but that's being rather pedantic :)",
+      "createdAt": "2022-03-18T22:56:43Z",
+      "updatedAt": "2022-03-20T00:25:35Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "tplooker",
+          "authorAssociation": "OWNER",
+          "body": "> The key identifiers are specifically for only one subgroup (the G1 on Bls48581G1 for example) on the defined pairing curve, and in practice an implementation will use that single group identifier to first identify the pairing curve itself, caring only about the Bls48581 prefix. Would it make sense to add a separator character such as _, -, or + like in other JOSE/COSE identifiers?\r\n\r\nYes this could be a good suggestion if we believe implementations will benefit from being able to partially parse the `crv` value to know the underlying curve involved is and then further process OR use another field to establish what sub-group is being used. Im unsure however how common that behaviour may be?\r\n\r\n",
+          "createdAt": "2022-03-20T00:25:35Z",
+          "updatedAt": "2022-03-20T00:25:35Z"
+        }
+      ]
+    }
+  ],
+  "pulls": [
+    {
+      "number": 4,
+      "id": "PR_kwDOGwQuwM4ycYLC",
+      "title": "Mike's initial contributions",
+      "url": "https://github.com/tplooker/draft-looker-cose-bls-key-representations/pull/4",
+      "state": "MERGED",
+      "author": "selfissued",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-02-10T23:00:43Z",
+      "updatedAt": "2022-02-11T03:52:08Z",
+      "baseRepository": "tplooker/draft-looker-cose-bls-key-representations",
+      "baseRefName": "main",
+      "baseRefOid": "18b56458c96a34a4d53e652adc039a382101d307",
+      "headRepository": "selfissued/draft-looker-bls-jose-cose",
+      "headRefName": "mbj-initial-contributions",
+      "headRefOid": "29fa0cb582d3f75277c088e30fca6681872754f6",
+      "closedAt": "2022-02-11T03:52:08Z",
+      "mergedAt": "2022-02-11T03:52:08Z",
+      "mergedBy": "tplooker",
+      "mergeCommit": {
+        "oid": "e98d848c25d9f0642565479bab7d0580cfc08713"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOGwQuwM40cAD3",
+          "commit": {
+            "abbreviatedOid": "29fa0cb"
+          },
+          "author": "tplooker",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-02-11T03:51:45Z",
+          "updatedAt": "2022-02-11T03:51:45Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOGwQuwM40cAEz",
+          "commit": {
+            "abbreviatedOid": "29fa0cb"
+          },
+          "author": "tplooker",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-02-11T03:51:57Z",
+          "updatedAt": "2022-02-11T03:51:57Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOGwQuwM4yeGAg",
+      "title": "Add relivant references to introduction",
+      "url": "https://github.com/tplooker/draft-looker-cose-bls-key-representations/pull/6",
+      "state": "MERGED",
+      "author": "tplooker",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-02-11T04:07:25Z",
+      "updatedAt": "2022-02-13T09:03:46Z",
+      "baseRepository": "tplooker/draft-looker-cose-bls-key-representations",
+      "baseRefName": "main",
+      "baseRefOid": "e98d848c25d9f0642565479bab7d0580cfc08713",
+      "headRepository": "tplooker/draft-looker-cose-bls-key-representations",
+      "headRefName": "tl/update-intro-refs",
+      "headRefOid": "773affbb36bd25a6c89277077b057235987275f3",
+      "closedAt": "2022-02-11T04:09:59Z",
+      "mergedAt": "2022-02-11T04:09:59Z",
+      "mergedBy": "tplooker",
+      "mergeCommit": {
+        "oid": "447388a19e1262af7559a8f3473b0a2d3319204b"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOGwQuwM40cBbu",
+          "commit": {
+            "abbreviatedOid": "773affb"
+          },
+          "author": "selfissued",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "LGTM",
+          "createdAt": "2022-02-11T04:09:15Z",
+          "updatedAt": "2022-02-11T04:09:15Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "id": "PR_kwDOGwQuwM4y5oSS",
+      "title": "Update intro and sec considerations",
+      "url": "https://github.com/tplooker/draft-looker-cose-bls-key-representations/pull/8",
+      "state": "MERGED",
+      "author": "tplooker",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Attempts to make it more apparent what the immediate application of standardizing these cryptographic keys is useful for, also adds a section that notes implementers should be aware of using the keys within various algorithms",
+      "createdAt": "2022-02-16T04:31:02Z",
+      "updatedAt": "2022-02-16T07:51:06Z",
+      "baseRepository": "tplooker/draft-looker-cose-bls-key-representations",
+      "baseRefName": "main",
+      "baseRefOid": "447388a19e1262af7559a8f3473b0a2d3319204b",
+      "headRepository": "tplooker/draft-looker-cose-bls-key-representations",
+      "headRefName": "tl/update-intro",
+      "headRefOid": "7572c759518edf37c360f3b3280c22f86a670634",
+      "closedAt": "2022-02-16T07:51:02Z",
+      "mergedAt": "2022-02-16T07:51:02Z",
+      "mergedBy": "tplooker",
+      "mergeCommit": {
+        "oid": "0bf1e2db75c9e4c4f76ab1cb19a58e2c859385c1"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOGwQuwM40sAQ3",
+          "commit": {
+            "abbreviatedOid": "2424b92"
+          },
+          "author": "selfissued",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "Please merge when ready after applying the single grammatical correction that I suggested in my comment.",
+          "createdAt": "2022-02-16T04:40:28Z",
+          "updatedAt": "2022-02-16T04:40:58Z",
+          "comments": [
+            {
+              "originalPosition": 28,
+              "body": "a particular algorithm -> particular algorithms.",
+              "createdAt": "2022-02-16T04:40:29Z",
+              "updatedAt": "2022-02-16T04:41:17Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOGwQuwM40shBR",
+          "commit": {
+            "abbreviatedOid": "2424b92"
+          },
+          "author": "tplooker",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-02-16T07:50:07Z",
+          "updatedAt": "2022-02-16T07:50:08Z",
+          "comments": [
+            {
+              "originalPosition": 28,
+              "body": "```suggestion\r\nFurthermore, because this specification only defines the cryptographic key representations and not the usage of these keys with specific algorithms, implementers should be aware to follow any guidance that may be provided around appropriate usage of the keys and or additional steps that may be required to validate the keys within the context of particular algorithms.\r\n```",
+              "createdAt": "2022-02-16T07:50:07Z",
+              "updatedAt": "2022-02-16T07:50:08Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "id": "PR_kwDOGwQuwM4zXt5k",
+      "title": "Add reference to jwp in intro",
+      "url": "https://github.com/tplooker/draft-looker-cose-bls-key-representations/pull/10",
+      "state": "MERGED",
+      "author": "tplooker",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Fixes #7",
+      "createdAt": "2022-02-23T21:39:54Z",
+      "updatedAt": "2022-03-01T07:05:40Z",
+      "baseRepository": "tplooker/draft-looker-cose-bls-key-representations",
+      "baseRefName": "main",
+      "baseRefOid": "c7af9ec455da8a03b4ed22e0e1c364cf8f0b1eac",
+      "headRepository": "tplooker/draft-looker-cose-bls-key-representations",
+      "headRefName": "tl/add-jwp-reference",
+      "headRefOid": "88cd8cb6794a3e13f75da22d9e2ab7622797b55e",
+      "closedAt": "2022-03-01T07:05:36Z",
+      "mergedAt": "2022-03-01T07:05:36Z",
+      "mergedBy": "tplooker",
+      "mergeCommit": {
+        "oid": "17b7458079a8df36390b277819909e580fa2ebad"
+      },
+      "comments": [
+        {
+          "author": "tplooker",
+          "authorAssociation": "OWNER",
+          "body": "@selfissued\r\n",
+          "createdAt": "2022-02-23T21:40:39Z",
+          "updatedAt": "2022-02-23T21:40:39Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOGwQuwM41ZbHF",
+          "commit": {
+            "abbreviatedOid": "88cd8cb"
+          },
+          "author": "selfissued",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "Merge it!",
+          "createdAt": "2022-03-01T04:57:56Z",
+          "updatedAt": "2022-03-01T04:57:56Z",
+          "comments": []
+        }
+      ]
+    }
+  ]
+}
