@@ -5,12 +5,12 @@
 COSE                                                           T. Looker
 Internet-Draft                                                     Mattr
 Intended status: Standards Track                                M. Jones
-Expires: 2 September 2022                                      Microsoft
-                                                            1 March 2022
+Expires: 10 January 2023                                       Microsoft
+                                                             9 July 2022
 
 
 Barreto-Lynn-Scott Elliptic Curve Key Representations for JOSE and COSE
-            draft-looker-cose-bls-key-representations-latest
+             draft-ietf-cose-bls-key-representations-latest
 
 Abstract
 
@@ -24,8 +24,7 @@ Discussion Venues
    This note is to be removed before publishing as an RFC.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/tplooker/draft-looker-cose-bls-key-
-   representations.
+   https://github.com/tplooker/draft-ietf-cose-bls-key-representations.
 
 Status of This Memo
 
@@ -42,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 September 2022.
+   This Internet-Draft will expire on 10 January 2023.
 
 Copyright Notice
 
@@ -477,7 +476,9 @@ Appendix B.  Document History
 
    -00
 
-   *  Initial version
+   *  Created draft-ietf-cose-bls-key-representations-00 from draft-
+      looker-cose-bls-key-representations-00 following working group
+      adoption.
 
 Authors' Addresses
 
