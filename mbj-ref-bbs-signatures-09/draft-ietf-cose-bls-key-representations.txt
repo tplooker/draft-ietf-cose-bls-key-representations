@@ -5,8 +5,8 @@
 COSE                                                           T. Looker
 Internet-Draft                                                     Mattr
 Intended status: Standards Track                                M. Jones
-Expires: 22 July 2025                             Self-Issued Consulting
-                                                         18 January 2025
+Expires: 17 January 2026                          Self-Issued Consulting
+                                                            16 July 2025
 
 
 Barreto-Lynn-Scott Elliptic Curve Key Representations for JOSE and COSE
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 22 July 2025.
+   This Internet-Draft will expire on 17 January 2026.
 
 Copyright Notice
 
@@ -410,9 +410,9 @@ Table of Contents
 
 5.2.  Informative References
 
-   [BBS]      IETF CFRG, "The BBS Signature Scheme", 23 September 2024,
+   [BBS]      IRTF CFRG, "The BBS Signature Scheme", 7 July 2025,
               <https://www.ietf.org/archive/id/draft-irtf-cfrg-bbs-
-              signatures-07.html>.
+              signatures-09.html>.
 
    [ECDAA]    FIDO Alliance, "ECDAA Algorithm", 2018,
               <https://fidoalliance.org/specs/fido-v2.0-id-20180227/
@@ -472,12 +472,12 @@ Table of Contents
               <https://trustedcomputinggroup.org/>.
 
    [id.draft.bls-signature]
-              IETF CFRG, "BLS Signatures", 16 June 2022,
+              IRTF CFRG, "BLS Signatures", 16 June 2022,
               <https://datatracker.ietf.org/doc/html/draft-irtf-cfrg-
               bls-signature-05>.
 
    [id.draft.pairing-friendly-curves]
-              IETF CFRG, "Pairing-Friendly Curves", 10 May 2023,
+              IRTF CFRG, "Pairing-Friendly Curves", 10 May 2023,
               <https://www.ietf.org/archive/id/draft-irtf-cfrg-pairing-
               friendly-curves-11.html>.
 
@@ -641,7 +641,7 @@ Appendix B.  COSE_Key Examples
 
 B.1.  BLS12381 Key Pairs
 
-   The following examples showcase COSE_key examples for both the G1 and
+   The following examples showcase COSE_Key examples for both the G1 and
    G2 subgroups of the BLS12381 curve.  Note, the examples also include
    the corresponding private key, expressed through the inclusion of the
    “d” (-4) parameter.
@@ -738,7 +738,7 @@ C6E754E865A9F01B3ED511D86673A6D8109DC94D0840FF539FA2D175B2DEA6BD3484D91A
 
 B.2.  BLS48581 Key Pairs
 
-   The following examples showcase COSE_key examples for both the G1 and
+   The following examples showcase COSE_Key examples for both the G1 and
    G2 subgroups of the BLS48581 curve.  Note, the examples also include
    the corresponding private key, expressed through the inclusion of the
    “d” (-4) parameter.
@@ -966,6 +966,10 @@ Appendix C.  Acknowledgments
    to thank David Waite for his contributions to the specification.
 
 Appendix D.  Document History
+
+   -07
+
+   *  Reference draft-irtf-cfrg-bbs-signatures-09.
 
    -06
 
