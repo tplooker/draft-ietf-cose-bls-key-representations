@@ -1,10 +1,10 @@
 %%%
 title = "Barreto-Lynn-Scott Elliptic Curve Key Representations for JOSE and COSE"
 ipr= "trust200902"
-area = "Internet"
+area = "Security"
 workgroup = "COSE"
 submissiontype = "IETF"
-keyword = ["COSE", "JOSE"]
+keyword = ["COSE", "JOSE", "BLS", "BBS", "Zero-Knowledge Proof", "ZKP", "Cryptography", "Privacy"]
 
 [seriesInfo]
 name = "Internet-Draft"
