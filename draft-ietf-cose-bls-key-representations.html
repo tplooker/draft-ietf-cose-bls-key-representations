@@ -10,23 +10,29 @@
 <meta content="
        This specification defines how to represent cryptographic keys for the pairing-friendly elliptic curves known as Barreto-Lynn-Scott (BLS), for use with the key representation formats of JSON Web Key (JWK) and COSE (COSE_Key). 
     " name="description">
-<meta content="xml2rfc 3.25.0" name="generator">
+<meta content="xml2rfc 3.30.0" name="generator">
 <meta content="COSE" name="keyword">
 <meta content="JOSE" name="keyword">
+<meta content="BLS" name="keyword">
+<meta content="BBS" name="keyword">
+<meta content="Zero-Knowledge Proof" name="keyword">
+<meta content="ZKP" name="keyword">
+<meta content="Cryptography" name="keyword">
+<meta content="Privacy" name="keyword">
 <meta content="draft-ietf-cose-bls-key-representations-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.25.0
-    Python 3.12.8
+  xml2rfc 3.30.0
+    Python 3.12.11
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
-    Jinja2 3.1.5
-    lxml 5.3.0
-    platformdirs 4.3.6
+    Jinja2 3.1.6
+    lxml 5.3.1
+    platformdirs 4.3.8
     pycountry 24.6.1
     PyYAML 6.0.2
-    requests 2.32.3
-    setuptools 70.3.0
+    requests 2.32.4
+    setuptools 80.9.0
     wcwidth 0.2.13
 -->
 <link href="draft-ietf-cose-bls-key-representations.xml" rel="alternate" type="application/rfc+xml">
@@ -437,7 +443,7 @@ dl {
     margin-bottom: 0;
   }
 }
-dl > dt {
+dl:not(.dlNewline) > dt {
   float: left;
   margin-right: 2ch;
   min-width: 8ch;
@@ -1046,11 +1052,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Barreto-Lynn-Scott Elliptic Curve Key Re</td>
-<td class="right">January 2025</td>
+<td class="right">July 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Looker &amp; Jones</td>
-<td class="center">Expires 22 July 2025</td>
+<td class="center">Expires 22 January 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1063,12 +1069,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-cose-bls-key-representations-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-01-18" class="published">18 January 2025</time>
+<time datetime="2025-07-21" class="published">21 July 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-07-22">22 July 2025</time></dd>
+<dd class="expires"><time datetime="2026-01-22">22 January 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1114,7 +1120,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 22 July 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 22 January 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1567,7 +1573,7 @@ E'(GF(p^8))<a href="#section-4.2-9.4" class="pilcrow">¶</a>
 <dl class="references">
 <dt id="BBS">[BBS]</dt>
         <dd>
-<span class="refAuthor">IETF CFRG</span>, <span class="refTitle">"The BBS Signature Scheme"</span>, <time datetime="2024-09-23" class="refDate">23 September 2024</time>, <span>&lt;<a href="https://www.ietf.org/archive/id/draft-irtf-cfrg-bbs-signatures-07.html">https://www.ietf.org/archive/id/draft-irtf-cfrg-bbs-signatures-07.html</a>&gt;</span>. </dd>
+<span class="refAuthor">IRTF CFRG</span>, <span class="refTitle">"The BBS Signature Scheme"</span>, <time datetime="2025-07-07" class="refDate">7 July 2025</time>, <span>&lt;<a href="https://www.ietf.org/archive/id/draft-irtf-cfrg-bbs-signatures-09.html">https://www.ietf.org/archive/id/draft-irtf-cfrg-bbs-signatures-09.html</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="ECDAA">[ECDAA]</dt>
         <dd>
@@ -1619,11 +1625,11 @@ E'(GF(p^8))<a href="#section-4.2-9.4" class="pilcrow">¶</a>
 <dd class="break"></dd>
 <dt id="id.draft.bls-signature">[id.draft.bls-signature]</dt>
         <dd>
-<span class="refAuthor">IETF CFRG</span>, <span class="refTitle">"BLS Signatures"</span>, <time datetime="2022-06-16" class="refDate">16 June 2022</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-irtf-cfrg-bls-signature-05">https://datatracker.ietf.org/doc/html/draft-irtf-cfrg-bls-signature-05</a>&gt;</span>. </dd>
+<span class="refAuthor">IRTF CFRG</span>, <span class="refTitle">"BLS Signatures"</span>, <time datetime="2022-06-16" class="refDate">16 June 2022</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-irtf-cfrg-bls-signature-05">https://datatracker.ietf.org/doc/html/draft-irtf-cfrg-bls-signature-05</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="id.draft.pairing-friendly-curves">[id.draft.pairing-friendly-curves]</dt>
       <dd>
-<span class="refAuthor">IETF CFRG</span>, <span class="refTitle">"Pairing-Friendly Curves"</span>, <time datetime="2023-05-10" class="refDate">10 May 2023</time>, <span>&lt;<a href="https://www.ietf.org/archive/id/draft-irtf-cfrg-pairing-friendly-curves-11.html">https://www.ietf.org/archive/id/draft-irtf-cfrg-pairing-friendly-curves-11.html</a>&gt;</span>. </dd>
+<span class="refAuthor">IRTF CFRG</span>, <span class="refTitle">"Pairing-Friendly Curves"</span>, <time datetime="2023-05-10" class="refDate">10 May 2023</time>, <span>&lt;<a href="https://www.ietf.org/archive/id/draft-irtf-cfrg-pairing-friendly-curves-11.html">https://www.ietf.org/archive/id/draft-irtf-cfrg-pairing-friendly-curves-11.html</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -1809,7 +1815,7 @@ FUCypARd4bpHGKJmsPafn8A"
         <h3 id="name-bls12381-key-pairs-2">
 <a href="#appendix-B.1" class="section-number selfRef">B.1. </a><a href="#name-bls12381-key-pairs-2" class="section-name selfRef">BLS12381 Key Pairs</a>
         </h3>
-<p id="appendix-B.1-1">The following examples showcase COSE_key examples for both the G1 and G2 subgroups of the BLS12381 curve. Note, the examples also include the corresponding private key, expressed through the inclusion of the “d” (-4) parameter.<a href="#appendix-B.1-1" class="pilcrow">¶</a></p>
+<p id="appendix-B.1-1">The following examples showcase COSE_Key examples for both the G1 and G2 subgroups of the BLS12381 curve. Note, the examples also include the corresponding private key, expressed through the inclusion of the “d” (-4) parameter.<a href="#appendix-B.1-1" class="pilcrow">¶</a></p>
 <p id="appendix-B.1-2">An example COSE_Key for the BLS12381 curve where the public key is in the G1 subgroup expressed as an octet string.<a href="#appendix-B.1-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-B.1-3">
 <pre>a50101200d21583011de060462d56ac129e1e8cfcf8e02be595b4e575f2cb726d9070826
@@ -1919,7 +1925,7 @@ C6E754E865A9F01B3ED511D86673A6D8109DC94D0840FF539FA2D175B2DEA6BD3484D91A
         <h3 id="name-bls48581-key-pairs-2">
 <a href="#appendix-B.2" class="section-number selfRef">B.2. </a><a href="#name-bls48581-key-pairs-2" class="section-name selfRef">BLS48581 Key Pairs</a>
         </h3>
-<p id="appendix-B.2-1">The following examples showcase COSE_key examples for both the G1 and G2 subgroups of the BLS48581 curve. Note, the examples also include the corresponding private key, expressed through the inclusion of the “d” (-4) parameter.<a href="#appendix-B.2-1" class="pilcrow">¶</a></p>
+<p id="appendix-B.2-1">The following examples showcase COSE_Key examples for both the G1 and G2 subgroups of the BLS48581 curve. Note, the examples also include the corresponding private key, expressed through the inclusion of the “d” (-4) parameter.<a href="#appendix-B.2-1" class="pilcrow">¶</a></p>
 <p id="appendix-B.2-2">An example COSE_Key for the BLS48581 curve where the public key is in the G1 subgroup expressed as an octet string.<a href="#appendix-B.2-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-B.2-3">
 <pre>a50101200f2158490522e96ca7ca18bf31598a15d39aa95c6fe56da85a7bc8e8108f193c
@@ -2168,41 +2174,46 @@ for his contributions to the specification.<a href="#appendix-C-1" class="pilcro
       <h2 id="name-document-history">
 <a href="#appendix-D" class="section-number selfRef">Appendix D. </a><a href="#name-document-history" class="section-name selfRef">Document History</a>
       </h2>
-<p id="appendix-D-1">-06<a href="#appendix-D-1" class="pilcrow">¶</a></p>
+<p id="appendix-D-1">-07<a href="#appendix-D-1" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-2.1">Updated draft-irtf-cfrg-bbs-signatures reference.<a href="#appendix-D-2.1" class="pilcrow">¶</a>
-</li>
-        <li class="compact" id="appendix-D-2.2">Made draft-irtf-cfrg-bls-signature and draft-irtf-cfrg-pairing-friendly-curves references informative.<a href="#appendix-D-2.2" class="pilcrow">¶</a>
+<li class="compact" id="appendix-D-2.1">Reference draft-irtf-cfrg-bbs-signatures-09.<a href="#appendix-D-2.1" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-3">-05<a href="#appendix-D-3" class="pilcrow">¶</a></p>
+<p id="appendix-D-3">-06<a href="#appendix-D-3" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-4.1">Replaced instances of "Bls" with "BLS" since B., L., and S. are people's initials, just like "RSA" is three people's initials.<a href="#appendix-D-4.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-D-4.1">Updated draft-irtf-cfrg-bbs-signatures reference.<a href="#appendix-D-4.1" class="pilcrow">¶</a>
+</li>
+        <li class="compact" id="appendix-D-4.2">Made draft-irtf-cfrg-bls-signature and draft-irtf-cfrg-pairing-friendly-curves references informative.<a href="#appendix-D-4.2" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-5">-04<a href="#appendix-D-5" class="pilcrow">¶</a></p>
+<p id="appendix-D-5">-05<a href="#appendix-D-5" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-6.1">Changed the key type from OKP to EC/EC2 since these keys use "x" and "y" values.<a href="#appendix-D-6.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-D-6.1">Replaced instances of "Bls" with "BLS" since B., L., and S. are people's initials, just like "RSA" is three people's initials.<a href="#appendix-D-6.1" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-7">-03<a href="#appendix-D-7" class="pilcrow">¶</a></p>
+<p id="appendix-D-7">-04<a href="#appendix-D-7" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-8.1">Updated references.<a href="#appendix-D-8.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-D-8.1">Changed the key type from OKP to EC/EC2 since these keys use "x" and "y" values.<a href="#appendix-D-8.1" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-9">-02<a href="#appendix-D-9" class="pilcrow">¶</a></p>
+<p id="appendix-D-9">-03<a href="#appendix-D-9" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-10.1">Update COSE_Key and JWK examples.<a href="#appendix-D-10.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-D-10.1">Updated references.<a href="#appendix-D-10.1" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-11">-01<a href="#appendix-D-11" class="pilcrow">¶</a></p>
+<p id="appendix-D-11">-02<a href="#appendix-D-11" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-12.1">Added JWK examples.<a href="#appendix-D-12.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-D-12.1">Update COSE_Key and JWK examples.<a href="#appendix-D-12.1" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-13">-00<a href="#appendix-D-13" class="pilcrow">¶</a></p>
+<p id="appendix-D-13">-01<a href="#appendix-D-13" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-14.1">Created draft-ietf-cose-bls-key-representations-00 from draft-looker-cose-bls-key-representations-00 following working group adoption.<a href="#appendix-D-14.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-D-14.1">Added JWK examples.<a href="#appendix-D-14.1" class="pilcrow">¶</a>
+</li>
+      </ul>
+<p id="appendix-D-15">-00<a href="#appendix-D-15" class="pilcrow">¶</a></p>
+<ul class="compact">
+<li class="compact" id="appendix-D-16.1">Created draft-ietf-cose-bls-key-representations-00 from draft-looker-cose-bls-key-representations-00 following working group adoption.<a href="#appendix-D-16.1" class="pilcrow">¶</a>
 </li>
       </ul>
 </section>
