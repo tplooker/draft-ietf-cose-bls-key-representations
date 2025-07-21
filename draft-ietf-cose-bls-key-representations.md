@@ -1,10 +1,10 @@
 %%%
 title = "Barreto-Lynn-Scott Elliptic Curve Key Representations for JOSE and COSE"
 ipr= "trust200902"
-area = "Internet"
+area = "Security"
 workgroup = "COSE"
 submissiontype = "IETF"
-keyword = ["COSE", "JOSE"]
+keyword = ["COSE", "JOSE", "BLS", "BBS", "Zero-Knowledge Proof", "ZKP", "Cryptography", "Privacy"]
 
 [seriesInfo]
 name = "Internet-Draft"
@@ -368,7 +368,7 @@ FUCypARd4bpHGKJmsPafn8A"
 
 ## BLS12381 Key Pairs
 
-The following examples showcase COSE_key examples for both the G1 and G2 subgroups of the BLS12381 curve. Note, the examples also include the corresponding private key, expressed through the inclusion of the “d” (-4) parameter.
+The following examples showcase COSE_Key examples for both the G1 and G2 subgroups of the BLS12381 curve. Note, the examples also include the corresponding private key, expressed through the inclusion of the “d” (-4) parameter.
 
 An example COSE_Key for the BLS12381 curve where the public key is in the G1 subgroup expressed as an octet string.
 
@@ -474,7 +474,7 @@ C6E754E865A9F01B3ED511D86673A6D8109DC94D0840FF539FA2D175B2DEA6BD3484D91A
 
 ## BLS48581 Key Pairs
 
-The following examples showcase COSE_key examples for both the G1 and G2 subgroups of the BLS48581 curve. Note, the examples also include the corresponding private key, expressed through the inclusion of the “d” (-4) parameter.
+The following examples showcase COSE_Key examples for both the G1 and G2 subgroups of the BLS48581 curve. Note, the examples also include the corresponding private key, expressed through the inclusion of the “d” (-4) parameter.
 
 An example COSE_Key for the BLS48581 curve where the public key is in the G1 subgroup expressed as an octet string.
 
@@ -714,6 +714,10 @@ for his contributions to the specification.
 
 # Document History
 
+-07
+
+* Reference draft-irtf-cfrg-bbs-signatures-09.
+
 -06
 
 * Updated draft-irtf-cfrg-bbs-signatures reference.
@@ -760,7 +764,7 @@ for his contributions to the specification.
 <reference anchor="id.draft.pairing-friendly-curves" target="https://www.ietf.org/archive/id/draft-irtf-cfrg-pairing-friendly-curves-11.html">
  <front>
    <title>Pairing-Friendly Curves</title>
-   <author><organization>IETF CFRG</organization></author>
+   <author><organization>IRTF CFRG</organization></author>
    <date day="10" month="May" year="2023"/>
  </front>
 </reference>
@@ -768,7 +772,7 @@ for his contributions to the specification.
 <reference anchor="id.draft.bls-signature" target="https://datatracker.ietf.org/doc/html/draft-irtf-cfrg-bls-signature-05">
  <front>
    <title>BLS Signatures</title>
-   <author><organization>IETF CFRG</organization></author>
+   <author><organization>IRTF CFRG</organization></author>
    <date day="16" month="June" year="2022"/>
  </front>
 </reference>
@@ -813,11 +817,11 @@ for his contributions to the specification.
   </front>
 </reference>
 
-<reference anchor="BBS" target="https://www.ietf.org/archive/id/draft-irtf-cfrg-bbs-signatures-07.html">
+<reference anchor="BBS" target="https://www.ietf.org/archive/id/draft-irtf-cfrg-bbs-signatures-09.html">
   <front>
     <title>The BBS Signature Scheme</title>
-   <author><organization>IETF CFRG</organization></author>
-    <date day="23" month="September" year="2024"/>
+   <author><organization>IRTF CFRG</organization></author>
+    <date day="7" month="July" year="2025"/>
   </front>
 </reference>
 
