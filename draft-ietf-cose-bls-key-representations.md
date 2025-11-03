@@ -61,7 +61,9 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## Point Coordinates Encoding
 
-A point representing a public key will either be in the G1 or G2 subgroup of a curve. Depending on which one of the subgroups the public key will belong to, different serialization procedures need to be used, to encode its coordinates. Most specifically, if the public key is a point in the G1 subgroup, each of its coordinates MUST be encoded using the serialization defined in Section 2.3.5 of [@SEC1]. If the public key is a point in the G2 subgroup, each of its coordinates MUST be serialize using the procedure described in Appendix I.5 in [@I-D.ietf-lwig-curve-representations].
+A point representing a public key will either be in the G1 or G2 subgroup of a curve. Both are encoded using the compressed serialized point format defined normatively in Appendix B.2 of [@BBS].
+<!-- A syntax like this is supposed to work for making a section reference, but I can't get it to work here for some reason: `[@BBS, section B.2]` -->
+
 
 ## Representation Definition
 
@@ -89,10 +91,10 @@ When expressing a cryptographic key for these curves in COSE_Key form, the follo
 
 JWK "crv" value | COSE_Key "crv" value | Description         |
 ----------------|----------------------|---------------------|
-BLS12381G1      | TBD (13 requested)                   | A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 12 with 381-bit p in the subgroup of G1 defined as `E(GF(p))` of order r. The private key will be 32 bytes long. Each of the x and y coordinates of the public key will be 48 bytes long.
-BLS12381G2      | TBD (14 requested)                   | A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 12 with 381-bit p in the subgroup of G2 defined as `E(GF(p^2))` of order r. The private key will be 32 bytes long. Each of the x and y coordinates of the public key will be 96 bytes long.
-BLS48581G1      | TBD (15 requested)                   | A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 48 with 581-bit p in the subgroup of G1 defined as `E(GF(p))` of order r. The private key will be 65 bytes long. Each of the x and y coordinates of the public key will be 73 bytes long.
-BLS48581G2      | TBD (16 requested)                   | A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 48 with 581-bit p in the subgroup of G2 defined as `E(GF(p^8))` of order r. The private key will be 65 bytes long. Each of the x and y coordinates of the public key will be 584 bytes long.
+BLS12381G1      | TBD (13 requested)                   | A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 12 with 381-bit p in the subgroup of G1 defined as `E(GF(p))` of order r. The private key will be 32 bytes long. The public key will be 48 bytes long.
+BLS12381G2      | TBD (14 requested)                   | A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 12 with 381-bit p in the subgroup of G2 defined as `E(GF(p^2))` of order r. The private key will be 32 bytes long. The public key will be 96 bytes long.
+BLS48581G1      | TBD (15 requested)                   | A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 48 with 581-bit p in the subgroup of G1 defined as `E(GF(p))` of order r. The private key will be 65 bytes long. The public key will be 73 bytes long.
+BLS48581G2      | TBD (16 requested)                   | A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 48 with 581-bit p in the subgroup of G2 defined as `E(GF(p^8))` of order r. The private key will be 65 bytes long. The public key will be 584 bytes long.
 
 # Security Considerations
 
