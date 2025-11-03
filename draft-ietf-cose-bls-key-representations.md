@@ -61,7 +61,9 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## Point Coordinates Encoding
 
-A point representing a public key will either be in the G1 or G2 subgroup of a curve. Depending on which one of the subgroups the public key will belong to, different serialization procedures need to be used, to encode its coordinates. Most specifically, if the public key is a point in the G1 subgroup, each of its coordinates MUST be encoded using the serialization defined in Section 2.3.5 of [@SEC1]. If the public key is a point in the G2 subgroup, each of its coordinates MUST be serialize using the procedure described in Appendix I.5 in [@I-D.ietf-lwig-curve-representations].
+A point representing a public key will either be in the G1 or G2 subgroup of a curve. Both are encoded using the compressed serialized point format defined normatively in Appendix B.2 of [@BBS] and in (#encoding-bls48-581).
+<!-- A syntax like this is supposed to work for making a section reference, but I can't get it to work here for some reason: `[@BBS, section B.2]` -->
+
 
 ## Representation Definition
 
@@ -73,8 +75,8 @@ When expressing a cryptographic key for these curves in JSON Web Key (JWK) form,
 
 - The parameter "kty" MUST be present and set to "OKP".
 - The parameter "crv" MUST be present and value MUST be one defined in (#curve-parameter-registration).
-- The parameter "x" MUST be present with its value being the base64url encoding of the compressed serialized point format defined normatively in Appendix B of <xref target="BBS"/>.
-- The parameter "d" MUST be present for private key representations whose value MUST contain the big-endian representation of the private key base64url encoded without padding as defined in [@!RFC7515] Appendix C. The length of this octet string MUST be `ceiling(log-base-2(n)/8)` octets (where `n` is the order of the curve). This parameter MUST NOT be present for public keys.
+- The parameter "x" MUST be present with its value being the base64url encoding of the compressed serialized point format defined normatively in Appendix B of [@BBS].
+- The parameter "d" MUST be present for private key representations whose value MUST contain the big-endian representation of the private key base64url encoded without padding as defined in [@!RFC7515] Appendix C. This parameter MUST NOT be present for public keys.
 
 ### COSE_Key Representation
 
@@ -82,17 +84,17 @@ When expressing a cryptographic key for these curves in COSE_Key form, the follo
 
 - The parameter "kty" (1) MUST be present and set to "OKP" (1).
 - The parameter "crv" (-1) MUST be present and value MUST be one defined in (#curve-parameter-registration).
-- The parameter "x" (-2) MUST be present with its value being the compressed serialized point format defined normatively in Appendix B of <xref target="BBS"/>.
-- The parameter "d" (-4) MUST be present for private key representations whose value MUST contain the big-endian representation of the private key. The length of this octet string MUST be `ceiling(log-base-2(n)/8)` octets (where `n` is the order of the curve). This parameter MUST NOT be present for public keys.
+- The parameter "x" (-2) MUST be present with its value being the compressed serialized point format defined normatively in Appendix B of [@BBS].
+- The parameter "d" (-4) MUST be present for private key representations whose value MUST contain the big-endian representation of the private key. This parameter MUST NOT be present for public keys.
 
 ### Curve Parameter Registration
 
 JWK "crv" value | COSE_Key "crv" value | Description         |
 ----------------|----------------------|---------------------|
-BLS12381G1      | TBD (13 requested)                   | A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 12 with 381-bit p in the subgroup of G1 defined as `E(GF(p))` of order r. The private key will be 32 bytes long. Each of the x and y coordinates of the public key will be 48 bytes long.
-BLS12381G2      | TBD (14 requested)                   | A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 12 with 381-bit p in the subgroup of G2 defined as `E(GF(p^2))` of order r. The private key will be 32 bytes long. Each of the x and y coordinates of the public key will be 96 bytes long.
-BLS48581G1      | TBD (15 requested)                   | A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 48 with 581-bit p in the subgroup of G1 defined as `E(GF(p))` of order r. The private key will be 65 bytes long. Each of the x and y coordinates of the public key will be 73 bytes long.
-BLS48581G2      | TBD (16 requested)                   | A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 48 with 581-bit p in the subgroup of G2 defined as `E(GF(p^8))` of order r. The private key will be 65 bytes long. Each of the x and y coordinates of the public key will be 584 bytes long.
+BLS12381G1      | TBD (13 requested)                   | A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 12 with 381-bit p in the subgroup of G1 defined as `E(GF(p))` of order r. The private key will be 32 bytes long. The public key will be 48 bytes long.
+BLS12381G2      | TBD (14 requested)                   | A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 12 with 381-bit p in the subgroup of G2 defined as `E(GF(p^2))` of order r. The private key will be 32 bytes long. The public key will be 96 bytes long.
+BLS48581G1      | TBD (15 requested)                   | A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 48 with 581-bit p in the subgroup of G1 defined as `E(GF(p))` of order r. The private key will be 65 bytes long. The public key will be 73 bytes long.
+BLS48581G2      | TBD (16 requested)                   | A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 48 with 581-bit p in the subgroup of G2 defined as `E(GF(p^8))` of order r. The private key will be 65 bytes long. The public key will be 584 bytes long.
 
 # Security Considerations
 
@@ -622,6 +624,92 @@ BFD78E74C26C9B3FD61CC297',
 }
 ```
 
+
+# BLS48581 point encoding {#encoding-bls48-581}
+
+Appendix B.2 of [@BBS] defines point encoding and decoding procedures for BLS12-381.
+This section analogously extends the definition with encoding and decoding procedures for BLS48-581.
+
+In this section we will use the notation defined in Appendix B.2 of [@BBS]
+as well as the following notation,
+
+- For an octet string `x`, `x[i:j]` will denote the substring beginning with the `i`-th octet and ending just before the `j`-th octet,
+  where indices begin at 0.
+  For example, `x[0:3]` denotes the first three octets (i.e., 24 most significant bits) of `x`.
+
+We first have to define the following utility operations.
+`sign_GF_p^8(y)` returns one bit corresponding to the sign of an element in `GF(p^8)`.
+The procedure `sign_GF_p` is defined in Appendix B.2 of [@BBS].
+
+```
+res = sign_GF_p^8(y)
+
+Inputs:
+
+- y (REQUIRED), point of the GF(p^8) group
+
+Outputs:
+
+- res, either 0 or 1
+
+Procedure:
+
+1. return sign_GF_p^8_i(y, 7)
+
+
+res = sign_GF_p^8_i(y, i)
+
+Inputs:
+
+- y (REQUIRED), point of the GF(p^8) group
+- i (REQUIRED), integer in the range [0, 7].
+    Index of the component to evaluate next.
+
+Outputs:
+
+- res, either 0 or 1
+
+Procedure:
+
+1. (y_0, ..., y_i, ..., y_7) = y
+2. if i is 0, return sign_GF_p(y_0)
+3. if y_i is 0, return sign_GF_p^8_i(y_0, i - 1)
+4. return sign_GF_p(y_i)
+```
+
+## Point Serialization
+
+The point serialization procedure is the same as defined in Appendix B.2.1 of [@BBS],
+with the following differences:
+
+- The expression `sign_GF_p^2(y)` is replaced with `sign_GF_p^8(y)`.
+- The expression `I2OSP(0, 48)` is replaced with `I2OSP(0, 73)`.
+- The expression `I2OSP(x, 48)` is replaced with `I2OSP(x, 73)`.
+- The expression `I2OSP(0, 96)` is replaced with `I2OSP(0, 584)`.
+- Step 4 of the `x_string` definition is replaced with the following:
+  If `P` is a point on `E2` and `P != Identity_E2`, then let `x_0`, ..., `x_7` elements of `GF(p)`
+  such that `x = (x_0, ..., x_7)` and set `x_string = I2OSP(x_7, 73) || ... || I2OSP(x_0, 73)`.
+
+
+## Point De-serialization
+
+The point de-serialization procedure is the same as defined in Appendix B.2.2 of [@BBS],
+with the following differences:
+
+- The first two conditions in step 1 are:
+  - If `s_string` has length 73 octets, the encoded point is on the curve E1.
+  - If `s_string` has length 584 octets, the encoded point is on the curve E2.
+
+- Step 4 is deleted.
+- The following sub-step is added at the beginning of step 5:
+  - Let `x = OS2IP(s_string)`.
+- The expression `x^3 + 4` is replaced with `x^3 + 1` in step 5.
+- The following sub-steps are added at the beginning of step 6:
+  - Let `x_7, ..., x_0 = OS2IP(s_string[0:73]), OS2IP(s_string[73:146]), ..., OS2IP(s_string[511:584])`.
+  - Let `x = (x_0, ..., x_7)`.
+- The expression `x^3 + 4 * (I + 1)` is replaced with `x^3 - 1 / w` in step 6.
+
+
 # Acknowledgments
 
 The authors would like to acknowledge the work of Kyle Den Hartog, which was used as the foundation for this draft.
@@ -635,7 +723,7 @@ for their contributions to the specification.
 
 -08
 
-* Use ZCash compressed point format defined normatively in Appendix B of <xref target="BBS"/>.
+* Use ZCash compressed point format defined normatively in Appendix B of [@BBS].
 * Use "kty": "OKP" instead of "EC"/"EC2".
 * Added Emil Lundberg to the acknowledgements.
 
