@@ -10,7 +10,7 @@
 <meta content="
        This specification defines how to represent cryptographic keys for the pairing-friendly elliptic curves known as Barreto-Lynn-Scott (BLS), for use with the key representation formats of JSON Web Key (JWK) and COSE (COSE_Key). 
     " name="description">
-<meta content="xml2rfc 3.30.0" name="generator">
+<meta content="xml2rfc 3.31.0" name="generator">
 <meta content="COSE" name="keyword">
 <meta content="JOSE" name="keyword">
 <meta content="BLS" name="keyword">
@@ -21,19 +21,18 @@
 <meta content="Privacy" name="keyword">
 <meta content="draft-ietf-cose-bls-key-representations-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.30.0
-    Python 3.12.11
+  xml2rfc 3.31.0
+    Python 3.12.12
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
     Jinja2 3.1.6
     lxml 5.3.1
-    platformdirs 4.3.8
+    platformdirs 4.5.0
     pycountry 24.6.1
     PyYAML 6.0.2
-    requests 2.32.4
-    setuptools 80.9.0
-    wcwidth 0.2.13
+    requests 2.32.5
+    wcwidth 0.2.14
 -->
 <link href="draft-ietf-cose-bls-key-representations.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1052,11 +1051,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Barreto-Lynn-Scott Elliptic Curve Key Re</td>
-<td class="right">July 2025</td>
+<td class="right">November 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Looker &amp; Jones</td>
-<td class="center">Expires 22 January 2026</td>
+<td class="center">Expires 7 May 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1069,12 +1068,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-cose-bls-key-representations-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-07-21" class="published">21 July 2025</time>
+<time datetime="2025-11-03" class="published">3 November 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-01-22">22 January 2026</time></dd>
+<dd class="expires"><time datetime="2026-05-07">7 May 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1120,7 +1119,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 22 January 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 7 May 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1222,13 +1221,24 @@ svg :is([fill="white"], [fill^="#fff"]) {
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
-            <p id="section-toc.1-1.8.1"><a href="#appendix-C" class="auto internal xref">Appendix C</a>.  <a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+            <p id="section-toc.1-1.8.1"><a href="#appendix-C" class="auto internal xref">Appendix C</a>.  <a href="#name-bls48581-point-encoding" class="internal xref">BLS48581 point encoding</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.1">
+                <p id="section-toc.1-1.8.2.1.1"><a href="#appendix-C.1" class="auto internal xref">C.1</a>.  <a href="#name-point-serialization" class="internal xref">Point Serialization</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.2">
+                <p id="section-toc.1-1.8.2.2.1"><a href="#appendix-C.2" class="auto internal xref">C.2</a>.  <a href="#name-point-de-serialization" class="internal xref">Point De-serialization</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
-            <p id="section-toc.1-1.9.1"><a href="#appendix-D" class="auto internal xref">Appendix D</a>.  <a href="#name-document-history" class="internal xref">Document History</a></p>
+            <p id="section-toc.1-1.9.1"><a href="#appendix-D" class="auto internal xref">Appendix D</a>.  <a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
-            <p id="section-toc.1-1.10.1"><a href="#appendix-E" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+            <p id="section-toc.1-1.10.1"><a href="#appendix-E" class="auto internal xref">Appendix E</a>.  <a href="#name-document-history" class="internal xref">Document History</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
+            <p id="section-toc.1-1.11.1"><a href="#appendix-F" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1259,7 +1269,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <h3 id="name-point-coordinates-encoding">
 <a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-point-coordinates-encoding" class="section-name selfRef">Point Coordinates Encoding</a>
         </h3>
-<p id="section-2.1-1">A point representing a public key will either be in the G1 or G2 subgroup of a curve. Depending on which one of the subgroups the public key will belong to, different serialization procedures need to be used, to encode its coordinates. Most specifically, if the public key is a point in the G1 subgroup, each of its coordinates MUST be encoded using the serialization defined in Section 2.3.5 of <span>[<a href="#SEC1" class="cite xref">SEC1</a>]</span>. If the public key is a point in the G2 subgroup, each of its coordinates MUST be serialize using the procedure described in Appendix I.5 in <span>[<a href="#I-D.ietf-lwig-curve-representations" class="cite xref">I-D.ietf-lwig-curve-representations</a>]</span>.<a href="#section-2.1-1" class="pilcrow">¶</a></p>
+<p id="section-2.1-1">A point representing a public key will either be in the G1 or G2 subgroup of a curve. Both are encoded using the compressed serialized point format defined normatively in Appendix B.2 of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span> and in <a href="#encoding-bls48-581" class="auto internal xref">Appendix C</a>.<a href="#section-2.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="representation-definition">
@@ -1275,15 +1285,13 @@ svg :is([fill="white"], [fill^="#fff"]) {
           </h4>
 <p id="section-2.2.1-1">When expressing a cryptographic key for these curves in JSON Web Key (JWK) form, the following rules apply:<a href="#section-2.2.1-1" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="section-2.2.1-2.1">The parameter "kty" MUST be present and set to "EC".<a href="#section-2.2.1-2.1" class="pilcrow">¶</a>
+<li class="compact" id="section-2.2.1-2.1">The parameter "kty" MUST be present and set to "OKP".<a href="#section-2.2.1-2.1" class="pilcrow">¶</a>
 </li>
             <li class="compact" id="section-2.2.1-2.2">The parameter "crv" MUST be present and value MUST be one defined in <a href="#curve-parameter-registration" class="auto internal xref">Section 2.2.3</a>.<a href="#section-2.2.1-2.2" class="pilcrow">¶</a>
 </li>
-            <li class="compact" id="section-2.2.1-2.3">The parameter "x" MUST be present whose value represents the x coordinate of the curve point for the public key. This value MUST be encoded using the procedure defined in <a href="#point-coordinates-encoding">Section 2.1</a> and MUST be base64url encoded without padding as defined in <span>[<a href="#RFC7515" class="cite xref">RFC7515</a>]</span> Appendix C.<a href="#section-2.2.1-2.3" class="pilcrow">¶</a>
+            <li class="compact" id="section-2.2.1-2.3">The parameter "x" MUST be present with its value being the base64url encoding of the compressed serialized point format defined normatively in Appendix B of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span>.<a href="#section-2.2.1-2.3" class="pilcrow">¶</a>
 </li>
-            <li class="compact" id="section-2.2.1-2.4">The parameter "y" MUST be present whose value represents the y coordinate of the curve point for the public key. This value MUST be encoded using the procedure defined in <a href="#point-coordinates-encoding">Section 2.1</a> and MUST be base64url encoded without padding as defined in <span>[<a href="#RFC7515" class="cite xref">RFC7515</a>]</span> Appendix C.<a href="#section-2.2.1-2.4" class="pilcrow">¶</a>
-</li>
-            <li class="compact" id="section-2.2.1-2.5">The parameter "d" MUST be present for private key representations whose value MUST contain the little-endian representation of the private key base64url encoded without padding as defined in <span>[<a href="#RFC7515" class="cite xref">RFC7515</a>]</span> Appendix C. This parameter MUST NOT be present for public keys.<a href="#section-2.2.1-2.5" class="pilcrow">¶</a>
+            <li class="compact" id="section-2.2.1-2.4">The parameter "d" MUST be present for private key representations whose value MUST contain the big-endian representation of the private key base64url encoded without padding as defined in <span>[<a href="#RFC7515" class="cite xref">RFC7515</a>]</span> Appendix C. This parameter MUST NOT be present for public keys.<a href="#section-2.2.1-2.4" class="pilcrow">¶</a>
 </li>
           </ul>
 </section>
@@ -1295,15 +1303,13 @@ svg :is([fill="white"], [fill^="#fff"]) {
           </h4>
 <p id="section-2.2.2-1">When expressing a cryptographic key for these curves in COSE_Key form, the following rules apply:<a href="#section-2.2.2-1" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="section-2.2.2-2.1">The parameter "kty" (1) MUST be present and set to "EC2" (2).<a href="#section-2.2.2-2.1" class="pilcrow">¶</a>
+<li class="compact" id="section-2.2.2-2.1">The parameter "kty" (1) MUST be present and set to "OKP" (1).<a href="#section-2.2.2-2.1" class="pilcrow">¶</a>
 </li>
             <li class="compact" id="section-2.2.2-2.2">The parameter "crv" (-1) MUST be present and value MUST be one defined in <a href="#curve-parameter-registration" class="auto internal xref">Section 2.2.3</a>.<a href="#section-2.2.2-2.2" class="pilcrow">¶</a>
 </li>
-            <li class="compact" id="section-2.2.2-2.3">The parameter "x" (-2) MUST be present whose value represents the x coordinate of the curve point for the public key. This value MUST be encoded using the procedure defined in <a href="#point-coordinates-encoding">Section 2.1</a> and MUST be base64url encoded without padding as defined in <span>[<a href="#RFC7515" class="cite xref">RFC7515</a>]</span> Appendix C.<a href="#section-2.2.2-2.3" class="pilcrow">¶</a>
+            <li class="compact" id="section-2.2.2-2.3">The parameter "x" (-2) MUST be present with its value being the compressed serialized point format defined normatively in Appendix B of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span>.<a href="#section-2.2.2-2.3" class="pilcrow">¶</a>
 </li>
-            <li class="compact" id="section-2.2.2-2.4">The parameter "y" (-3) Must be present whose value represents the y coordinate of the curve point for the public key. This value MUST be encoded using the procedure defined in <a href="#point-coordinates-encoding">Section 2.1</a> and MUST be base64url encoded without padding as defined in <span>[<a href="#RFC7515" class="cite xref">RFC7515</a>]</span> Appendix C.<a href="#section-2.2.2-2.4" class="pilcrow">¶</a>
-</li>
-            <li class="compact" id="section-2.2.2-2.5">The parameter "d" (-4) MUST be present for private key representations whose value MUST contain the little-endian representation of the private key. This parameter MUST NOT be present for public keys.<a href="#section-2.2.2-2.5" class="pilcrow">¶</a>
+            <li class="compact" id="section-2.2.2-2.4">The parameter "d" (-4) MUST be present for private key representations whose value MUST contain the big-endian representation of the private key. This parameter MUST NOT be present for public keys.<a href="#section-2.2.2-2.4" class="pilcrow">¶</a>
 </li>
           </ul>
 </section>
@@ -1326,22 +1332,22 @@ svg :is([fill="white"], [fill^="#fff"]) {
               <tr>
                 <td class="text-left" rowspan="1" colspan="1">BLS12381G1</td>
                 <td class="text-left" rowspan="1" colspan="1">TBD (13 requested)</td>
-                <td class="text-left" rowspan="1" colspan="1">A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 12 with 381-bit p in the subgroup of G1 defined as <code>E(GF(p))</code> of order r. The private key will be 32 bytes long. Each of the x and y coordinates of the public key will be 48 bytes long.</td>
+                <td class="text-left" rowspan="1" colspan="1">A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 12 with 381-bit p in the subgroup of G1 defined as <code>E(GF(p))</code> of order r. The private key will be 32 bytes long. The public key will be 48 bytes long.</td>
               </tr>
               <tr>
                 <td class="text-left" rowspan="1" colspan="1">BLS12381G2</td>
                 <td class="text-left" rowspan="1" colspan="1">TBD (14 requested)</td>
-                <td class="text-left" rowspan="1" colspan="1">A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 12 with 381-bit p in the subgroup of G2 defined as <code>E(GF(p^2))</code> of order r. The private key will be 32 bytes long. Each of the x and y coordinates of the public key will be 96 bytes long.</td>
+                <td class="text-left" rowspan="1" colspan="1">A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 12 with 381-bit p in the subgroup of G2 defined as <code>E(GF(p^2))</code> of order r. The private key will be 32 bytes long. The public key will be 96 bytes long.</td>
               </tr>
               <tr>
                 <td class="text-left" rowspan="1" colspan="1">BLS48581G1</td>
                 <td class="text-left" rowspan="1" colspan="1">TBD (15 requested)</td>
-                <td class="text-left" rowspan="1" colspan="1">A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 48 with 581-bit p in the subgroup of G1 defined as <code>E(GF(p))</code> of order r. The private key will be 65 bytes long. Each of the x and y coordinates of the public key will be 73 bytes long.</td>
+                <td class="text-left" rowspan="1" colspan="1">A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 48 with 581-bit p in the subgroup of G1 defined as <code>E(GF(p))</code> of order r. The private key will be 65 bytes long. The public key will be 73 bytes long.</td>
               </tr>
               <tr>
                 <td class="text-left" rowspan="1" colspan="1">BLS48581G2</td>
                 <td class="text-left" rowspan="1" colspan="1">TBD (16 requested)</td>
-                <td class="text-left" rowspan="1" colspan="1">A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 48 with 581-bit p in the subgroup of G2 defined as <code>E(GF(p^8))</code> of order r. The private key will be 65 bytes long. Each of the x and y coordinates of the public key will be 584 bytes long.</td>
+                <td class="text-left" rowspan="1" colspan="1">A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 48 with 581-bit p in the subgroup of G2 defined as <code>E(GF(p^8))</code> of order r. The private key will be 65 bytes long. The public key will be 584 bytes long.</td>
               </tr>
             </tbody>
           </table>
@@ -1445,7 +1451,7 @@ E'(GF(p^8))<a href="#section-4.1-9.2" class="pilcrow">¶</a>
 </li>
           <li class="compact" id="section-4.2-3.2">Value: TBD (13 requested)<a href="#section-4.2-3.2" class="pilcrow">¶</a>
 </li>
-          <li class="compact" id="section-4.2-3.3">Key Type: EC2<a href="#section-4.2-3.3" class="pilcrow">¶</a>
+          <li class="compact" id="section-4.2-3.3">Key Type: OKP<a href="#section-4.2-3.3" class="pilcrow">¶</a>
 </li>
           <li class="compact" id="section-4.2-3.4">Curve Description: 381 bit with an embedding degree of 12 Barreto-
 Lynn-Scott pairing-friendly curve using the r-order subgroup of
@@ -1466,7 +1472,7 @@ E(GF(p))<a href="#section-4.2-3.4" class="pilcrow">¶</a>
 </li>
           <li class="compact" id="section-4.2-5.2">Value: TBD (14 requested)<a href="#section-4.2-5.2" class="pilcrow">¶</a>
 </li>
-          <li class="compact" id="section-4.2-5.3">Key Type: EC2<a href="#section-4.2-5.3" class="pilcrow">¶</a>
+          <li class="compact" id="section-4.2-5.3">Key Type: OKP<a href="#section-4.2-5.3" class="pilcrow">¶</a>
 </li>
           <li class="compact" id="section-4.2-5.4">Curve Description: 381 bit with an embedding degree of 12 Barreto-
 Lynn-Scott pairing-friendly curve using the r-order subgroup of
@@ -1487,7 +1493,7 @@ E'(GF(p^2))<a href="#section-4.2-5.4" class="pilcrow">¶</a>
 </li>
           <li class="compact" id="section-4.2-7.2">Value: TBD (15 requested)<a href="#section-4.2-7.2" class="pilcrow">¶</a>
 </li>
-          <li class="compact" id="section-4.2-7.3">Key Type: EC2<a href="#section-4.2-7.3" class="pilcrow">¶</a>
+          <li class="compact" id="section-4.2-7.3">Key Type: OKP<a href="#section-4.2-7.3" class="pilcrow">¶</a>
 </li>
           <li class="compact" id="section-4.2-7.4">Curve Description: 581 bit with an embedding degree of 48 Barreto-
 Lynn-Scott pairing-friendly curve using the r-order subgroup of
@@ -1508,7 +1514,7 @@ E(GF(p))<a href="#section-4.2-7.4" class="pilcrow">¶</a>
 </li>
           <li class="compact" id="section-4.2-9.2">Value: TBD (16 requested)<a href="#section-4.2-9.2" class="pilcrow">¶</a>
 </li>
-          <li class="compact" id="section-4.2-9.3">Key Type: EC2<a href="#section-4.2-9.3" class="pilcrow">¶</a>
+          <li class="compact" id="section-4.2-9.3">Key Type: OKP<a href="#section-4.2-9.3" class="pilcrow">¶</a>
 </li>
           <li class="compact" id="section-4.2-9.4">Curve Description: 581 bit with an embedding degree of 48 Barreto-
 Lynn-Scott pairing-friendly curve using the r-order subgroup of
@@ -1583,10 +1589,6 @@ E'(GF(p^8))<a href="#section-4.2-9.4" class="pilcrow">¶</a>
         <dd>
 <span class="refAuthor">Intel Corporation</span>, <span class="refTitle">"Intel (R) SGX: Intel (R) EPID Provisioning and Attestation Services"</span>, <span>&lt;<a href="https://software.intel.com/en-us/download/intel-sgx-intel-epid-provisioning-and-attestation-services">https://software.intel.com/en-us/download/intel-sgx-intel-epid-provisioning-and-attestation-services</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="I-D.ietf-lwig-curve-representations">[I-D.ietf-lwig-curve-representations]</dt>
-        <dd>
-<span class="refAuthor">Struik, R.</span>, <span class="refTitle">"Alternative Elliptic Curve Representations"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lwig-curve-representations-23</span>, <time datetime="2022-01-21" class="refDate">21 January 2022</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lwig-curve-representations-23">https://datatracker.ietf.org/doc/html/draft-ietf-lwig-curve-representations-23</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="JWP">[JWP]</dt>
         <dd>
 <span class="refAuthor">Miller, J.</span>, <span class="refAuthor">Waite, D.</span>, and <span class="refAuthor">M. Jones</span>, <span class="refTitle">"JSON Web Proof"</span>, <time datetime="2023-10-21" class="refDate">21 October 2023</time>, <span>&lt;<a href="https://www.ietf.org/archive/id/draft-ietf-jose-json-web-proof-02.html">https://www.ietf.org/archive/id/draft-ietf-jose-json-web-proof-02.html</a>&gt;</span>. </dd>
@@ -1615,10 +1617,6 @@ E'(GF(p^8))<a href="#section-4.2-9.4" class="pilcrow">¶</a>
         <dd>
 <span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc8174">https://www.rfc-editor.org/info/rfc8174</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="SEC1">[SEC1]</dt>
-        <dd>
-<span class="refAuthor">Standards for Efficient Cryptography Group</span>, <span class="refTitle">"SEC 1: Elliptic Curve Cryptography"</span>, <time datetime="2009-05-21" class="refDate">21 May 2009</time>, <span>&lt;<a href="http://www.secg.org/sec1-v2.pdf">http://www.secg.org/sec1-v2.pdf</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="TPM">[TPM]</dt>
         <dd>
 <span class="refAuthor">Trusted Computing Group</span>, <span class="refTitle">"Trusted Platform Module"</span>, <span>&lt;<a href="https://trustedcomputinggroup.org/">https://trustedcomputinggroup.org/</a>&gt;</span>. </dd>
@@ -1644,15 +1642,14 @@ E'(GF(p^8))<a href="#section-4.2-9.4" class="pilcrow">¶</a>
         <h3 id="name-bls12381-key-pairs">
 <a href="#appendix-A.1" class="section-number selfRef">A.1. </a><a href="#name-bls12381-key-pairs" class="section-name selfRef">BLS12381 Key Pairs</a>
         </h3>
-<p id="appendix-A.1-1">The following examples showcase JWKs for both the G1 and G2 subgroups of the BLS12381 curve. Note, the examples also include the corresponding private key, expressed through the inclusion of the “d” parameter.<a href="#appendix-A.1-1" class="pilcrow">¶</a></p>
+<p id="appendix-A.1-1">The following examples showcase JWKs for both the G1 and G2 subgroups of the BLS12381 curve. Note, the examples also include the corresponding private key, expressed through the inclusion of the "d" parameter.<a href="#appendix-A.1-1" class="pilcrow">¶</a></p>
 <p id="appendix-A.1-2">An example JWK for the BLS12381 curve where the public key is in the G1 subgroup.<a href="#appendix-A.1-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-A.1-3">
 <pre>{
-  "kty": "EC",
+  "kty": "OKP",
   "crv": "BLS12381G1",
-  "x": "Ed4GBGLVasEp4ejPz44CvllbTldfLLcm2QcIJluBL6p_SQmRrZvJNa3YaJ-Wx8Im",
-  "y": "AbdYAsAb20CHzlVW6VBO9i16BcGOmcYiMLlBEh9DfAiDu_1ZIAd1zewSi9f6517g",
-  "d": "3nc6_s38FVVlawbwmPFOjB4TlAPy_K2Tx39I7XnEnDc"
+  "x": "TBD THIS IS NOW WRONG. REPLACE IT. IJluBL6p_SQmRrZvJNa3YaJ-Wx8Im",
+  "d": "TBD THIS IS NOW WRONG. REPLACE IT. I7XnEnDc"
 }
 
 </pre><a href="#appendix-A.1-3" class="pilcrow">¶</a>
@@ -1660,11 +1657,10 @@ E'(GF(p^8))<a href="#section-4.2-9.4" class="pilcrow">¶</a>
 <p id="appendix-A.1-4">Another example of a different JWK for the BLS12381 curve where the public key is in the G1 subgroup.<a href="#appendix-A.1-4" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-A.1-5">
 <pre>{
-  "kty": "EC",
+  "kty": "OKP",
   "crv": "BLS12381G1",
-  "x": "EUGQExpzxebwmXEeqc39OI3J1NfUCMVQPqc_Lb-4dLu0xCaSrd0rDBMTFthd5r-2",
-  "y": "FNpXfp4a-5N7Cb528pwRhLINOmwyuhjKjPz8jcaxgCSNZCbjaYQsGoOhftRqWKpg",
-  "d": "OdNBrRDu89IrnlY5Hl-2CW-3cqW0Rw7IgQUuwLZ8gV4"
+  "x": "TBD THIS IS NOW WRONG. REPLACE IT. _Lb-4dLu0xCaSrd0rDBMTFthd5r-2",
+  "d": "TBD THIS IS NOW WRONG. REPLACE IT. uwLZ8gV4"
 }
 
 </pre><a href="#appendix-A.1-5" class="pilcrow">¶</a>
@@ -1672,13 +1668,11 @@ E'(GF(p^8))<a href="#section-4.2-9.4" class="pilcrow">¶</a>
 <p id="appendix-A.1-6">An example JWK for the BLS12381 curve where the public key is in the G2 subgroup.<a href="#appendix-A.1-6" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-A.1-7">
 <pre>{
-  "kty": "EC",
+  "kty": "OKP",
   "crv": "BLS12381G2",
-  "x": "Ajs8lstTgoTgXMF6QXdyh3m8k2ixxURGYLMaYylVK_x0F8HhE8zk0YWiGV3CHwpQ
-Ea2sH4PBZLaYCn8se-1clmCORDsKxbbw3Js_Alu4OmkV9gmbJsy1YF2rt7Vxzs6S",
-  "y": "BVkkrVEib-P_FMPHNtqxJymP3pV-H8fCdvPkoWInpFfM9tViyqD8JAmwDf64zU2h
-BV_vvCQ632ScAooEExXuz1IeQH9D2o-uY_dAjZ37YHuRMEyzh8Tq-90JHQvicOqx",
-  "d": "hR6HfxlTwcjMGST5wYnkGiJvuVnpUPbvXSGsvwjJhUM"
+  "x": "t2IMOefTklK0-lLsfbbnHeik-ax-x-aZVTcXe9heYDme1PhsyDtUzivz-oTg-ZDJ
+DnmbAW1GJwN65w3I0U7q-PgauHW8RoGzc_l7Ac2QBDyKhbfaQ_X0DhqtkAwxXiC2",
+  "d": "IgRY0ektXHs-heJjAsVTRaMI6OL3W_kYuzGaid2yeQ4"
 }
 
 </pre><a href="#appendix-A.1-7" class="pilcrow">¶</a>
@@ -1686,13 +1680,11 @@ BV_vvCQ632ScAooEExXuz1IeQH9D2o-uY_dAjZ37YHuRMEyzh8Tq-90JHQvicOqx",
 <p id="appendix-A.1-8">Another example of a different JWK for the BLS12381 curve where the public key is in the G2 subgroup.<a href="#appendix-A.1-8" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-A.1-9">
 <pre>{
-  "kty": "EC",
+  "kty": "OKP",
   "crv": "BLS12381G2",
-  "x": "Atx1GqJH4rXlpTk0wg9LA6SsHrWWdPPqL2BXLd7zzMpFLeLdr-QQMJ2NPebFkw-h
-CyWIj8dwP9uvuu9c9WZrVWvQnY2n7xQHF-BM-Mx6747t_ZJCu809fskA3ca3TVr7",
-  "y": "Bk0BZG3RijbTl9YqzuAZZHuxj4eNxKBF4TD_6KdxmCxgAri0Bx46xtcMqqKgqUmd
-DRC65Jv08EkVBojJkraUVEkxVhixgYS5hdfRfYZWaisT4M_NYoOFZFP4_5Jg05_p",
-  "d": "1jeo0uurZvaIC82YUMNLOHalfvhabbMHtLeVaI0tNhs"
+  "x": "rgPyS3U6AR_cOuRC1LSxNmw5HfLlAurrRdFGjwyrZihZyeIoqMXQhr7aGM0eo1iS
+E2WGstFUjZShhfoF2mK1D61CXFyOAoM-Qt6e7NZjsN9LKZNpGNHnFttuMrlBvk6v",
+  "d": "O4x7NVtBvaLb-SZxGe3CKzl7obmSD47aLmReKdKQ_v8"
 }
 
 </pre><a href="#appendix-A.1-9" class="pilcrow">¶</a>
@@ -1704,17 +1696,15 @@ DRC65Jv08EkVBojJkraUVEkxVhixgYS5hdfRfYZWaisT4M_NYoOFZFP4_5Jg05_p",
         <h3 id="name-bls48581-key-pairs">
 <a href="#appendix-A.2" class="section-number selfRef">A.2. </a><a href="#name-bls48581-key-pairs" class="section-name selfRef">BLS48581 Key Pairs</a>
         </h3>
-<p id="appendix-A.2-1">The following examples showcase JWKs for both the G1 and G2 subgroups of the BLS48581 curve. As before, note that the examples also include the corresponding private key, expressed through the inclusion of the “d” parameter.<a href="#appendix-A.2-1" class="pilcrow">¶</a></p>
+<p id="appendix-A.2-1">The following examples showcase JWKs for both the G1 and G2 subgroups of the BLS48581 curve. As before, note that the examples also include the corresponding private key, expressed through the inclusion of the "d" parameter.<a href="#appendix-A.2-1" class="pilcrow">¶</a></p>
 <p id="appendix-A.2-2">An example JWK for the BLS48581 curve where the public key is in the G1 subgroup.<a href="#appendix-A.2-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-A.2-3">
 <pre>{
-  "kty": "EC",
+  "kty": "OKP",
   "crv": "BLS48581G1",
-  "x": "BZo5kuiunkAUaE9n-c8L12pjTfV35ZTzei0eYIzYEM05Y--PCABHPXt20ImhyL9K
+  "x": "TBD THIS IS NOW WRONG. REPLACE IT. eYIzYEM05Y--PCABHPXt20ImhyL9K
 sdrUqYxe5KrsbsahKYdN9dXa6a7fsFnWxw",
-  "y": "EJfIRJ62OJ1vnLuwtziSgC4syIDVgiYoGxqLhdryqJEGepP7-4iePB5nrAthL6gl
-MeKIeF9q7jsZfeM3g4CTlXMOH2yLCh1VyA",
-  "d": "FbigQBwP9gNCFI_LFxt-c8ZpgY_1JjSOx-oUweZJgmGYZijWUsL6R0qQY1gwtrHT
+  "d": "TBD THIS IS NOW WRONG. REPLACE IT. UweZJgmGYZijWUsL6R0qQY1gwtrHT
 LWEWNbq--FlOVKL_EBlbL9I"
 }
 
@@ -1723,13 +1713,11 @@ LWEWNbq--FlOVKL_EBlbL9I"
 <p id="appendix-A.2-4">Another example of a different JWK for the BLS48581 curve where the public key is in the G1 subgroup.<a href="#appendix-A.2-4" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-A.2-5">
 <pre>{
-  "kty": "EC",
+  "kty": "OKP",
   "crv": "BLS48581G1",
-  "x": "BjRT7VST4vMlTj6yMF73QlEg5XSHYQflAJMPf-4BhjO9qL8A6Rqo1OsdiGTrC3jY
+  "x": "TBD THIS IS NOW WRONG. REPLACE IT. Pf-4BhjO9qL8A6Rqo1OsdiGTrC3jY
 S3mLOHp-zg-yDmK_7HD8RR4S9j2Tf84blA",
-  "y": "BOS-o0BD7RI7t2w5q0ljpy9NRJ7h8vT-sjfj8HKpGXaVP17RFUswlc1dBSVPsiSZ
-RU78ZinNO0kK57dJrDXeRUB7gSM6L6aZog",
-  "d": "pAq4V50JFEVjNbx12WDpHCiolrB-wxQw6wOZh2l_5-p_TWfTui7LgcIBpZb17idK
+  "d": "TBD THIS IS NOW WRONG. REPLACE IT. Zh2l_5-p_TWfTui7LgcIBpZb17idK
 gSh-XhGqhxEkXMUggGOQjJc"
 }
 
@@ -1738,9 +1726,9 @@ gSh-XhGqhxEkXMUggGOQjJc"
 <p id="appendix-A.2-6">An example JWK for the BLS48581 curve where the public key is in the G2 subgroup.<a href="#appendix-A.2-6" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-A.2-7">
 <pre>{
-  "kty": "EC",
+  "kty": "OKP",
   "crv": "BLS48581G2",
-  "x": "ANAdJhZscIOfuf06ScGr1EwKcy7IFnq4bKPRl_QpBhRtx7Hg4hvpCXXbt03L1UGv
+  "x": "TBD THIS IS NOW WRONG. REPLACE IT. Rl_QpBhRtx7Hg4hvpCXXbt03L1UGv
 oZbf-pxVfOyQMaA1qsGAHU0R6OYgUIpc-wE3KKZFLtzfS3vKPVLSLNTm7USw7audlChzhn8g
 aG5aJc1J7j0SfN0pn5TPLVA6PE47cMhHWHEirUzpkFxLTKYNqNoQVOZxuqcJs6UAC9ZwJaIi
 vfDvv4XJuS02y7irAjJxhXhWfF9TuTyp6aiyGU1mjiYAoJ6HSIaJ2TiR5UztoiMjuUuOqZG4
@@ -1751,18 +1739,7 @@ HG7IpWkg4uIq9zpQ_U66giDqmoglccwoMMyeG_LAd7zsuILtzOwPJOjJkC4U3HcAVZvSLQZz
 tGCq0L775LRhmVg4CAb4bHaqvN2XW7mWordv9EvHq7NRwCVzMPFYWUd2-sXgqJ3AU0l5Bqpn
 gjH3gxSnG7mNEnmctmjQSnSOYhBoWRzmoJ2FmtQEFxCVIZvL7ZCaqkD27ZjamowAKFzmdFWV
 -wzHSs-br6ely00z402C7iX5c85zsI9NqxMwkDpprpx5oGjIFqiO8kkDyPdJSoLfzPA",
-  "y": "DhTWwVEjNmqbRMtXexiuMVQEvL_ZqLk0NcjlzrlqO-k8uiRmKxiupQ8-Qm1tKYUJ
-sJVdkLiyL14ptu0BbNoFIxUqLIP3PtauAgZjdSgUPOqDz7xvEaHGIhcEdivoKwokBpLQfO0x
-CSoia3tBm37xFWTLYNmmQQR8AEpUPk4OP9IWn5XkJQGYUfraO2qwNUmDdJwIJb8pDZVp_A0x
-YugO1CuKp-hlfNV6rdEYeGsYuMZelR9XlcNI9CdfsnQsfcoE5bypqeN5kJiCDNI0apdFQgxX
-D5xipr-6OafMARtcJclLbOlqzYL4l0coAwVbBe1Yz54yPGu4ubBI5N4dZcZ43c46hMFh_hz3
-qYkru5ClWjGtvRHUrBWNVTKoyyHAelBylnBckATeep2wHJmwE92fILQx-TQH3xYAwgx0o4ZC
-4_2gZXr73zddtS7mxaxWm6Y6AbHAoIpUBrqcMd9QjZ4_lX6BR1P_TKL_HySHOd4RMM-3H1fw
-e52V2E9Gi8tZJJzkLsWNT0F9MLYDULv1-4zRkPuKuqZGUfswU-cufNmx1U4TfrWpeqzwhQ8i
-h74AH8Fygk7ZpPwLAqFr_FNPoXeoxlRP4426_8Rsw-9fMjlDW3qqdEMI1M25BEm9kglUW__r
-n0OyFrCPfPDpUmlQxDmu50Uwi1m-8jnmGQxfDqzgrQqN79DUtD8C8m9y26zFttasdNMFEjE9
-vlq6GVbpYEr3juZhvKBvLzJLGGRQrxxGDPDGA_itNRJnw_EtafcH4rkWDtWV4yb79Sw",
-  "d": "x-6jzDQgIvWIEyd5PF6nq9DNTIFesIExG_jBMJd9HJMtQdfDooFlQvbY3Ts0rSb-
+  "d": "TBD THIS IS NOW WRONG. REPLACE IT. BMJd9HJMtQdfDooFlQvbY3Ts0rSb-
 sPIIpLBx7bRCtwhkpioKmMM"
 }
 
@@ -1771,9 +1748,9 @@ sPIIpLBx7bRCtwhkpioKmMM"
 <p id="appendix-A.2-8">Another example of a different JWK for the BLS48581 curve where the public key is in the G2 subgroup.<a href="#appendix-A.2-8" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-A.2-9">
 <pre>{
-  "kty": "EC",
+  "kty": "OKP",
   "crv": "BLS48581G2",
-  "x": "BgaTERiH8qDLfouNR44GOkiE2EOCgCbLxWEI3ocyXPLxeEtCCVUtnj3sQv-I3nM3
+  "x": "TBD THIS IS NOW WRONG. REPLACE IT. I3ocyXPLxeEtCCVUtnj3sQv-I3nM3
 V6IptFAoEJkLpCmMLBwyMTZ3B69p61yYBAU-fO2XyUiR0aEmWgqI-tesctbExIleiWWi221n
 wzIVUKi47E6bkNnBjvynvHMaB4lsJ0llYlsuYO7QqKXY55xSatMbTkTFncEOeEjQbDjHu96O
 DBD0F9r2-yahJ2PW5Jaztt9B0-UtHlTz0nje_ZaRTarna3-2p9ZrWM6DpXJQJg1dvefE1ngk
@@ -1784,18 +1761,7 @@ Qwnn1zKQyhYyfHSmQcLN9Kmpke-5AQsNw0Oo8R05HhjhdR2GIWPIRHqCXN_cu__qof7jdtUu
 pCoNUms3YyGMNYXdDEZzQS_8Fex6zWrHLCsTXqBrlAtKUIrzA-zAS_Jj_iIEvZRQM6J949P5
 iSEbSOtIalYzUuoOIjbF2s7bWpwNwgvKL1LbHT_ldARL9y0RxeK5BINrKCLA9aDDpK4rQX1B
 _ZR4ni422eQgfbdT6MjZ_YooobKKQxYCXdcx-DQsjhVMIHcr2RG_1450wmybP9Ycwpc",
-  "y": "DoHzwzZAL1ArvHD-z7Eey67D4IEjfVgdXgANRGmtQzPirXDhOmohjnvMJ9KisyWm
-kJKuSp5B0wr-EO4AmmPualDZNutOC97NzAk2tJeVi5kNWPKp1RKxHIDhAqME-LUbVCTRFn23
-rfO9QNDd0dPev35o6ee3FwGtJYlieEeYEym0wHM96FxwfjsPrxgZYYorCToGES5rzbr1zOh0
-vmLVei-n-VWOnjymKh6CzjGLZm7q8exB8QZoG_JeugV7l0GifG4eeLfh4hDtYVNH7JCeJJEN
-jfgDdp1Dy1fHDv7U9bX8gDEfRoTJS9FDU85a-tc3c5Oy472IzIq-Aml39YolBPISU1gNRO5R
-PK4gMad184pxtrYXZaMWOow3I2aUSDZ0-IBH4QLP8MSJoVxZHo5fhkpkSlFT1C5FgNiNny_I
-48EtANkHjH4S8zOxegLeTxK9doj2k6c2ptNAR7xDdm2mhfNhKIRgev3vhW70W54QpUpckS9i
-znbOl6ofzs-CtSezA7yMhLh_Vb0bgz6Wz2viixI6jd9_yVkicPse-57Fi24Et0x3A1CnuWkw
-Ez1TvXk-9QWFQWKhAsoIMCB0svCjgcnSKcaAeRFGvd0XKtBICmHhCK1CqvcAuYtsDELmhzsi
-JVxOpmB5JdgDt2Ii6CaiAzxkP-I02O6UbdzGbZPN0gJfgIJRMuvJRZF-G9An1CsTMD6Y0Q4R
-o3aWrSY3mpnKRZddVC2W4OKuhS7qrLR7REl-gJvSCzaqiuLQlvqOrP4i55n52tDVWqQ",
-  "d": "TeLY_9dGUWdbaMjjgWA8-osKXvyfPz3gq4B9Drr-dV0ZgB3hhYBWlkklKOuO78t8
+  "d": "TBD THIS IS NOW WRONG. REPLACE IT. 9Drr-dV0ZgB3hhYBWlkklKOuO78t8
 FUCypARd4bpHGKJmsPafn8A"
 }
 
@@ -1815,10 +1781,10 @@ FUCypARd4bpHGKJmsPafn8A"
         <h3 id="name-bls12381-key-pairs-2">
 <a href="#appendix-B.1" class="section-number selfRef">B.1. </a><a href="#name-bls12381-key-pairs-2" class="section-name selfRef">BLS12381 Key Pairs</a>
         </h3>
-<p id="appendix-B.1-1">The following examples showcase COSE_Key examples for both the G1 and G2 subgroups of the BLS12381 curve. Note, the examples also include the corresponding private key, expressed through the inclusion of the “d” (-4) parameter.<a href="#appendix-B.1-1" class="pilcrow">¶</a></p>
+<p id="appendix-B.1-1">The following examples showcase COSE_Key examples for both the G1 and G2 subgroups of the BLS12381 curve. Note, the examples also include the corresponding private key, expressed through the inclusion of the "d" (-4) parameter.<a href="#appendix-B.1-1" class="pilcrow">¶</a></p>
 <p id="appendix-B.1-2">An example COSE_Key for the BLS12381 curve where the public key is in the G1 subgroup expressed as an octet string.<a href="#appendix-B.1-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-B.1-3">
-<pre>a50101200d21583011de060462d56ac129e1e8cfcf8e02be595b4e575f2cb726d9070826
+<pre>TBD THIS IS NOW WRONG. REPLACE IT. 1e8cfcf8e02be595b4e575f2cb726d9070826
 5b812faa7f490991ad9bc935add8689f96c7c22622583001b75802c01bdb4087ce5556e9
 504ef62d7a05c18e99c62230b941121f437c0883bbfd59200775cdec128bd7fae75ee023
 5820de773afecdfc1555656b06f098f14e8c1e139403f2fcad93c77f48ed79c49c37
@@ -1830,18 +1796,16 @@ FUCypARd4bpHGKJmsPafn8A"
 <pre>{
   1: 1,
   -1: 13,
-  -2: h'11DE060462D56AC129E1E8CFCF8E02BE595B4E575F2CB726D90708265B812FAA
+  -2: h'TBD THIS IS NOW WRONG. REPLACE IT. B4E575F2CB726D90708265B812FAA
 7F490991AD9BC935ADD8689F96C7C226',
-  -3: h'01B75802C01BDB4087CE5556E9504EF62D7A05C18E99C62230B941121F437C08
-83BBFD59200775CDEC128BD7FAE75EE0',
-  -4: h'DE773AFECDFC1555656B06F098F14E8C1E139403F2FCAD93C77F48ED79C49C37'
+  -4: h'TBD THIS IS NOW WRONG. REPLACE IT. 39403F2FCAD93C77F48ED79C49C37'
 }
 
 </pre><a href="#appendix-B.1-5" class="pilcrow">¶</a>
 </div>
 <p id="appendix-B.1-6">Another example of a different COSE_Key for the BLS12381 curve where the public key is in the G1 subgroup expressed as an octet string.<a href="#appendix-B.1-6" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-B.1-7">
-<pre>a50101200d215830114190131a73c5e6f099711ea9cdfd388dc9d4d7d408c5503ea73f2d
+<pre>TBD THIS IS NOW WRONG. REPLACE IT. 9711ea9cdfd388dc9d4d7d408c5503ea73f2d
 bfb874bbb4c42692addd2b0c131316d85de6bfb622583014da577e9e1afb937b09be76f2
 9c1184b20d3a6c32ba18ca8cfcfc8dc6b180248d6426e369842c1a83a17ed46a58aa6023
 582039d341ad10eef3d22b9e56391e5fb6096fb772a5b4470ec881052ec0b67c815e
@@ -1853,18 +1817,17 @@ bfb874bbb4c42692addd2b0c131316d85de6bfb622583014da577e9e1afb937b09be76f2
 <pre>{
   1: 1,
   -1: 13,
-  -2: h'114190131A73C5E6F099711EA9CDFD388DC9D4D7D408C5503EA73F2DBFB874BB
+  -2: h'TBD THIS IS NOW WRONG. REPLACE IT. 9D4D7D408C5503EA73F2DBFB874BB
 B4C42692ADDD2B0C131316D85DE6BFB6',
-  -3: h'14DA577E9E1AFB937B09BE76F29C1184B20D3A6C32BA18CA8CFCFC8DC6B18024
 8D6426E369842C1A83A17ED46A58AA60',
-  -4: h'39D341AD10EEF3D22B9E56391E5FB6096FB772A5B4470EC881052EC0B67C815E'
+  -4: h'TBD THIS IS NOW WRONG. REPLACE IT. 772A5B4470EC881052EC0B67C815E'
 }
 
 </pre><a href="#appendix-B.1-9" class="pilcrow">¶</a>
 </div>
 <p id="appendix-B.1-10">An example COSE_Key for the BLS12381 curve where the public key is in the G2 subgroup expressed as an octet string.<a href="#appendix-B.1-10" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-B.1-11">
-<pre>a50101200e215860019003f72fb13e7f03f922fe6b1843a8e7fcdaf47031c5d007a32af7
+<pre>TBD THIS IS NOW WRONG. REPLACE IT. 922fe6b1843a8e7fcdaf47031c5d007a32af7
 43779a14c4664c602825810fdc71d3e03510a423015a595ea2a0a900d5ede9fef8b19a0e
 35d0e29843a0622a7cb13edc3a001bdb12e45b16b60274d28dfba48253b34d2122586014
 75166c12064581d08975ee393472f329860fcec9a64b63dcf36af39e94466a77622ef08d
@@ -1879,20 +1842,17 @@ B4C42692ADDD2B0C131316D85DE6BFB6',
 <pre>{
   1: 1,
   -1: 14,
-  -2: h'019003F72FB13E7F03F922FE6B1843A8E7FCDAF47031C5D007A32AF743779A14
-C4664C602825810FDC71D3E03510A423015A595EA2A0A900D5EDE9FEF8B19A0E35D0E298
-43A0622A7CB13EDC3A001BDB12E45B16B60274D28DFBA48253B34D21',
-  -3: h'1475166C12064581D08975EE393472F329860FCEC9A64B63DCF36AF39E94466A
-77622EF08D0EBB092B5F7C7327A2352F06ABEFF3E0D8959F1F00276A96B7F02082798D84
-097CAE47119A14E450F7D93FB99FD597A10C0FF8C0563A25C2967455',
-  -4: h'890EC57AACF4D641C4B619A78774F9B814A50F5858AAFD56EC038739E96F834F'
+  -2: h'89bf2eb011792886dc332582aaa7b2f2cd0e0428b3ed9b0f7fdfb3db1cb6c785
+ccc3a2db601a3b9fc3b27471f3705cba15be70d37d81bd7e244af2b177c26892fb5770
+def9c321d7055b2635cf74b9ce8e300c3d052304a03bf42002fd395b22',
+  -4: h'60a16f19075486bf6fda27796b91c9149992d0ffa623b0be8c5e1b413e76d481'
 }
 
 </pre><a href="#appendix-B.1-13" class="pilcrow">¶</a>
 </div>
 <p id="appendix-B.1-14">Another example of a different COSE_Key for the BLS12381 curve where the public key is in the G2 subgroup expressed as an octet string.<a href="#appendix-B.1-14" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-B.1-15">
-<pre>a50101200e21586003b81526b001b41701632609ee1285cf09549e2228caa0775a052ae6
+<pre>TBD THIS IS NOW WRONG. REPLACE IT. 32609ee1285cf09549e2228caa0775a052ae6
 f1ae5737dcc66a8c0f0b65fac070d85b0217cc6c0ce5db1c27767ef73f2e8355b5f02dab
 a2b810548fc8f0be26c329375b95b6b6d844ce981ced5934709e57aca986f92722586010
 97125da5ebd6b31d875a3884c2197b1afcdecbbbbc26871e38880fe80eac09c6e754e865
@@ -1907,13 +1867,10 @@ acc9cc748fb5280477a5c187dc6d749d0de00beee1a2062358202a9cff87262ce1b09303
 <pre>{
   1: 1,
   -1: 14,
-  -2: h'03B81526B001B41701632609EE1285CF09549E2228CAA0775A052AE6F1AE5737
-DCC66A8C0F0B65FAC070D85B0217CC6C0CE5DB1C27767EF73F2E8355B5F02DABA2B81054
-8FC8F0BE26C329375B95B6B6D844CE981CED5934709E57ACA986F927',
-  -3: h'1097125DA5EBD6B31D875A3884C2197B1AFCDECBBBBC26871E38880FE80EAC09
-C6E754E865A9F01B3ED511D86673A6D8109DC94D0840FF539FA2D175B2DEA6BD3484D91A
-73424AD4C4ACC9CC748FB5280477A5C187DC6D749D0DE00BEEE1A206',
-  -4: h'2A9CFF87262CE1B093032446AC6911C4B947305DEEA7631E23D1A27C46BD9F62'
+  -2: h'b03ea8b181c4a4d3c5927a9ae3ad98587566b0dba9008240f5d54db7b19ef15c09
+2e8baf88394a3fb52f063a6f56488a18e58f81d5ee1bf6c5146adcb1f43d746791322ee275
+b022de06ed8b3f8ab56e53a1f6943662b3df528a5640a03eec6a',
+  -4: h'3fe7a731678b27201792c20fb11fd91130edc405b8647cfd1ce4598e7186680d'
 }
 
 </pre><a href="#appendix-B.1-17" class="pilcrow">¶</a>
@@ -1925,10 +1882,10 @@ C6E754E865A9F01B3ED511D86673A6D8109DC94D0840FF539FA2D175B2DEA6BD3484D91A
         <h3 id="name-bls48581-key-pairs-2">
 <a href="#appendix-B.2" class="section-number selfRef">B.2. </a><a href="#name-bls48581-key-pairs-2" class="section-name selfRef">BLS48581 Key Pairs</a>
         </h3>
-<p id="appendix-B.2-1">The following examples showcase COSE_Key examples for both the G1 and G2 subgroups of the BLS48581 curve. Note, the examples also include the corresponding private key, expressed through the inclusion of the “d” (-4) parameter.<a href="#appendix-B.2-1" class="pilcrow">¶</a></p>
+<p id="appendix-B.2-1">The following examples showcase COSE_Key examples for both the G1 and G2 subgroups of the BLS48581 curve. Note, the examples also include the corresponding private key, expressed through the inclusion of the "d" (-4) parameter.<a href="#appendix-B.2-1" class="pilcrow">¶</a></p>
 <p id="appendix-B.2-2">An example COSE_Key for the BLS48581 curve where the public key is in the G1 subgroup expressed as an octet string.<a href="#appendix-B.2-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-B.2-3">
-<pre>a50101200f2158490522e96ca7ca18bf31598a15d39aa95c6fe56da85a7bc8e8108f193c
+<pre>TBD THIS IS NOW WRONG. REPLACE IT. 98a15d39aa95c6fe56da85a7bc8e8108f193c
 54ea68c84b973ed2f29725ed7a1413329699258050e2c69628d83d0cc4b83bb10fafae7f
 a535ad21a1fef91eaf225849003b9940c85d62aba1e9955d6b1836d01bad300b886d0ae9
 7df1305b0bfbca337fad9662581647ca6cf11b861e3e71642d5d82c254774fb67937a237
@@ -1943,13 +1900,10 @@ e684e3bd671cf29ece
 <pre>{
   1: 1,
   -1: 15,
-  -2: h'0522E96CA7CA18BF31598A15D39AA95C6FE56DA85A7BC8E8108F193C54EA68C8
+  -2: h'TBD THIS IS NOW WRONG. REPLACE IT. 56DA85A7BC8E8108F193C54EA68C8
 4B973ED2F29725ED7A1413329699258050E2C69628D83D0CC4B83BB10FAFAE7FA535AD21
 A1FEF91EAF',
-  -3: h'003B9940C85D62ABA1E9955D6B1836D01BAD300B886D0AE97DF1305B0BFBCA33
-7FAD9662581647CA6CF11B861E3E71642D5D82C254774FB67937A23745C2D1F328898A53
-EAC0CAD87E',
-  -4: h'6E9DCFDC9ABD54A06233F8B0D49EF665362EBF4539A8D83FE273B4C54FF36E8B
+  -4: h'TBD THIS IS NOW WRONG. REPLACE IT. EBF4539A8D83FE273B4C54FF36E8B
 600823E2695560E4615D9A866E929B918E8183FA89660C1FE684E3BD671CF29ECE'
 }
 
@@ -1957,7 +1911,7 @@ EAC0CAD87E',
 </div>
 <p id="appendix-B.2-6">Another example of a different COSE_Key for the BLS48581 curve where the public key is in the G1 subgroup expressed as an octet string.<a href="#appendix-B.2-6" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-B.2-7">
-<pre>a50101200f215849063453ed5493e2f3254e3eb2305ef7425120e574876107e500930f7f
+<pre>TBD THIS IS NOW WRONG. REPLACE IT. e3eb2305ef7425120e574876107e500930f7f
 ee018633bda8bf00e91aa8d4eb1d8864eb0b78d84b798b387a7ece0fb20e62bfec70fc45
 1e12f63d937fce1b9422584904e4bea34043ed123bb76c39ab4963a72f4d449ee1f2f4fe
 b237e3f072a91976953f5ed1154b3095cd5d05254fb22499454efc6629cd3b490ae7b749
@@ -1972,13 +1926,10 @@ ac35de45407b81233a2fa699a2235841a40ab8579d0914456335bc75d960e91c28a896b0
 <pre>{
   1: 1,
   -1: 15,
-  -2: h'063453ED5493E2F3254E3EB2305EF7425120E574876107E500930F7FEE018633
+  -2: h'TBD THIS IS NOW WRONG. REPLACE IT. 0E574876107E500930F7FEE018633
 BDA8BF00E91AA8D4EB1D8864EB0B78D84B798B387A7ECE0FB20E62BFEC70FC451E12F63D
 937FCE1B94',
-  -3: h'04E4BEA34043ED123BB76C39AB4963A72F4D449EE1F2F4FEB237E3F072A91976
-953F5ED1154B3095CD5D05254FB22499454EFC6629CD3B490AE7B749AC35DE45407B8123
-3A2FA699A2',
-  -4: h'A40AB8579D0914456335BC75D960E91C28A896B07EC31430EB039987697FE7EA
+  -4: h'TBD THIS IS NOW WRONG. REPLACE IT. 896B07EC31430EB039987697FE7EA
 7F4D67D3BA2ECB81C201A596F5EE274A81287E5E11AA8711245CC5208063908C97'
 }
 
@@ -1986,7 +1937,7 @@ BDA8BF00E91AA8D4EB1D8864EB0B78D84B798B387A7ECE0FB20E62BFEC70FC451E12F63D
 </div>
 <p id="appendix-B.2-10">An example COSE_Key for the BLS48581 curve where the public key is in the G2 subgroup expressed as an octet string.<a href="#appendix-B.2-10" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-B.2-11">
-<pre>a5010120102159024800d01d26166c70839fb9fd3a49c1abd44c0a732ec8167ab86ca3d1
+<pre>TBD THIS IS NOW WRONG. REPLACE IT. fb9fd3a49c1abd44c0a732ec8167ab86ca3d1
 97f42906146dc7b1e0e21be90975dbb74dcbd541afa196dffa9c557cec9031a035aac180
 1d4d11e8e620508a5cfb013728a6452edcdf4b7bca3d52d22cd4e6ed44b0edab9d942873
 867f20686e5a25cd49ee3d127cdd299f94cf2d503a3c4e3b70c847587122ad4ce9905c4b
@@ -2029,7 +1980,7 @@ f6d8dd3b34ad26feb0f208a4b071edb442b70864a62a0a98c3
 <pre>{
   1: 1,
   -1: 16,
-  -2: h'00D01D26166C70839FB9FD3A49C1ABD44C0A732EC8167AB86CA3D197F4290614
+  -2: h'TBD THIS IS NOW WRONG. REPLACE IT. A732EC8167AB86CA3D197F4290614
 6DC7B1E0E21BE90975DBB74DCBD541AFA196DFFA9C557CEC9031A035AAC1801D4D11E8E6
 20508A5CFB013728A6452EDCDF4B7BCA3D52D22CD4E6ED44B0EDAB9D942873867F20686E
 5A25CD49EE3D127CDD299F94CF2D503A3C4E3B70C847587122AD4CE9905C4B4CA60DA8DA
@@ -2046,24 +1997,7 @@ AAD0BEFBE4B4619958380806F86C76AABCDD975BB996A2B76FF44BC7ABB351C0257330F1
 68591CE6A09D859AD404171095219BCBED909AAA40F6ED98DA9A8C00285CE6745595FB0C
 C74ACF9BAFA7A5CB4D33E34D82EE25F973CE73B08F4DAB1330903A69AE9C79A068C816A8
 8EF24903C8F7494A82DFCCF0',
-  -3: h'0E14D6C15123366A9B44CB577B18AE315404BCBFD9A8B93435C8E5CEB96A3BE9
-3CBA24662B18AEA50F3E426D6D298509B0955D90B8B22F5E29B6ED016CDA0523152A2C83
-F73ED6AE0206637528143CEA83CFBC6F11A1C6221704762BE82B0A240692D07CED31092A
-226B7B419B7EF11564CB60D9A641047C004A543E4E0E3FD2169F95E425019851FADA3B6A
-B0354983749C0825BF290D9569FC0D3162E80ED42B8AA7E8657CD57AADD118786B18B8C6
-5E951F5795C348F4275FB2742C7DCA04E5BCA9A9E3799098820CD2346A9745420C570F9C
-62A6BFBA39A7CC011B5C25C94B6CE96ACD82F897472803055B05ED58CF9E323C6BB8B9B0
-48E4DE1D65C678DDCE3A84C161FE1CF7A9892BBB90A55A31ADBD11D4AC158D5532A8CB21
-C07A507296705C9004DE7A9DB01C99B013DD9F20B431F93407DF1600C20C74A38642E3FD
-A0657AFBDF375DB52EE6C5AC569BA63A01B1C0A08A5406BA9C31DF508D9E3F957E814753
-FF4CA2FF1F248739DE1130CFB71F57F07B9D95D84F468BCB59249CE42EC58D4F417D30B6
-0350BBF5FB8CD190FB8ABAA64651FB3053E72E7CD9B1D54E137EB5A97AACF0850F2287BE
-001FC172824ED9A4FC0B02A16BFC534FA177A8C6544FE38DBAFFC46CC3EF5F3239435B7A
-AA744308D4CDB90449BD9209545BFFEB9F43B216B08F7CF0E9526950C439AEE745308B59
-BEF239E6190C5F0EACE0AD0A8DEFD0D4B43F02F26F72DBACC5B6D6AC74D30512313DBE5A
-BA1956E9604AF78EE661BCA06F2F324B186450AF1C460CF0C603F8AD351267C3F12D69F7
-07E2B9160ED595E326FBF52C',
-  -4: h'C7EEA3CC342022F5881327793C5EA7ABD0CD4C815EB081311BF8C130977D1C93
+  -4: h'TBD THIS IS NOW WRONG. REPLACE IT. D4C815EB081311BF8C130977D1C93
 2D41D7C3A2816542F6D8DD3B34AD26FEB0F208A4B071EDB442B70864A62A0A98C3'
 }
 
@@ -2071,7 +2005,7 @@ BA1956E9604AF78EE661BCA06F2F324B186450AF1C460CF0C603F8AD351267C3F12D69F7
 </div>
 <p id="appendix-B.2-14">Another example of a different COSE_Key for the BLS48581 curve where the public key is in the G2 subgroup expressed as an octet string.<a href="#appendix-B.2-14" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-B.2-15">
-<pre>a50101201021590248060693111887f2a0cb7e8b8d478e063a4884d843828026cbc56108
+<pre>TBD THIS IS NOW WRONG. REPLACE IT. b7e8b8d478e063a4884d843828026cbc56108
 de87325cf2f1784b4209552d9e3dec42ff88de733757a229b4502810990ba4298c2c1c32
 31367707af69eb5c9804053e7ced97c94891d1a1265a0a88fad7ac72d6c4c4895e8965a2
 db6d67c3321550a8b8ec4e9b90d9c18efca7bc731a07896c274965625b2e60eed0a8a5d8
@@ -2114,7 +2048,7 @@ d74651675b68c8e381603cfa8b0a5efc9f3f3de0ab807d0ebafe755d19801de185805696
 <pre>{
   1: 1,
   -1: 16,
-  -2: h'060693111887F2A0CB7E8B8D478E063A4884D843828026CBC56108DE87325CF2
+  -2: h'TBD THIS IS NOW WRONG. REPLACE IT. 4D843828026CBC56108DE87325CF2
 F1784B4209552D9E3DEC42FF88DE733757A229B4502810990BA4298C2C1C3231367707AF
 69EB5C9804053E7CED97C94891D1A1265A0A88FAD7AC72D6C4C4895E8965A2DB6D67C332
 1550A8B8EC4E9B90D9C18EFCA7BC731A07896C274965625B2E60EED0A8A5D8E79C526AD3
@@ -2131,24 +2065,7 @@ C04BF263FE2204BD945033A27DE3D3F989211B48EB486A563352EA0E2236C5DACEDB5A9C
 0DC20BCA2F52DB1D3FE574044BF72D11C5E2B904836B2822C0F5A0C3A4AE2B417D41FD94
 789E2E36D9E4207DB753E8C8D9FD8A28A1B28A4316025DD731F8342C8E154C20772BD911
 BFD78E74C26C9B3FD61CC297',
-  -3: h'0E81F3C336402F502BBC70FECFB11ECBAEC3E081237D581D5E000D4469AD4333
-E2AD70E13A6A218E7BCC27D2A2B325A69092AE4A9E41D30AFE10EE009A63EE6A50D936EB
-4E0BDECDCC0936B497958B990D58F2A9D512B11C80E102A304F8B51B5424D1167DB7ADF3
-BD40D0DDD1D3DEBF7E68E9E7B71701AD2589627847981329B4C0733DE85C707E3B0FAF18
-19618A2B093A06112E6BCDBAF5CCE874BE62D57A2FA7F9558E9E3CA62A1E82CE318B666E
-EAF1EC41F106681BF25EBA057B9741A27C6E1E78B7E1E210ED615347EC909E24910D8DF8
-03769D43CB57C70EFED4F5B5FC80311F4684C94BD14353CE5AFAD7377393B2E3BD88CC8A
-BE026977F58A2504F21253580D44EE513CAE2031A775F38A71B6B61765A3163A8C372366
-94483674F88047E102CFF0C489A15C591E8E5F864A644A5153D42E4580D88D9F2FC8E3C1
-2D00D9078C7E12F333B17A02DE4F12BD7688F693A736A6D34047BC43766DA685F3612884
-607AFDEF856EF45B9E10A54A5C912F62CE76CE97AA1FCECF82B527B303BC8C84B87F55BD
-1B833E96CF6BE28B123A8DDF7FC9592270FB1EFB9EC58B6E04B74C770350A7B96930133D
-53BD793EF505854162A102CA08302074B2F0A381C9D229C680791146BDDD172AD0480A61
-E108AD42AAF700B98B6C0C42E6873B22255C4EA6607925D803B76222E826A2033C643FE2
-34D8EE946DDCC66D93CDD2025F80825132EBC945917E1BD027D42B13303E98D10E11A376
-96AD26379A99CA45975D542D96E0E2AE852EEAACB47B44497E809BD20B36AA8AE2D096FA
-8EACFE22E799F9DAD0D55AA4',
-  -4: h'4DE2D8FFD74651675B68C8E381603CFA8B0A5EFC9F3F3DE0AB807D0EBAFE755D
+  -4: h'TBD THIS IS NOW WRONG. REPLACE IT. A5EFC9F3F3DE0AB807D0EBAFE755D
 19801DE185805696492528EB8EEFCB7C1540B2A4045DE1BA4718A266B0F69F9FC0'
 }
 
@@ -2158,68 +2075,204 @@ E108AD42AAF700B98B6C0C42E6873B22255C4EA6607925D803B76222E826A2033C643FE2
 </div>
 </section>
 </div>
-<div id="acknowledgments">
+<div id="encoding-bls48-581">
 <section id="appendix-C">
-      <h2 id="name-acknowledgments">
-<a href="#appendix-C" class="section-number selfRef">Appendix C. </a><a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
+      <h2 id="name-bls48581-point-encoding">
+<a href="#appendix-C" class="section-number selfRef">Appendix C. </a><a href="#name-bls48581-point-encoding" class="section-name selfRef">BLS48581 point encoding</a>
       </h2>
-<p id="appendix-C-1">The authors would like to acknowledge the work of Kyle Den Hartog, which was used as the foundation for this draft.
+<p id="appendix-C-1">Appendix B.2 of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span> defines point encoding and decoding procedures for BLS12-381.
+This section analogously extends the definition with encoding and decoding procedures for BLS48-581.<a href="#appendix-C-1" class="pilcrow">¶</a></p>
+<p id="appendix-C-2">In this section we will use the notation defined in Appendix B.2 of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span>
+as well as the following notation,<a href="#appendix-C-2" class="pilcrow">¶</a></p>
+<ul class="compact">
+<li class="compact" id="appendix-C-3.1">For an octet string <code>x</code>, <code>x[i:j]</code> will denote the substring beginning with the <code>i</code>-th octet and ending just before the <code>j</code>-th octet,
+where indices begin at 0.
+For example, <code>x[0:3]</code> denotes the first three octets (i.e., 24 most significant bits) of <code>x</code>.<a href="#appendix-C-3.1" class="pilcrow">¶</a>
+</li>
+      </ul>
+<p id="appendix-C-4">We first have to define the following utility operations.
+<code>sign_GF_p^8(y)</code> returns one bit corresponding to the sign of an element in <code>GF(p^8)</code>.
+The procedure <code>sign_GF_p</code> is defined in Appendix B.2 of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span>.<a href="#appendix-C-4" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-C-5">
+<pre>res = sign_GF_p^8(y)
+
+Inputs:
+
+- y (REQUIRED), point of the GF(p^8) group
+
+Outputs:
+
+- res, either 0 or 1
+
+Procedure:
+
+1. return sign_GF_p^8_i(y, 7)
+
+
+res = sign_GF_p^8_i(y, i)
+
+Inputs:
+
+- y (REQUIRED), point of the GF(p^8) group
+- i (REQUIRED), integer in the range [0, 7].
+    Index of the component to evaluate next.
+
+Outputs:
+
+- res, either 0 or 1
+
+Procedure:
+
+1. (y_0, ..., y_i, ..., y_7) = y
+2. if i is 0, return sign_GF_p(y_0)
+3. if y_i is 0, return sign_GF_p^8_i(y_0, i - 1)
+4. return sign_GF_p(y_i)
+
+</pre><a href="#appendix-C-5" class="pilcrow">¶</a>
+</div>
+<div id="point-serialization">
+<section id="appendix-C.1">
+        <h3 id="name-point-serialization">
+<a href="#appendix-C.1" class="section-number selfRef">C.1. </a><a href="#name-point-serialization" class="section-name selfRef">Point Serialization</a>
+        </h3>
+<p id="appendix-C.1-1">The point serialization procedure is the same as defined in Appendix B.2.1 of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span>,
+with the following differences:<a href="#appendix-C.1-1" class="pilcrow">¶</a></p>
+<ul class="compact">
+<li class="compact" id="appendix-C.1-2.1">The expression <code>sign_GF_p^2(y)</code> is replaced with <code>sign_GF_p^8(y)</code>.<a href="#appendix-C.1-2.1" class="pilcrow">¶</a>
+</li>
+          <li class="compact" id="appendix-C.1-2.2">The expression <code>I2OSP(0, 48)</code> is replaced with <code>I2OSP(0, 73)</code>.<a href="#appendix-C.1-2.2" class="pilcrow">¶</a>
+</li>
+          <li class="compact" id="appendix-C.1-2.3">The expression <code>I2OSP(x, 48)</code> is replaced with <code>I2OSP(x, 73)</code>.<a href="#appendix-C.1-2.3" class="pilcrow">¶</a>
+</li>
+          <li class="compact" id="appendix-C.1-2.4">The expression <code>I2OSP(0, 96)</code> is replaced with <code>I2OSP(0, 584)</code>.<a href="#appendix-C.1-2.4" class="pilcrow">¶</a>
+</li>
+          <li class="compact" id="appendix-C.1-2.5">Step 4 of the <code>x_string</code> definition is replaced with the following:
+If <code>P</code> is a point on <code>E2</code> and <code>P != Identity_E2</code>, then let <code>x_0</code>, ..., <code>x_7</code> elements of <code>GF(p)</code>
+such that <code>x = (x_0, ..., x_7)</code> and set <code>x_string = I2OSP(x_7, 73) || ... || I2OSP(x_0, 73)</code>.<a href="#appendix-C.1-2.5" class="pilcrow">¶</a>
+</li>
+        </ul>
+</section>
+</div>
+<div id="point-de-serialization">
+<section id="appendix-C.2">
+        <h3 id="name-point-de-serialization">
+<a href="#appendix-C.2" class="section-number selfRef">C.2. </a><a href="#name-point-de-serialization" class="section-name selfRef">Point De-serialization</a>
+        </h3>
+<p id="appendix-C.2-1">The point de-serialization procedure is the same as defined in Appendix B.2.2 of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span>,
+with the following differences:<a href="#appendix-C.2-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="appendix-C.2-2.1">
+            <p id="appendix-C.2-2.1.1">The first two conditions in step 1 are:<a href="#appendix-C.2-2.1.1" class="pilcrow">¶</a></p>
+<ul class="compact normal">
+<li class="compact normal" id="appendix-C.2-2.1.2.1">If <code>s_string</code> has length 73 octets, the encoded point is on the curve E1.<a href="#appendix-C.2-2.1.2.1" class="pilcrow">¶</a>
+</li>
+              <li class="compact normal" id="appendix-C.2-2.1.2.2">If <code>s_string</code> has length 584 octets, the encoded point is on the curve E2.<a href="#appendix-C.2-2.1.2.2" class="pilcrow">¶</a>
+</li>
+            </ul>
+</li>
+          <li class="normal" id="appendix-C.2-2.2">
+            <p id="appendix-C.2-2.2.1">Step 4 is deleted.<a href="#appendix-C.2-2.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="appendix-C.2-2.3">
+            <p id="appendix-C.2-2.3.1">The following sub-step is added at the beginning of step 5:<a href="#appendix-C.2-2.3.1" class="pilcrow">¶</a></p>
+<ul class="compact normal">
+<li class="compact normal" id="appendix-C.2-2.3.2.1">Let <code>x = OS2IP(s_string)</code>.<a href="#appendix-C.2-2.3.2.1" class="pilcrow">¶</a>
+</li>
+            </ul>
+</li>
+          <li class="normal" id="appendix-C.2-2.4">
+            <p id="appendix-C.2-2.4.1">The expression <code>x^3 + 4</code> is replaced with <code>x^3 + 1</code> in step 5.<a href="#appendix-C.2-2.4.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="appendix-C.2-2.5">
+            <p id="appendix-C.2-2.5.1">The following sub-steps are added at the beginning of step 6:<a href="#appendix-C.2-2.5.1" class="pilcrow">¶</a></p>
+<ul class="compact normal">
+<li class="compact normal" id="appendix-C.2-2.5.2.1">Let <code>x_7, ..., x_0 = OS2IP(s_string[0:73]), OS2IP(s_string[73:146]), ..., OS2IP(s_string[511:584])</code>.<a href="#appendix-C.2-2.5.2.1" class="pilcrow">¶</a>
+</li>
+              <li class="compact normal" id="appendix-C.2-2.5.2.2">Let <code>x = (x_0, ..., x_7)</code>.<a href="#appendix-C.2-2.5.2.2" class="pilcrow">¶</a>
+</li>
+            </ul>
+</li>
+          <li class="normal" id="appendix-C.2-2.6">
+            <p id="appendix-C.2-2.6.1">The expression <code>x^3 + 4 * (I + 1)</code> is replaced with <code>x^3 - 1 / w</code> in step 6.<a href="#appendix-C.2-2.6.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+</section>
+</div>
+</section>
+</div>
+<div id="acknowledgments">
+<section id="appendix-D">
+      <h2 id="name-acknowledgments">
+<a href="#appendix-D" class="section-number selfRef">Appendix D. </a><a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
+      </h2>
+<p id="appendix-D-1">The authors would like to acknowledge the work of Kyle Den Hartog, which was used as the foundation for this draft.
 We would also like to thank
+Emil Lundberg
+and
 David Waite
-for his contributions to the specification.<a href="#appendix-C-1" class="pilcrow">¶</a></p>
+for their contributions to the specification.<a href="#appendix-D-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="document-history">
-<section id="appendix-D">
+<section id="appendix-E">
       <h2 id="name-document-history">
-<a href="#appendix-D" class="section-number selfRef">Appendix D. </a><a href="#name-document-history" class="section-name selfRef">Document History</a>
+<a href="#appendix-E" class="section-number selfRef">Appendix E. </a><a href="#name-document-history" class="section-name selfRef">Document History</a>
       </h2>
-<p id="appendix-D-1">-07<a href="#appendix-D-1" class="pilcrow">¶</a></p>
+<p id="appendix-E-1">-08<a href="#appendix-E-1" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-2.1">Reference draft-irtf-cfrg-bbs-signatures-09.<a href="#appendix-D-2.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-E-2.1">Use ZCash compressed point format defined normatively in Appendix B of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span>.<a href="#appendix-E-2.1" class="pilcrow">¶</a>
+</li>
+        <li class="compact" id="appendix-E-2.2">Use "kty": "OKP" instead of "EC"/"EC2".<a href="#appendix-E-2.2" class="pilcrow">¶</a>
+</li>
+        <li class="compact" id="appendix-E-2.3">Added Emil Lundberg to the acknowledgements.<a href="#appendix-E-2.3" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-3">-06<a href="#appendix-D-3" class="pilcrow">¶</a></p>
+<p id="appendix-E-3">-07<a href="#appendix-E-3" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-4.1">Updated draft-irtf-cfrg-bbs-signatures reference.<a href="#appendix-D-4.1" class="pilcrow">¶</a>
-</li>
-        <li class="compact" id="appendix-D-4.2">Made draft-irtf-cfrg-bls-signature and draft-irtf-cfrg-pairing-friendly-curves references informative.<a href="#appendix-D-4.2" class="pilcrow">¶</a>
+<li class="compact" id="appendix-E-4.1">Reference draft-irtf-cfrg-bbs-signatures-09.<a href="#appendix-E-4.1" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-5">-05<a href="#appendix-D-5" class="pilcrow">¶</a></p>
+<p id="appendix-E-5">-06<a href="#appendix-E-5" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-6.1">Replaced instances of "Bls" with "BLS" since B., L., and S. are people's initials, just like "RSA" is three people's initials.<a href="#appendix-D-6.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-E-6.1">Updated draft-irtf-cfrg-bbs-signatures reference.<a href="#appendix-E-6.1" class="pilcrow">¶</a>
+</li>
+        <li class="compact" id="appendix-E-6.2">Made draft-irtf-cfrg-bls-signature and draft-irtf-cfrg-pairing-friendly-curves references informative.<a href="#appendix-E-6.2" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-7">-04<a href="#appendix-D-7" class="pilcrow">¶</a></p>
+<p id="appendix-E-7">-05<a href="#appendix-E-7" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-8.1">Changed the key type from OKP to EC/EC2 since these keys use "x" and "y" values.<a href="#appendix-D-8.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-E-8.1">Replaced instances of "Bls" with "BLS" since B., L., and S. are people's initials, just like "RSA" is three people's initials.<a href="#appendix-E-8.1" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-9">-03<a href="#appendix-D-9" class="pilcrow">¶</a></p>
+<p id="appendix-E-9">-04<a href="#appendix-E-9" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-10.1">Updated references.<a href="#appendix-D-10.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-E-10.1">Changed the key type from OKP to EC/EC2 since these keys use "x" and "y" values.<a href="#appendix-E-10.1" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-11">-02<a href="#appendix-D-11" class="pilcrow">¶</a></p>
+<p id="appendix-E-11">-03<a href="#appendix-E-11" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-12.1">Update COSE_Key and JWK examples.<a href="#appendix-D-12.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-E-12.1">Updated references.<a href="#appendix-E-12.1" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-13">-01<a href="#appendix-D-13" class="pilcrow">¶</a></p>
+<p id="appendix-E-13">-02<a href="#appendix-E-13" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-14.1">Added JWK examples.<a href="#appendix-D-14.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-E-14.1">Update COSE_Key and JWK examples.<a href="#appendix-E-14.1" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-15">-00<a href="#appendix-D-15" class="pilcrow">¶</a></p>
+<p id="appendix-E-15">-01<a href="#appendix-E-15" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-16.1">Created draft-ietf-cose-bls-key-representations-00 from draft-looker-cose-bls-key-representations-00 following working group adoption.<a href="#appendix-D-16.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-E-16.1">Added JWK examples.<a href="#appendix-E-16.1" class="pilcrow">¶</a>
+</li>
+      </ul>
+<p id="appendix-E-17">-00<a href="#appendix-E-17" class="pilcrow">¶</a></p>
+<ul class="compact">
+<li class="compact" id="appendix-E-18.1">Created draft-ietf-cose-bls-key-representations-00 from draft-looker-cose-bls-key-representations-00 following working group adoption.<a href="#appendix-E-18.1" class="pilcrow">¶</a>
 </li>
       </ul>
 </section>
 </div>
 <div id="authors-addresses">
-<section id="appendix-E">
+<section id="appendix-F">
       <h2 id="name-authors-addresses">
 <a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
       </h2>
