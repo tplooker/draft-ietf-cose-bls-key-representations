@@ -73,7 +73,7 @@ When expressing a cryptographic key for these curves in JSON Web Key (JWK) form,
 
 - The parameter "kty" MUST be present and set to "OKP".
 - The parameter "crv" MUST be present and value MUST be one defined in (#curve-parameter-registration).
-- The parameter "x" MUST be present with its value being the base64url encoding of the compressed serialized point format defined normatively in Appendix B of <xref target="BBS"/>.
+- The parameter "x" MUST be present with its value being the base64url encoding of the compressed serialized point format defined normatively in Appendix B of [@BBS].
 - The parameter "d" MUST be present for private key representations whose value MUST contain the big-endian representation of the private key base64url encoded without padding as defined in [@!RFC7515] Appendix C. This parameter MUST NOT be present for public keys.
 
 ### COSE_Key Representation
@@ -82,7 +82,7 @@ When expressing a cryptographic key for these curves in COSE_Key form, the follo
 
 - The parameter "kty" (1) MUST be present and set to "OKP" (1).
 - The parameter "crv" (-1) MUST be present and value MUST be one defined in (#curve-parameter-registration).
-- The parameter "x" (-2) MUST be present with its value being the compressed serialized point format defined normatively in Appendix B of <xref target="BBS"/>.
+- The parameter "x" (-2) MUST be present with its value being the compressed serialized point format defined normatively in Appendix B of [@BBS].
 - The parameter "d" (-4) MUST be present for private key representations whose value MUST contain the big-endian representation of the private key. This parameter MUST NOT be present for public keys.
 
 ### Curve Parameter Registration
@@ -635,7 +635,7 @@ for their contributions to the specification.
 
 -08
 
-* Use ZCash compressed point format defined normatively in Appendix B of <xref target="BBS"/>.
+* Use ZCash compressed point format defined normatively in Appendix B of [@BBS].
 * Use "kty": "OKP" instead of "EC"/"EC2".
 * Added Emil Lundberg to the acknowledgements.
 
