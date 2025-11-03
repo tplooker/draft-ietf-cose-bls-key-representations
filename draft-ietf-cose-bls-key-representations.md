@@ -83,7 +83,7 @@ When expressing a cryptographic key for these curves in COSE_Key form, the follo
 - The parameter "kty" (1) MUST be present and set to "OKP" (1).
 - The parameter "crv" (-1) MUST be present and value MUST be one defined in (#curve-parameter-registration).
 - The parameter "x" (-2) MUST be present with its value being the compressed serialized point format defined normatively in Appendix B of <xref target="BBS"/>.
-- The parameter "d" (-4) MUST be present for private key representations with its value being the compressed serialized point format defined normatively in Appendix B of <xref target="BBS"/>. This parameter MUST NOT be present for public keys.
+- The parameter "d" (-4) MUST be present for private key representations whose value MUST contain the little-endian representation of the private key. This parameter MUST NOT be present for public keys.
 
 ### Curve Parameter Registration
 
