@@ -173,7 +173,7 @@ Table of Contents
       base64url encoding of the compressed serialized point format
       defined normatively in Appendix B of <xref target="BBS"/>.
    *  The parameter "d" MUST be present for private key representations
-      whose value MUST contain the little-endian representation of the
+      whose value MUST contain the big-endian representation of the
       private key base64url encoded without padding as defined in
       [RFC7515] Appendix C.  This parameter MUST NOT be present for
       public keys.
@@ -190,7 +190,7 @@ Table of Contents
       compressed serialized point format defined normatively in
       Appendix B of <xref target="BBS"/>.
    *  The parameter "d" (-4) MUST be present for private key
-      representations whose value MUST contain the little-endian
+      representations whose value MUST contain the big-endian
       representation of the private key.  This parameter MUST NOT be
       present for public keys.
 
