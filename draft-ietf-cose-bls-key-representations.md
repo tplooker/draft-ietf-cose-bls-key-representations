@@ -61,7 +61,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## Point Coordinates Encoding
 
-A point representing a public key will either be in the G1 or G2 subgroup of a curve. Both are encoded using the compressed serialized point format defined normatively in Appendix B.2 of [@BBS].
+A point representing a public key will either be in the G1 or G2 subgroup of a curve. Both are encoded using the compressed serialized point format defined normatively in Appendix B.2 of [@BBS] and in (#encoding-bls48-581).
 <!-- A syntax like this is supposed to work for making a section reference, but I can't get it to work here for some reason: `[@BBS, section B.2]` -->
 
 
@@ -623,6 +623,92 @@ BFD78E74C26C9B3FD61CC297',
 19801DE185805696492528EB8EEFCB7C1540B2A4045DE1BA4718A266B0F69F9FC0'
 }
 ```
+
+
+# BLS48581 point encoding {#encoding-bls48-581}
+
+Appendix B.2 of [@BBS] defines point encoding and decoding procedures for BLS12-381.
+This section analogously extends the definition with encoding and decoding procedures for BLS48-581.
+
+In this section we will use the notation defined in Appendix B.2 of [@BBS]
+as well as the following notation,
+
+- For an octet string `x`, `x[i:j]` will denote the substring beginning with the `i`-th octet and ending just before the `j`-th octet,
+  where indices begin at 0.
+  For example, `x[0:3]` denotes the first three octets (i.e., 24 most significant bits) of `x`.
+
+We first have to define the following utility operations.
+`sign_GF_p^8(y)` returns one bit corresponding to the sign of an element in `GF(p^8)`.
+The procedure `sign_GF_p` is defined in Appendix B.2 of [@BBS].
+
+```
+res = sign_GF_p^8(y)
+
+Inputs:
+
+- y (REQUIRED), point of the GF(p^8) group
+
+Outputs:
+
+- res, either 0 or 1
+
+Procedure:
+
+1. return sign_GF_p^8_i(y, 7)
+
+
+res = sign_GF_p^8_i(y, i)
+
+Inputs:
+
+- y (REQUIRED), point of the GF(p^8) group
+- i (REQUIRED), integer in the range [0, 7].
+    Index of the component to evaluate next.
+
+Outputs:
+
+- res, either 0 or 1
+
+Procedure:
+
+1. (y_0, ..., y_i, ..., y_7) = y
+2. if i is 0, return sign_GF_p(y_0)
+3. if y_i is 0, return sign_GF_p^8_i(y_0, i - 1)
+4. return sign_GF_p(y_i)
+```
+
+## Point Serialization
+
+The point serialization procedure is the same as defined in Appendix B.2.1 of [@BBS],
+with the following differences:
+
+- The expression `sign_GF_p^2(y)` is replaced with `sign_GF_p^8(y)`.
+- The expression `I2OSP(0, 48)` is replaced with `I2OSP(0, 73)`.
+- The expression `I2OSP(x, 48)` is replaced with `I2OSP(x, 73)`.
+- The expression `I2OSP(0, 96)` is replaced with `I2OSP(0, 584)`.
+- Step 4 of the `x_string` definition is replaced with the following:
+  If `P` is a point on `E2` and `P != Identity_E2`, then let `x_0`, ..., `x_7` elements of `GF(p)`
+  such that `x = (x_0, ..., x_7)` and set `x_string = I2OSP(x_7, 73) || ... || I2OSP(x_0, 73)`.
+
+
+## Point De-serialization
+
+The point de-serialization procedure is the same as defined in Appendix B.2.2 of [@BBS],
+with the following differences:
+
+- The first two conditions in step 1 are:
+  - If `s_string` has length 73 octets, the encoded point is on the curve E1.
+  - If `s_string` has length 584 octets, the encoded point is on the curve E2.
+
+- Step 4 is deleted.
+- The following sub-step is added at the beginning of step 5:
+  - Let `x = OS2IP(s_string)`.
+- The expression `x^3 + 4` is replaced with `x^3 + 1` in step 5.
+- The following sub-steps are added at the beginning of step 6:
+  - Let `x_7, ..., x_0 = OS2IP(s_string[0:73]), OS2IP(s_string[73:146]), ..., OS2IP(s_string[511:584])`.
+  - Let `x = (x_0, ..., x_7)`.
+- The expression `x^3 + 4 * (I + 1)` is replaced with `x^3 - 1 / w` in step 6.
+
 
 # Acknowledgments
 
