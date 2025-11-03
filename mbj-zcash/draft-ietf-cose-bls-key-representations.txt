@@ -5,8 +5,8 @@
 COSE                                                           T. Looker
 Internet-Draft                                                     Mattr
 Intended status: Standards Track                                M. Jones
-Expires: 5 May 2026                               Self-Issued Consulting
-                                                         1 November 2025
+Expires: 7 May 2026                               Self-Issued Consulting
+                                                         3 November 2025
 
 
 Barreto-Lynn-Scott Elliptic Curve Key Representations for JOSE and COSE
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 May 2026.
+   This Internet-Draft will expire on 7 May 2026.
 
 Copyright Notice
 
@@ -173,10 +173,10 @@ Table of Contents
       base64url encoding of the compressed serialized point format
       defined normatively in Appendix B of <xref target="BBS"/>.
    *  The parameter "d" MUST be present for private key representations
-      with its value being the base64url encoding of the compressed
-      serialized point format defined normatively in Appendix B of <xref
-      target="BBS"/>.  This parameter MUST NOT be present for public
-      keys.
+      whose value MUST contain the little-endian representation of the
+      private key base64url encoded without padding as defined in
+      [RFC7515] Appendix C.  This parameter MUST NOT be present for
+      public keys.
 
 2.2.2.  COSE_Key Representation
 
@@ -382,6 +382,10 @@ Table of Contents
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
+
+   [RFC7515]  Jones, M., Bradley, J., and N. Sakimura, "JSON Web
+              Signature (JWS)", RFC 7515, DOI 10.17487/RFC7515, May
+              2015, <https://www.rfc-editor.org/info/rfc7515>.
 
    [RFC7517]  Jones, M., "JSON Web Key (JWK)", RFC 7517,
               DOI 10.17487/RFC7517, May 2015,
