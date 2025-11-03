@@ -175,8 +175,9 @@ Table of Contents
    *  The parameter "d" MUST be present for private key representations
       whose value MUST contain the big-endian representation of the
       private key base64url encoded without padding as defined in
-      [RFC7515] Appendix C.  This parameter MUST NOT be present for
-      public keys.
+      [RFC7515] Appendix C.  The length of this octet string MUST be
+      ceiling(log-base-2(n)/8) octets (where n is the order of the
+      curve).  This parameter MUST NOT be present for public keys.
 
 2.2.2.  COSE_Key Representation
 
@@ -191,8 +192,10 @@ Table of Contents
       Appendix B of <xref target="BBS"/>.
    *  The parameter "d" (-4) MUST be present for private key
       representations whose value MUST contain the big-endian
-      representation of the private key.  This parameter MUST NOT be
-      present for public keys.
+      representation of the private key.  The length of this octet
+      string MUST be ceiling(log-base-2(n)/8) octets (where n is the
+      order of the curve).  This parameter MUST NOT be present for
+      public keys.
 
 2.2.3.  Curve Parameter Registration
 
