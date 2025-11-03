@@ -1298,7 +1298,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </li>
             <li class="compact" id="section-2.2.2-2.3">The parameter "x" (-2) MUST be present with its value being the compressed serialized point format defined normatively in Appendix B of &lt;xref target="BBS"/&gt;.<a href="#section-2.2.2-2.3" class="pilcrow">¶</a>
 </li>
-            <li class="compact" id="section-2.2.2-2.4">The parameter "d" (-4) MUST be present for private key representations with its value being the compressed serialized point format defined normatively in Appendix B of &lt;xref target="BBS"/&gt;. This parameter MUST NOT be present for public keys.<a href="#section-2.2.2-2.4" class="pilcrow">¶</a>
+            <li class="compact" id="section-2.2.2-2.4">The parameter "d" (-4) MUST be present for private key representations whose value MUST contain the little-endian representation of the private key. This parameter MUST NOT be present for public keys.<a href="#section-2.2.2-2.4" class="pilcrow">¶</a>
 </li>
           </ul>
 </section>
