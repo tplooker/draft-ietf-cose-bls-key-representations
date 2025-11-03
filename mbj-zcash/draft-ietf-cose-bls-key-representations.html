@@ -1221,13 +1221,24 @@ svg :is([fill="white"], [fill^="#fff"]) {
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
-            <p id="section-toc.1-1.8.1"><a href="#appendix-C" class="auto internal xref">Appendix C</a>.  <a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+            <p id="section-toc.1-1.8.1"><a href="#appendix-C" class="auto internal xref">Appendix C</a>.  <a href="#name-bls48581-point-encoding" class="internal xref">BLS48581 point encoding</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.1">
+                <p id="section-toc.1-1.8.2.1.1"><a href="#appendix-C.1" class="auto internal xref">C.1</a>.  <a href="#name-point-serialization" class="internal xref">Point Serialization</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.2">
+                <p id="section-toc.1-1.8.2.2.1"><a href="#appendix-C.2" class="auto internal xref">C.2</a>.  <a href="#name-point-de-serialization" class="internal xref">Point De-serialization</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
-            <p id="section-toc.1-1.9.1"><a href="#appendix-D" class="auto internal xref">Appendix D</a>.  <a href="#name-document-history" class="internal xref">Document History</a></p>
+            <p id="section-toc.1-1.9.1"><a href="#appendix-D" class="auto internal xref">Appendix D</a>.  <a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
-            <p id="section-toc.1-1.10.1"><a href="#appendix-E" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+            <p id="section-toc.1-1.10.1"><a href="#appendix-E" class="auto internal xref">Appendix E</a>.  <a href="#name-document-history" class="internal xref">Document History</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
+            <p id="section-toc.1-1.11.1"><a href="#appendix-F" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1258,7 +1269,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <h3 id="name-point-coordinates-encoding">
 <a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-point-coordinates-encoding" class="section-name selfRef">Point Coordinates Encoding</a>
         </h3>
-<p id="section-2.1-1">A point representing a public key will either be in the G1 or G2 subgroup of a curve. Depending on which one of the subgroups the public key will belong to, different serialization procedures need to be used, to encode its coordinates. Most specifically, if the public key is a point in the G1 subgroup, each of its coordinates MUST be encoded using the serialization defined in Section 2.3.5 of <span>[<a href="#SEC1" class="cite xref">SEC1</a>]</span>. If the public key is a point in the G2 subgroup, each of its coordinates MUST be serialize using the procedure described in Appendix I.5 in <span>[<a href="#I-D.ietf-lwig-curve-representations" class="cite xref">I-D.ietf-lwig-curve-representations</a>]</span>.<a href="#section-2.1-1" class="pilcrow">¶</a></p>
+<p id="section-2.1-1">A point representing a public key will either be in the G1 or G2 subgroup of a curve. Both are encoded using the compressed serialized point format defined normatively in Appendix B.2 of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span> and in <a href="#encoding-bls48-581" class="auto internal xref">Appendix C</a>.<a href="#section-2.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="representation-definition">
@@ -1278,9 +1289,9 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </li>
             <li class="compact" id="section-2.2.1-2.2">The parameter "crv" MUST be present and value MUST be one defined in <a href="#curve-parameter-registration" class="auto internal xref">Section 2.2.3</a>.<a href="#section-2.2.1-2.2" class="pilcrow">¶</a>
 </li>
-            <li class="compact" id="section-2.2.1-2.3">The parameter "x" MUST be present with its value being the base64url encoding of the compressed serialized point format defined normatively in Appendix B of &lt;xref target="BBS"/&gt;.<a href="#section-2.2.1-2.3" class="pilcrow">¶</a>
+            <li class="compact" id="section-2.2.1-2.3">The parameter "x" MUST be present with its value being the base64url encoding of the compressed serialized point format defined normatively in Appendix B of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span>.<a href="#section-2.2.1-2.3" class="pilcrow">¶</a>
 </li>
-            <li class="compact" id="section-2.2.1-2.4">The parameter "d" MUST be present for private key representations whose value MUST contain the big-endian representation of the private key base64url encoded without padding as defined in <span>[<a href="#RFC7515" class="cite xref">RFC7515</a>]</span> Appendix C. The length of this octet string MUST be <code>ceiling(log-base-2(n)/8)</code> octets (where <code>n</code> is the order of the curve). This parameter MUST NOT be present for public keys.<a href="#section-2.2.1-2.4" class="pilcrow">¶</a>
+            <li class="compact" id="section-2.2.1-2.4">The parameter "d" MUST be present for private key representations whose value MUST contain the big-endian representation of the private key base64url encoded without padding as defined in <span>[<a href="#RFC7515" class="cite xref">RFC7515</a>]</span> Appendix C. This parameter MUST NOT be present for public keys.<a href="#section-2.2.1-2.4" class="pilcrow">¶</a>
 </li>
           </ul>
 </section>
@@ -1296,9 +1307,9 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </li>
             <li class="compact" id="section-2.2.2-2.2">The parameter "crv" (-1) MUST be present and value MUST be one defined in <a href="#curve-parameter-registration" class="auto internal xref">Section 2.2.3</a>.<a href="#section-2.2.2-2.2" class="pilcrow">¶</a>
 </li>
-            <li class="compact" id="section-2.2.2-2.3">The parameter "x" (-2) MUST be present with its value being the compressed serialized point format defined normatively in Appendix B of &lt;xref target="BBS"/&gt;.<a href="#section-2.2.2-2.3" class="pilcrow">¶</a>
+            <li class="compact" id="section-2.2.2-2.3">The parameter "x" (-2) MUST be present with its value being the compressed serialized point format defined normatively in Appendix B of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span>.<a href="#section-2.2.2-2.3" class="pilcrow">¶</a>
 </li>
-            <li class="compact" id="section-2.2.2-2.4">The parameter "d" (-4) MUST be present for private key representations whose value MUST contain the big-endian representation of the private key. The length of this octet string MUST be <code>ceiling(log-base-2(n)/8)</code> octets (where <code>n</code> is the order of the curve). This parameter MUST NOT be present for public keys.<a href="#section-2.2.2-2.4" class="pilcrow">¶</a>
+            <li class="compact" id="section-2.2.2-2.4">The parameter "d" (-4) MUST be present for private key representations whose value MUST contain the big-endian representation of the private key. This parameter MUST NOT be present for public keys.<a href="#section-2.2.2-2.4" class="pilcrow">¶</a>
 </li>
           </ul>
 </section>
@@ -1321,22 +1332,22 @@ svg :is([fill="white"], [fill^="#fff"]) {
               <tr>
                 <td class="text-left" rowspan="1" colspan="1">BLS12381G1</td>
                 <td class="text-left" rowspan="1" colspan="1">TBD (13 requested)</td>
-                <td class="text-left" rowspan="1" colspan="1">A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 12 with 381-bit p in the subgroup of G1 defined as <code>E(GF(p))</code> of order r. The private key will be 32 bytes long. Each of the x and y coordinates of the public key will be 48 bytes long.</td>
+                <td class="text-left" rowspan="1" colspan="1">A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 12 with 381-bit p in the subgroup of G1 defined as <code>E(GF(p))</code> of order r. The private key will be 32 bytes long. The public key will be 48 bytes long.</td>
               </tr>
               <tr>
                 <td class="text-left" rowspan="1" colspan="1">BLS12381G2</td>
                 <td class="text-left" rowspan="1" colspan="1">TBD (14 requested)</td>
-                <td class="text-left" rowspan="1" colspan="1">A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 12 with 381-bit p in the subgroup of G2 defined as <code>E(GF(p^2))</code> of order r. The private key will be 32 bytes long. Each of the x and y coordinates of the public key will be 96 bytes long.</td>
+                <td class="text-left" rowspan="1" colspan="1">A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 12 with 381-bit p in the subgroup of G2 defined as <code>E(GF(p^2))</code> of order r. The private key will be 32 bytes long. The public key will be 96 bytes long.</td>
               </tr>
               <tr>
                 <td class="text-left" rowspan="1" colspan="1">BLS48581G1</td>
                 <td class="text-left" rowspan="1" colspan="1">TBD (15 requested)</td>
-                <td class="text-left" rowspan="1" colspan="1">A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 48 with 581-bit p in the subgroup of G1 defined as <code>E(GF(p))</code> of order r. The private key will be 65 bytes long. Each of the x and y coordinates of the public key will be 73 bytes long.</td>
+                <td class="text-left" rowspan="1" colspan="1">A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 48 with 581-bit p in the subgroup of G1 defined as <code>E(GF(p))</code> of order r. The private key will be 65 bytes long. The public key will be 73 bytes long.</td>
               </tr>
               <tr>
                 <td class="text-left" rowspan="1" colspan="1">BLS48581G2</td>
                 <td class="text-left" rowspan="1" colspan="1">TBD (16 requested)</td>
-                <td class="text-left" rowspan="1" colspan="1">A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 48 with 581-bit p in the subgroup of G2 defined as <code>E(GF(p^8))</code> of order r. The private key will be 65 bytes long. Each of the x and y coordinates of the public key will be 584 bytes long.</td>
+                <td class="text-left" rowspan="1" colspan="1">A cryptographic key on the Barreto-Lynn-Scott (BLS) curve featuring an embedding degree 48 with 581-bit p in the subgroup of G2 defined as <code>E(GF(p^8))</code> of order r. The private key will be 65 bytes long. The public key will be 584 bytes long.</td>
               </tr>
             </tbody>
           </table>
@@ -1578,10 +1589,6 @@ E'(GF(p^8))<a href="#section-4.2-9.4" class="pilcrow">¶</a>
         <dd>
 <span class="refAuthor">Intel Corporation</span>, <span class="refTitle">"Intel (R) SGX: Intel (R) EPID Provisioning and Attestation Services"</span>, <span>&lt;<a href="https://software.intel.com/en-us/download/intel-sgx-intel-epid-provisioning-and-attestation-services">https://software.intel.com/en-us/download/intel-sgx-intel-epid-provisioning-and-attestation-services</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="I-D.ietf-lwig-curve-representations">[I-D.ietf-lwig-curve-representations]</dt>
-        <dd>
-<span class="refAuthor">Struik, R.</span>, <span class="refTitle">"Alternative Elliptic Curve Representations"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lwig-curve-representations-23</span>, <time datetime="2022-01-21" class="refDate">21 January 2022</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lwig-curve-representations-23">https://datatracker.ietf.org/doc/html/draft-ietf-lwig-curve-representations-23</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="JWP">[JWP]</dt>
         <dd>
 <span class="refAuthor">Miller, J.</span>, <span class="refAuthor">Waite, D.</span>, and <span class="refAuthor">M. Jones</span>, <span class="refTitle">"JSON Web Proof"</span>, <time datetime="2023-10-21" class="refDate">21 October 2023</time>, <span>&lt;<a href="https://www.ietf.org/archive/id/draft-ietf-jose-json-web-proof-02.html">https://www.ietf.org/archive/id/draft-ietf-jose-json-web-proof-02.html</a>&gt;</span>. </dd>
@@ -1609,10 +1616,6 @@ E'(GF(p^8))<a href="#section-4.2-9.4" class="pilcrow">¶</a>
 <dt id="RFC8174">[RFC8174]</dt>
         <dd>
 <span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc8174">https://www.rfc-editor.org/info/rfc8174</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="SEC1">[SEC1]</dt>
-        <dd>
-<span class="refAuthor">Standards for Efficient Cryptography Group</span>, <span class="refTitle">"SEC 1: Elliptic Curve Cryptography"</span>, <time datetime="2009-05-21" class="refDate">21 May 2009</time>, <span>&lt;<a href="http://www.secg.org/sec1-v2.pdf">http://www.secg.org/sec1-v2.pdf</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="TPM">[TPM]</dt>
         <dd>
@@ -2072,79 +2075,204 @@ BFD78E74C26C9B3FD61CC297',
 </div>
 </section>
 </div>
-<div id="acknowledgments">
+<div id="encoding-bls48-581">
 <section id="appendix-C">
-      <h2 id="name-acknowledgments">
-<a href="#appendix-C" class="section-number selfRef">Appendix C. </a><a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
+      <h2 id="name-bls48581-point-encoding">
+<a href="#appendix-C" class="section-number selfRef">Appendix C. </a><a href="#name-bls48581-point-encoding" class="section-name selfRef">BLS48581 point encoding</a>
       </h2>
-<p id="appendix-C-1">The authors would like to acknowledge the work of Kyle Den Hartog, which was used as the foundation for this draft.
+<p id="appendix-C-1">Appendix B.2 of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span> defines point encoding and decoding procedures for BLS12-381.
+This section analogously extends the definition with encoding and decoding procedures for BLS48-581.<a href="#appendix-C-1" class="pilcrow">¶</a></p>
+<p id="appendix-C-2">In this section we will use the notation defined in Appendix B.2 of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span>
+as well as the following notation,<a href="#appendix-C-2" class="pilcrow">¶</a></p>
+<ul class="compact">
+<li class="compact" id="appendix-C-3.1">For an octet string <code>x</code>, <code>x[i:j]</code> will denote the substring beginning with the <code>i</code>-th octet and ending just before the <code>j</code>-th octet,
+where indices begin at 0.
+For example, <code>x[0:3]</code> denotes the first three octets (i.e., 24 most significant bits) of <code>x</code>.<a href="#appendix-C-3.1" class="pilcrow">¶</a>
+</li>
+      </ul>
+<p id="appendix-C-4">We first have to define the following utility operations.
+<code>sign_GF_p^8(y)</code> returns one bit corresponding to the sign of an element in <code>GF(p^8)</code>.
+The procedure <code>sign_GF_p</code> is defined in Appendix B.2 of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span>.<a href="#appendix-C-4" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-C-5">
+<pre>res = sign_GF_p^8(y)
+
+Inputs:
+
+- y (REQUIRED), point of the GF(p^8) group
+
+Outputs:
+
+- res, either 0 or 1
+
+Procedure:
+
+1. return sign_GF_p^8_i(y, 7)
+
+
+res = sign_GF_p^8_i(y, i)
+
+Inputs:
+
+- y (REQUIRED), point of the GF(p^8) group
+- i (REQUIRED), integer in the range [0, 7].
+    Index of the component to evaluate next.
+
+Outputs:
+
+- res, either 0 or 1
+
+Procedure:
+
+1. (y_0, ..., y_i, ..., y_7) = y
+2. if i is 0, return sign_GF_p(y_0)
+3. if y_i is 0, return sign_GF_p^8_i(y_0, i - 1)
+4. return sign_GF_p(y_i)
+
+</pre><a href="#appendix-C-5" class="pilcrow">¶</a>
+</div>
+<div id="point-serialization">
+<section id="appendix-C.1">
+        <h3 id="name-point-serialization">
+<a href="#appendix-C.1" class="section-number selfRef">C.1. </a><a href="#name-point-serialization" class="section-name selfRef">Point Serialization</a>
+        </h3>
+<p id="appendix-C.1-1">The point serialization procedure is the same as defined in Appendix B.2.1 of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span>,
+with the following differences:<a href="#appendix-C.1-1" class="pilcrow">¶</a></p>
+<ul class="compact">
+<li class="compact" id="appendix-C.1-2.1">The expression <code>sign_GF_p^2(y)</code> is replaced with <code>sign_GF_p^8(y)</code>.<a href="#appendix-C.1-2.1" class="pilcrow">¶</a>
+</li>
+          <li class="compact" id="appendix-C.1-2.2">The expression <code>I2OSP(0, 48)</code> is replaced with <code>I2OSP(0, 73)</code>.<a href="#appendix-C.1-2.2" class="pilcrow">¶</a>
+</li>
+          <li class="compact" id="appendix-C.1-2.3">The expression <code>I2OSP(x, 48)</code> is replaced with <code>I2OSP(x, 73)</code>.<a href="#appendix-C.1-2.3" class="pilcrow">¶</a>
+</li>
+          <li class="compact" id="appendix-C.1-2.4">The expression <code>I2OSP(0, 96)</code> is replaced with <code>I2OSP(0, 584)</code>.<a href="#appendix-C.1-2.4" class="pilcrow">¶</a>
+</li>
+          <li class="compact" id="appendix-C.1-2.5">Step 4 of the <code>x_string</code> definition is replaced with the following:
+If <code>P</code> is a point on <code>E2</code> and <code>P != Identity_E2</code>, then let <code>x_0</code>, ..., <code>x_7</code> elements of <code>GF(p)</code>
+such that <code>x = (x_0, ..., x_7)</code> and set <code>x_string = I2OSP(x_7, 73) || ... || I2OSP(x_0, 73)</code>.<a href="#appendix-C.1-2.5" class="pilcrow">¶</a>
+</li>
+        </ul>
+</section>
+</div>
+<div id="point-de-serialization">
+<section id="appendix-C.2">
+        <h3 id="name-point-de-serialization">
+<a href="#appendix-C.2" class="section-number selfRef">C.2. </a><a href="#name-point-de-serialization" class="section-name selfRef">Point De-serialization</a>
+        </h3>
+<p id="appendix-C.2-1">The point de-serialization procedure is the same as defined in Appendix B.2.2 of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span>,
+with the following differences:<a href="#appendix-C.2-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="appendix-C.2-2.1">
+            <p id="appendix-C.2-2.1.1">The first two conditions in step 1 are:<a href="#appendix-C.2-2.1.1" class="pilcrow">¶</a></p>
+<ul class="compact normal">
+<li class="compact normal" id="appendix-C.2-2.1.2.1">If <code>s_string</code> has length 73 octets, the encoded point is on the curve E1.<a href="#appendix-C.2-2.1.2.1" class="pilcrow">¶</a>
+</li>
+              <li class="compact normal" id="appendix-C.2-2.1.2.2">If <code>s_string</code> has length 584 octets, the encoded point is on the curve E2.<a href="#appendix-C.2-2.1.2.2" class="pilcrow">¶</a>
+</li>
+            </ul>
+</li>
+          <li class="normal" id="appendix-C.2-2.2">
+            <p id="appendix-C.2-2.2.1">Step 4 is deleted.<a href="#appendix-C.2-2.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="appendix-C.2-2.3">
+            <p id="appendix-C.2-2.3.1">The following sub-step is added at the beginning of step 5:<a href="#appendix-C.2-2.3.1" class="pilcrow">¶</a></p>
+<ul class="compact normal">
+<li class="compact normal" id="appendix-C.2-2.3.2.1">Let <code>x = OS2IP(s_string)</code>.<a href="#appendix-C.2-2.3.2.1" class="pilcrow">¶</a>
+</li>
+            </ul>
+</li>
+          <li class="normal" id="appendix-C.2-2.4">
+            <p id="appendix-C.2-2.4.1">The expression <code>x^3 + 4</code> is replaced with <code>x^3 + 1</code> in step 5.<a href="#appendix-C.2-2.4.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="appendix-C.2-2.5">
+            <p id="appendix-C.2-2.5.1">The following sub-steps are added at the beginning of step 6:<a href="#appendix-C.2-2.5.1" class="pilcrow">¶</a></p>
+<ul class="compact normal">
+<li class="compact normal" id="appendix-C.2-2.5.2.1">Let <code>x_7, ..., x_0 = OS2IP(s_string[0:73]), OS2IP(s_string[73:146]), ..., OS2IP(s_string[511:584])</code>.<a href="#appendix-C.2-2.5.2.1" class="pilcrow">¶</a>
+</li>
+              <li class="compact normal" id="appendix-C.2-2.5.2.2">Let <code>x = (x_0, ..., x_7)</code>.<a href="#appendix-C.2-2.5.2.2" class="pilcrow">¶</a>
+</li>
+            </ul>
+</li>
+          <li class="normal" id="appendix-C.2-2.6">
+            <p id="appendix-C.2-2.6.1">The expression <code>x^3 + 4 * (I + 1)</code> is replaced with <code>x^3 - 1 / w</code> in step 6.<a href="#appendix-C.2-2.6.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+</section>
+</div>
+</section>
+</div>
+<div id="acknowledgments">
+<section id="appendix-D">
+      <h2 id="name-acknowledgments">
+<a href="#appendix-D" class="section-number selfRef">Appendix D. </a><a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
+      </h2>
+<p id="appendix-D-1">The authors would like to acknowledge the work of Kyle Den Hartog, which was used as the foundation for this draft.
 We would also like to thank
 Emil Lundberg
 and
 David Waite
-for their contributions to the specification.<a href="#appendix-C-1" class="pilcrow">¶</a></p>
+for their contributions to the specification.<a href="#appendix-D-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="document-history">
-<section id="appendix-D">
+<section id="appendix-E">
       <h2 id="name-document-history">
-<a href="#appendix-D" class="section-number selfRef">Appendix D. </a><a href="#name-document-history" class="section-name selfRef">Document History</a>
+<a href="#appendix-E" class="section-number selfRef">Appendix E. </a><a href="#name-document-history" class="section-name selfRef">Document History</a>
       </h2>
-<p id="appendix-D-1">-08<a href="#appendix-D-1" class="pilcrow">¶</a></p>
+<p id="appendix-E-1">-08<a href="#appendix-E-1" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-2.1">Use ZCash compressed point format defined normatively in Appendix B of &lt;xref target="BBS"/&gt;.<a href="#appendix-D-2.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-E-2.1">Use ZCash compressed point format defined normatively in Appendix B of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span>.<a href="#appendix-E-2.1" class="pilcrow">¶</a>
 </li>
-        <li class="compact" id="appendix-D-2.2">Use "kty": "OKP" instead of "EC"/"EC2".<a href="#appendix-D-2.2" class="pilcrow">¶</a>
+        <li class="compact" id="appendix-E-2.2">Use "kty": "OKP" instead of "EC"/"EC2".<a href="#appendix-E-2.2" class="pilcrow">¶</a>
 </li>
-        <li class="compact" id="appendix-D-2.3">Added Emil Lundberg to the acknowledgements.<a href="#appendix-D-2.3" class="pilcrow">¶</a>
+        <li class="compact" id="appendix-E-2.3">Added Emil Lundberg to the acknowledgements.<a href="#appendix-E-2.3" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-3">-07<a href="#appendix-D-3" class="pilcrow">¶</a></p>
+<p id="appendix-E-3">-07<a href="#appendix-E-3" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-4.1">Reference draft-irtf-cfrg-bbs-signatures-09.<a href="#appendix-D-4.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-E-4.1">Reference draft-irtf-cfrg-bbs-signatures-09.<a href="#appendix-E-4.1" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-5">-06<a href="#appendix-D-5" class="pilcrow">¶</a></p>
+<p id="appendix-E-5">-06<a href="#appendix-E-5" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-6.1">Updated draft-irtf-cfrg-bbs-signatures reference.<a href="#appendix-D-6.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-E-6.1">Updated draft-irtf-cfrg-bbs-signatures reference.<a href="#appendix-E-6.1" class="pilcrow">¶</a>
 </li>
-        <li class="compact" id="appendix-D-6.2">Made draft-irtf-cfrg-bls-signature and draft-irtf-cfrg-pairing-friendly-curves references informative.<a href="#appendix-D-6.2" class="pilcrow">¶</a>
-</li>
-      </ul>
-<p id="appendix-D-7">-05<a href="#appendix-D-7" class="pilcrow">¶</a></p>
-<ul class="compact">
-<li class="compact" id="appendix-D-8.1">Replaced instances of "Bls" with "BLS" since B., L., and S. are people's initials, just like "RSA" is three people's initials.<a href="#appendix-D-8.1" class="pilcrow">¶</a>
+        <li class="compact" id="appendix-E-6.2">Made draft-irtf-cfrg-bls-signature and draft-irtf-cfrg-pairing-friendly-curves references informative.<a href="#appendix-E-6.2" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-9">-04<a href="#appendix-D-9" class="pilcrow">¶</a></p>
+<p id="appendix-E-7">-05<a href="#appendix-E-7" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-10.1">Changed the key type from OKP to EC/EC2 since these keys use "x" and "y" values.<a href="#appendix-D-10.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-E-8.1">Replaced instances of "Bls" with "BLS" since B., L., and S. are people's initials, just like "RSA" is three people's initials.<a href="#appendix-E-8.1" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-11">-03<a href="#appendix-D-11" class="pilcrow">¶</a></p>
+<p id="appendix-E-9">-04<a href="#appendix-E-9" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-12.1">Updated references.<a href="#appendix-D-12.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-E-10.1">Changed the key type from OKP to EC/EC2 since these keys use "x" and "y" values.<a href="#appendix-E-10.1" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-13">-02<a href="#appendix-D-13" class="pilcrow">¶</a></p>
+<p id="appendix-E-11">-03<a href="#appendix-E-11" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-14.1">Update COSE_Key and JWK examples.<a href="#appendix-D-14.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-E-12.1">Updated references.<a href="#appendix-E-12.1" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-15">-01<a href="#appendix-D-15" class="pilcrow">¶</a></p>
+<p id="appendix-E-13">-02<a href="#appendix-E-13" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-16.1">Added JWK examples.<a href="#appendix-D-16.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-E-14.1">Update COSE_Key and JWK examples.<a href="#appendix-E-14.1" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="appendix-D-17">-00<a href="#appendix-D-17" class="pilcrow">¶</a></p>
+<p id="appendix-E-15">-01<a href="#appendix-E-15" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-D-18.1">Created draft-ietf-cose-bls-key-representations-00 from draft-looker-cose-bls-key-representations-00 following working group adoption.<a href="#appendix-D-18.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-E-16.1">Added JWK examples.<a href="#appendix-E-16.1" class="pilcrow">¶</a>
+</li>
+      </ul>
+<p id="appendix-E-17">-00<a href="#appendix-E-17" class="pilcrow">¶</a></p>
+<ul class="compact">
+<li class="compact" id="appendix-E-18.1">Created draft-ietf-cose-bls-key-representations-00 from draft-looker-cose-bls-key-representations-00 following working group adoption.<a href="#appendix-E-18.1" class="pilcrow">¶</a>
 </li>
       </ul>
 </section>
 </div>
 <div id="authors-addresses">
-<section id="appendix-E">
+<section id="appendix-F">
       <h2 id="name-authors-addresses">
 <a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
       </h2>
