@@ -214,6 +214,8 @@ The following examples showcase JWKs for both the G1 and G2 subgroups of the BLS
 
 An example JWK for the BLS12381 curve where the public key is in the G1 subgroup.
 
+<!-- GENERATED CONTENT: Use examples directory -- BLS12381G1:0:jwk -->
+
 ```
 {
   "kty": "OKP",
@@ -222,8 +224,11 @@ An example JWK for the BLS12381 curve where the public key is in the G1 subgroup
   "d": "csnGswuvtF4lLJ5g7xdlFRbOKI1N7XaPhFdLZc408JU"
 }
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS12381G1:0:jwk -->
 
 Another example of a different JWK for the BLS12381 curve where the public key is in the G1 subgroup.
+
+<!-- GENERATED CONTENT: Use examples directory -- BLS12381G1:1:jwk -->
 
 ```
 {
@@ -233,8 +238,11 @@ Another example of a different JWK for the BLS12381 curve where the public key i
   "d": "H--QT8IQCXMHlYHEVBy6Z2yU4jENSPcmB6eVvcOWDHI"
 }
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS12381G1:1:jwk -->
 
 An example JWK for the BLS12381 curve where the public key is in the G2 subgroup.
+
+<!-- GENERATED CONTENT: Use examples directory -- BLS12381G2:0:jwk -->
 
 ```
 {
@@ -245,8 +253,11 @@ EReUf5yoxPi7pDDx4UdkmTXtzuaIKm9YY2cOpT5dO26ttBSzneQEUFhHpM3sdUmf",
   "d": "XdXO0OOc6YrVTKEPIR6JmmTSDDA5Y5pxCyY5TRI0k5c"
 }
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS12381G2:0:jwk -->
 
 Another example of a different JWK for the BLS12381 curve where the public key is in the G2 subgroup.
+
+<!-- GENERATED CONTENT: Use examples directory -- BLS12381G2:1:jwk -->
 
 ```
 {
@@ -257,6 +268,8 @@ DZKkES69mX0UBhUeyHI_DaZMv3YbSs_9Q1YxtJVn4uaneEykAFtTJyCSh2A6H1S7",
   "d": "MpN9MF6G6pmiZaJN6WOjWM2LQt07Blgb7WeJQbsKxWY"
 }
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS12381G2:1:jwk -->
+
 
 ## BLS48581 Key Pairs
 
@@ -264,18 +277,23 @@ The following examples showcase JWKs for both the G1 and G2 subgroups of the BLS
 
 An example JWK for the BLS48581 curve where the public key is in the G1 subgroup.
 
+<!-- GENERATED CONTENT: Use examples directory -- BLS48581G1:0:jwk -->
+
 ```
 {
   "kty": "OKP",
   "crv": "BLS48581G1",
-  "x": "jKj8Qmvi52Lky3VXrVaK7rEjW5lFBimGpicaEXPcsYrKzTjV5rRXYwtUog3QqY8Ub
-aE7cGD2ppQXtR2KWfK6DpHWXy2HaGWS4g",
-  "d": "EKF6v4ZUUDPLp52MWzpmTUg-S_-e01R08TcSH_wSUFkD4QteRbC13LEJE0W7aGJIV
-i1BoLLaAcuTbJxwI_1qAbs"
+  "x": "jKj8Qmvi52Lky3VXrVaK7rEjW5lFBimGpicaEXPcsYrKzTjV5rRXYwtUog3QqY8U
+baE7cGD2ppQXtR2KWfK6DpHWXy2HaGWS4g",
+  "d": "EKF6v4ZUUDPLp52MWzpmTUg-S_-e01R08TcSH_wSUFkD4QteRbC13LEJE0W7aGJI
+Vi1BoLLaAcuTbJxwI_1qAbs"
 }
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS48581G1:0:jwk -->
 
 Another example of a different JWK for the BLS48581 curve where the public key is in the G1 subgroup.
+
+<!-- GENERATED CONTENT: Use examples directory -- BLS48581G1:1:jwk -->
 
 ```
 {
@@ -287,8 +305,11 @@ eTYlOiFaRCxjMKhdgEwO3XMbKAnqPbUyQA",
 JqXHSTka7RAswU-8fprn0v0"
 }
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS48581G1:1:jwk -->
 
 An example JWK for the BLS48581 curve where the public key is in the G2 subgroup.
+
+<!-- GENERATED CONTENT: Use examples directory -- BLS48581G2:0:jwk -->
 
 ```
 {
@@ -309,8 +330,11 @@ gWNka59tht-QcB4s5JK6X8h-m99Nbn4wgJAuHo2g9TSDyUK7l7UJVkx2rEckQfPj2fs",
 XZUk9_y9QI_68dAwugoguh0"
 }
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS48581G2:0:jwk -->
 
 Another example of a different JWK for the BLS48581 curve where the public key is in the G2 subgroup.
+
+<!-- GENERATED CONTENT: Use examples directory -- BLS48581G2:1:jwk -->
 
 ```
 {
@@ -331,6 +355,8 @@ bb3d71OHeZyvxu8b6LMZ22JpjVzRja1l95CiLAfBAdMDHyxwYE8a_4j1p0Zp7KyHGB8",
 N437IDzp4P5-WKYtVcWFUrU"
 }
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS48581G2:1:jwk -->
+
 
 # COSE_Key Examples
 
@@ -340,14 +366,17 @@ The following examples showcase COSE_Key examples for both the G1 and G2 subgrou
 
 An example COSE_Key for the BLS12381 curve where the public key is in the G1 subgroup expressed as an octet string.
 
+<!-- GENERATED CONTENT: Use examples directory -- BLS12381G1:0:cwk -->
 ```
 a40101200d215830890e60d7414b0bc5485f86f48e3375a1fbe34ad2d4d6d2f4c4dfbf0a
 970734f890313eaab64f2160199bc9ebd95aee7223582072c9c6b30bafb45e252c9e60ef
 17651516ce288d4ded768f84574b65ce34f095
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS12381G1:0:cwk -->
 
 Below is the above CBOR represented as CDDL.
 
+<!-- GENERATED CONTENT: Use examples directory -- BLS12381G1:0:cddl -->
 ```
 {
   1 => 1,
@@ -357,17 +386,21 @@ Below is the above CBOR represented as CDDL.
   -4 => h'72c9c6b30bafb45e252c9e60ef17651516ce288d4ded768f84574b65ce34f095',
 }
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS12381G1:0:cddl -->
 
 Another example of a different COSE_Key for the BLS12381 curve where the public key is in the G1 subgroup expressed as an octet string.
 
+<!-- GENERATED CONTENT: Use examples directory -- BLS12381G1:1:cwk -->
 ```
 a40101200d215830aba1ab30cbe5278e8f29e6a3f88a1306dafd303a4e463984f2b42350
 d3a0b185c805161984c9f45d608774d5b2668b3f2358201fef904fc2100973079581c454
 1cba676c94e2310d48f72607a795bdc3960c72
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS12381G1:1:cwk -->
 
 Below is the above CBOR represented as CDDL.
 
+<!-- GENERATED CONTENT: Use examples directory -- BLS12381G1:1:cddl -->
 ```
 {
   1 => 1,
@@ -377,18 +410,22 @@ Below is the above CBOR represented as CDDL.
   -4 => h'1fef904fc2100973079581c4541cba676c94e2310d48f72607a795bdc3960c72',
 }
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS12381G1:1:cddl -->
 
 An example COSE_Key for the BLS12381 curve where the public key is in the G2 subgroup expressed as an octet string.
 
+<!-- GENERATED CONTENT: Use examples directory -- BLS12381G2:0:cwk -->
 ```
 a40101200d215860a550f6e4cdc26b48ce0661e2cde8ff630b9538421a764e38bab41c41
 00f7ba1213b168f92dd8119a34e47ed0a67bd2901117947f9ca8c4f8bba430f1e1476499
 35edcee6882a6f5863670ea53e5d3b6eadb414b39de404505847a4cdec75499f2358205d
 d5ced0e39ce98ad54ca10f211e899a64d20c3039639a710b26394d12349397
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS12381G2:0:cwk -->
 
 Below is the above CBOR represented as CDDL.
 
+<!-- GENERATED CONTENT: Use examples directory -- BLS12381G2:0:cddl -->
 ```
 {
   1 => 1,
@@ -399,18 +436,22 @@ Below is the above CBOR represented as CDDL.
   -4 => h'5dd5ced0e39ce98ad54ca10f211e899a64d20c3039639a710b26394d12349397',
 }
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS12381G2:0:cddl -->
 
 Another example of a different COSE_Key for the BLS12381 curve where the public key is in the G2 subgroup expressed as an octet string.
 
+<!-- GENERATED CONTENT: Use examples directory -- BLS12381G2:1:cwk -->
 ```
 a40101200d215860a3ec3a18fb5b66e886ee9119ec97a5c3ddb9a62ac7408ba74ce9cbcb
 e17af074acdc0d9e8dcba464579893258eb15c880d92a4112ebd997d1406151ec8723f0d
 a64cbf761b4acffd435631b49567e2e6a7784ca4005b5327209287603a1f54bb23582032
 937d305e86ea99a265a24de963a358cd8b42dd3b06581bed678941bb0ac566
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS12381G2:1:cwk -->
 
 Below is the above CBOR represented as CDDL.
 
+<!-- GENERATED CONTENT: Use examples directory -- BLS12381G2:1:cddl -->
 ```
 {
   1 => 1,
@@ -421,6 +462,8 @@ Below is the above CBOR represented as CDDL.
   -4 => h'32937d305e86ea99a265a24de963a358cd8b42dd3b06581bed678941bb0ac566',
 }
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS12381G2:1:cddl -->
+
 
 ## BLS48581 Key Pairs
 
@@ -428,6 +471,7 @@ The following examples showcase COSE_Key examples for both the G1 and G2 subgrou
 
 An example COSE_Key for the BLS48581 curve where the public key is in the G1 subgroup expressed as an octet string.
 
+<!-- GENERATED CONTENT: Use examples directory -- BLS48581G1:0:cwk -->
 ```
 a40101200e2158498ca8fc426be2e762e4cb7557ad568aeeb1235b9945062986a6271a11
 73dcb18acacd38d5e6b457630b54a20dd0a98f146da13b7060f6a69417b51d8a59f2ba0e
@@ -435,9 +479,11 @@ a40101200e2158498ca8fc426be2e762e4cb7557ad568aeeb1235b9945062986a6271a11
 f137121ffc12505903e10b5e45b0b5dcb1091345bb686248562d41a0b2da01cb936c9c70
 23fd6a01bb
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS48581G1:0:cwk -->
 
 Below is the above CBOR represented as CDDL.
 
+<!-- GENERATED CONTENT: Use examples directory -- BLS48581G1:0:cddl -->
 ```
 {
   1 => 1,
@@ -450,9 +496,11 @@ Below is the above CBOR represented as CDDL.
           bb',
 }
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS48581G1:0:cddl -->
 
 Another example of a different COSE_Key for the BLS48581 curve where the public key is in the G1 subgroup expressed as an octet string.
 
+<!-- GENERATED CONTENT: Use examples directory -- BLS48581G1:1:cwk -->
 ```
 a40101200e215849abdc6a227c2f1a5eb05d421314540c5143f858a7557e6b93492f205e
 ca1ef5db3547bf0a476c4ca2874c63d893ad67037936253a215a442c6330a85d804c0edd
@@ -460,9 +508,11 @@ ca1ef5db3547bf0a476c4ca2874c63d893ad67037936253a215a442c6330a85d804c0edd
 9d784657a78ace0a2d6f670d0fef04e5b45bf336a149200d26a5c749391aed102cc14fbc
 7e9ae7d2fd
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS48581G1:1:cwk -->
 
 Below is the above CBOR represented as CDDL.
 
+<!-- GENERATED CONTENT: Use examples directory -- BLS48581G1:1:cddl -->
 ```
 {
   1 => 1,
@@ -475,9 +525,11 @@ Below is the above CBOR represented as CDDL.
           fd',
 }
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS48581G1:1:cddl -->
 
 An example COSE_Key for the BLS48581 curve where the public key is in the G2 subgroup expressed as an octet string.
 
+<!-- GENERATED CONTENT: Use examples directory -- BLS48581G2:0:cwk -->
 ```
 a40101200e2159024883b712ac378e91127959724ccdbe4eb0b4966807957bcc97071a6b
 6514e5f48f3bdb6035f4d5c24bc891df16d393ed556a6f1d6386415764f37885894fbf46
@@ -499,9 +551,11 @@ c942bb97b509564c76ac472441f3e3d9fb2358410cc100b29e5806266f9b3c67999680e1
 b6927ea739f942bfb490652423f6fe2839644ab40bb5c0848ea3847657d32d875d9524f7
 fcbd408ffaf1d030ba0a20ba1d
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS48581G2:0:cwk -->
 
 Below is the above CBOR represented as CDDL.
 
+<!-- GENERATED CONTENT: Use examples directory -- BLS48581G2:0:cddl -->
 ```
 {
   1 => 1,
@@ -530,10 +584,11 @@ Below is the above CBOR represented as CDDL.
           1d',
 }
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS48581G2:0:cddl -->
 
 Another example of a different COSE_Key for the BLS48581 curve where the public key is in the G2 subgroup expressed as an octet string.
 
-
+<!-- GENERATED CONTENT: Use examples directory -- BLS48581G2:1:cwk -->
 ```
 a40101200e21590248a58397f10c010f7d91b387ef106b2458de45c5b9b5418583946388
 31f0d2201af5949174aa3e149ca66782b1ef8c841e1d21df12333cfb5679c6f8e87a10fb
@@ -555,9 +610,11 @@ cc3fcdbdbf9fd054db93fb98bb14f72810466e60fd673e78385bc77a5e3576606d1621ea
 19891c8598aeea6c5edb8a2d99852c2bb97af231c31acaa3479d4d7b9c87bb9c378dfb20
 3ce9e0fe7e58a62d55c58552b5
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS48581G2:1:cwk -->
 
 Below is the above CBOR represented as CDDL.
 
+<!-- GENERATED CONTENT: Use examples directory -- BLS48581G2:1:cddl -->
 ```
 {
   1 => 1,
@@ -586,6 +643,8 @@ Below is the above CBOR represented as CDDL.
           b5',
 }
 ```
+<!-- END GENERATED CONTENT: Use examples directory -- BLS48581G2:1:cddl -->
+
 
 
 # BLS48581 point encoding {#encoding-bls48-581}
