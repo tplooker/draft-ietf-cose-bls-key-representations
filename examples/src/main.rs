@@ -270,15 +270,15 @@ fn print_example<
             println!(
                 r#"```
 {{
-  1 => 1,
-  -1 => {crv_id},
-  -2 => h'{x}',
-  -4 => h'{d}',
+  1: 1,
+  -1: {crv_id},
+  -2: h'{x}',
+  -4: h'{d}',
 }}
 ```"#,
                 crv_id = crv_id,
-                x = wrap_indent(&to_hex(x), 64, 10),
-                d = wrap_indent(&to_hex(d), 64, 10),
+                x = wrap_indent(&to_hex(x), 64, 8),
+                d = wrap_indent(&to_hex(d), 64, 8),
             );
         }
 
