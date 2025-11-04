@@ -1,0 +1,10 @@
+[package]
+name = "cose-bls-key-representations-examples"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+base64 = "0.22.1"
+mcore = { path = "./lib/miracl-core/rust/mcore" }
+serde = "1.0.228"
+serde_cbor = "0.11.2"
