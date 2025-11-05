@@ -8,5 +8,5 @@ if [[ -d lib/mcore ]]; then git -C lib/miracl-core worktree remove --force --for
 git -C lib/miracl-core worktree add ../mcore
 
 cd lib/mcore/rust
-git apply ../../../miracl-sign.patch
+git apply ../../../miracl-alt-compress.patch
 python3 config64.py 31 39

@@ -34,28 +34,6 @@ fn to_hex<T: AsRef<[u8]>>(bytes: T) -> String {
         .collect()
 }
 
-/// Reformat the two most significant bytes from MIRACL output format to
-/// draft-irtf-cfrg-bbs-signatures-09 Appendix B.2 format
-///
-/// MIRACL outputs 1 extra leading byte containing flags. Bit 0x02 is always
-/// set, and bit 0x01 is set to the sign bit. If the MIRACL-internal constant
-/// `BIG_ENDIAN_SIGN` is `true`, then this // is compatible with the sign bit
-/// encoding in draft-irtf-cfrg-bbs-signatures-09, which sets S_bit if `y > (p -
-/// 1) / 2`. If `false`, then the sign bit is computed as `W.y.sign() == 1`,
-/// where `sign()` computes the parity as `self.w[0] % 2`.
-///
-/// This function squeezes the C_bit, I_bit and S_bit from
-/// draft-irtf-cfrg-bbs-signatures-09 into the second byte of `miracl_bytes`,
-/// then returns a slice of `miracl_bytes` that excludes the first byte of
-/// `miracl_bytes`.
-fn squeeze_bits(miracl_bytes: &mut [u8]) -> &[u8] {
-    let sign = miracl_bytes[0] & 0x01 == 0x01;
-    miracl_bytes[1] |= 0x80; // Set the C_bit
-    miracl_bytes[1] &= 0xbf; // Unset the I_bit
-    miracl_bytes[1] |= if sign { 0x20 } else { 0x00 }; // Set the S_bit
-    &miracl_bytes[1..]
-}
-
 trait Big<const LEN: usize> {
     fn frombytes(bytes: &[u8]) -> Self;
     fn rmod(&mut self, m: &Self);
@@ -109,10 +87,9 @@ impl ECPExtensions<48, 48> for bls12381::ecp::ECP {
         Self::BIG::new_ints(&bls12381::rom::CURVE_ORDER)
     }
     fn to_ietf_bytes(&self) -> [u8; 48] {
-        let mut bytes = [0; 49];
+        let mut bytes = [0; 48];
         self.tobytes(&mut bytes, true);
-        squeeze_bits(&mut bytes);
-        bytes[1..].try_into().expect("Wrong slice length")
+        bytes
     }
 }
 
@@ -128,10 +105,9 @@ impl ECPExtensions<48, 96> for bls12381::ecp2::ECP2 {
         Self::BIG::new_ints(&bls12381::rom::CURVE_ORDER)
     }
     fn to_ietf_bytes(&self) -> [u8; 96] {
-        let mut bytes = [0; 97];
+        let mut bytes = [0; 96];
         self.tobytes(&mut bytes, true);
-        squeeze_bits(&mut bytes);
-        bytes[1..].try_into().expect("Wrong slice length")
+        bytes
     }
 }
 
@@ -147,10 +123,9 @@ impl ECPExtensions<73, 73> for bls48581::ecp::ECP {
         Self::BIG::new_ints(&bls48581::rom::CURVE_ORDER)
     }
     fn to_ietf_bytes(&self) -> [u8; 73] {
-        let mut bytes = [0; 74];
+        let mut bytes = [0; 73];
         self.tobytes(&mut bytes, true);
-        squeeze_bits(&mut bytes);
-        bytes[1..].try_into().expect("Wrong slice length")
+        bytes
     }
 }
 
@@ -166,10 +141,9 @@ impl ECPExtensions<73, 584> for bls48581::ecp8::ECP8 {
         Self::BIG::new_ints(&bls48581::rom::CURVE_ORDER)
     }
     fn to_ietf_bytes(&self) -> [u8; 584] {
-        let mut bytes = [0; 585];
+        let mut bytes = [0; 584];
         self.tobytes(&mut bytes, true);
-        squeeze_bits(&mut bytes);
-        bytes[1..].try_into().expect("Wrong slice length")
+        bytes
     }
 }
 
