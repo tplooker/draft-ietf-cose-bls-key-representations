@@ -61,7 +61,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## Point Coordinates Encoding
 
-A point representing a public key will either be in the G1 or G2 subgroup of a curve. Both are encoded using the compressed serialized point format defined normatively in Appendix B.2 of [@BBS] and in (#encoding-bls48-581).
+A point representing a public key will either be in the G1 or G2 subgroup of a curve. Both are encoded using the compressed serialized point format defined in Appendix B.2 of [@BBS] and in (#encoding-bls48-581).
 <!-- A syntax like this is supposed to work for making a section reference, but I can't get it to work here for some reason: `[@BBS, section B.2]` -->
 
 
@@ -75,8 +75,8 @@ When expressing a cryptographic key for these curves in JSON Web Key (JWK) form,
 
 - The parameter "kty" MUST be present and set to "OKP".
 - The parameter "crv" MUST be present and value MUST be one defined in (#curve-parameter-registration).
-- The parameter "x" MUST be present with its value being the base64url encoding of the compressed serialized point format defined normatively in Appendix B of [@BBS].
-- The parameter "d" MUST be present for private key representations whose value MUST contain the big-endian representation of the private key base64url encoded without padding as defined in [@!RFC7515] Appendix C. This parameter MUST NOT be present for public keys.
+- The parameter "x" MUST be present with its value being the base64url encoding of the compressed public key curve point, serialized as defined in Appendix B.2 of [@BBS] and in (#encoding-bls48-581).
+- The parameter "d" MUST be present for private key representations whose value MUST contain the big-endian representation of the private key base64url encoded without padding as defined in [@!RFC7515] Appendix C. The length of this octet string MUST be `ceiling(log-base-2(r)/8)` octets (where `r` is the order of the curve generator). This parameter MUST NOT be present for public keys.
 
 ### COSE_Key Representation
 
@@ -84,8 +84,8 @@ When expressing a cryptographic key for these curves in COSE_Key form, the follo
 
 - The parameter "kty" (1) MUST be present and set to "OKP" (1).
 - The parameter "crv" (-1) MUST be present and value MUST be one defined in (#curve-parameter-registration).
-- The parameter "x" (-2) MUST be present with its value being the compressed serialized point format defined normatively in Appendix B of [@BBS].
-- The parameter "d" (-4) MUST be present for private key representations whose value MUST contain the big-endian representation of the private key. This parameter MUST NOT be present for public keys.
+- The parameter "x" (-2) MUST be present with its value being the compressed public key curve point, serialized as defined in Appendix B.2 of [@BBS] and in (#encoding-bls48-581).
+- The parameter "d" (-4) MUST be present for private key representations whose value MUST contain the big-endian representation of the private key. The length of this octet string MUST be `ceiling(log-base-2(r)/8)` octets (where `r` is the order of the curve generator). This parameter MUST NOT be present for public keys.
 
 ### Curve Parameter Registration
 
@@ -736,6 +736,7 @@ with the following differences:
 
 The authors would like to acknowledge the work of Kyle Den Hartog, which was used as the foundation for this draft.
 We would also like to thank
+Vasilis Kalos,
 Emil Lundberg
 and
 David Waite
@@ -745,6 +746,8 @@ for their contributions to the specification.
 
 -09
 
+* Clarified which point is encoded as "x".
+* Made "d" fixed length.
 * Changed CDDL examples from map notation to struct notation.
 
 
