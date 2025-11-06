@@ -151,8 +151,8 @@ Table of Contents
 
    A point representing a public key will either be in the G1 or G2
    subgroup of a curve.  Both are encoded using the compressed
-   serialized point format defined normatively in Appendix B.2 of [BBS]
-   and in Appendix C.
+   serialized point format defined in Appendix B.2 of [BBS] and in
+   Appendix C.
 
 2.2.  Representation Definition
 
@@ -168,13 +168,14 @@ Table of Contents
    *  The parameter "crv" MUST be present and value MUST be one defined
       in Section 2.2.3.
    *  The parameter "x" MUST be present with its value being the
-      base64url encoding of the compressed serialized point format
-      defined normatively in Appendix B of [BBS].
+      base64url encoding of the compressed public key curve point,
+      serialized as defined in Appendix B.2 of [BBS] and in Appendix C.
    *  The parameter "d" MUST be present for private key representations
       whose value MUST contain the big-endian representation of the
       private key base64url encoded without padding as defined in
-      [RFC7515] Appendix C.  This parameter MUST NOT be present for
-      public keys.
+      [RFC7515] Appendix C.  The length of this octet string MUST be
+      ceiling(log-base-2(r)/8) octets (where r is the order of the curve
+      generator).  This parameter MUST NOT be present for public keys.
 
 2.2.2.  COSE_Key Representation
 
@@ -185,12 +186,14 @@ Table of Contents
    *  The parameter "crv" (-1) MUST be present and value MUST be one
       defined in Section 2.2.3.
    *  The parameter "x" (-2) MUST be present with its value being the
-      compressed serialized point format defined normatively in
-      Appendix B of [BBS].
+      compressed public key curve point, serialized as defined in
+      Appendix B.2 of [BBS] and in Appendix C.
    *  The parameter "d" (-4) MUST be present for private key
       representations whose value MUST contain the big-endian
-      representation of the private key.  This parameter MUST NOT be
-      present for public keys.
+      representation of the private key.  The length of this octet
+      string MUST be ceiling(log-base-2(r)/8) octets (where r is the
+      order of the curve generator).  This parameter MUST NOT be present
+      for public keys.
 
 2.2.3.  Curve Parameter Registration
 
@@ -910,13 +913,15 @@ Appendix D.  Acknowledgments
 
    The authors would like to acknowledge the work of Kyle Den Hartog,
    which was used as the foundation for this draft.  We would also like
-   to thank Emil Lundberg and David Waite for their contributions to the
-   specification.
+   to thank Vasilis Kalos, Emil Lundberg and David Waite for their
+   contributions to the specification.
 
 Appendix E.  Document History
 
    -09
 
+   *  Clarified which point is encoded as "x".
+   *  Made "d" fixed length.
    *  Changed CDDL examples from map notation to struct notation.
 
    -08

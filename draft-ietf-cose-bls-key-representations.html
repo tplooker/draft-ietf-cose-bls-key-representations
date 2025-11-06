@@ -1269,7 +1269,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <h3 id="name-point-coordinates-encoding">
 <a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-point-coordinates-encoding" class="section-name selfRef">Point Coordinates Encoding</a>
         </h3>
-<p id="section-2.1-1">A point representing a public key will either be in the G1 or G2 subgroup of a curve. Both are encoded using the compressed serialized point format defined normatively in Appendix B.2 of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span> and in <a href="#encoding-bls48-581" class="auto internal xref">Appendix C</a>.<a href="#section-2.1-1" class="pilcrow">¶</a></p>
+<p id="section-2.1-1">A point representing a public key will either be in the G1 or G2 subgroup of a curve. Both are encoded using the compressed serialized point format defined in Appendix B.2 of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span> and in <a href="#encoding-bls48-581" class="auto internal xref">Appendix C</a>.<a href="#section-2.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="representation-definition">
@@ -1289,9 +1289,9 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </li>
             <li class="compact" id="section-2.2.1-2.2">The parameter "crv" MUST be present and value MUST be one defined in <a href="#curve-parameter-registration" class="auto internal xref">Section 2.2.3</a>.<a href="#section-2.2.1-2.2" class="pilcrow">¶</a>
 </li>
-            <li class="compact" id="section-2.2.1-2.3">The parameter "x" MUST be present with its value being the base64url encoding of the compressed serialized point format defined normatively in Appendix B of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span>.<a href="#section-2.2.1-2.3" class="pilcrow">¶</a>
+            <li class="compact" id="section-2.2.1-2.3">The parameter "x" MUST be present with its value being the base64url encoding of the compressed public key curve point, serialized as defined in Appendix B.2 of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span> and in <a href="#encoding-bls48-581" class="auto internal xref">Appendix C</a>.<a href="#section-2.2.1-2.3" class="pilcrow">¶</a>
 </li>
-            <li class="compact" id="section-2.2.1-2.4">The parameter "d" MUST be present for private key representations whose value MUST contain the big-endian representation of the private key base64url encoded without padding as defined in <span>[<a href="#RFC7515" class="cite xref">RFC7515</a>]</span> Appendix C. This parameter MUST NOT be present for public keys.<a href="#section-2.2.1-2.4" class="pilcrow">¶</a>
+            <li class="compact" id="section-2.2.1-2.4">The parameter "d" MUST be present for private key representations whose value MUST contain the big-endian representation of the private key base64url encoded without padding as defined in <span>[<a href="#RFC7515" class="cite xref">RFC7515</a>]</span> Appendix C. The length of this octet string MUST be <code>ceiling(log-base-2(r)/8)</code> octets (where <code>r</code> is the order of the curve generator). This parameter MUST NOT be present for public keys.<a href="#section-2.2.1-2.4" class="pilcrow">¶</a>
 </li>
           </ul>
 </section>
@@ -1307,9 +1307,9 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </li>
             <li class="compact" id="section-2.2.2-2.2">The parameter "crv" (-1) MUST be present and value MUST be one defined in <a href="#curve-parameter-registration" class="auto internal xref">Section 2.2.3</a>.<a href="#section-2.2.2-2.2" class="pilcrow">¶</a>
 </li>
-            <li class="compact" id="section-2.2.2-2.3">The parameter "x" (-2) MUST be present with its value being the compressed serialized point format defined normatively in Appendix B of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span>.<a href="#section-2.2.2-2.3" class="pilcrow">¶</a>
+            <li class="compact" id="section-2.2.2-2.3">The parameter "x" (-2) MUST be present with its value being the compressed public key curve point, serialized as defined in Appendix B.2 of <span>[<a href="#BBS" class="cite xref">BBS</a>]</span> and in <a href="#encoding-bls48-581" class="auto internal xref">Appendix C</a>.<a href="#section-2.2.2-2.3" class="pilcrow">¶</a>
 </li>
-            <li class="compact" id="section-2.2.2-2.4">The parameter "d" (-4) MUST be present for private key representations whose value MUST contain the big-endian representation of the private key. This parameter MUST NOT be present for public keys.<a href="#section-2.2.2-2.4" class="pilcrow">¶</a>
+            <li class="compact" id="section-2.2.2-2.4">The parameter "d" (-4) MUST be present for private key representations whose value MUST contain the big-endian representation of the private key. The length of this octet string MUST be <code>ceiling(log-base-2(r)/8)</code> octets (where <code>r</code> is the order of the curve generator). This parameter MUST NOT be present for public keys.<a href="#section-2.2.2-2.4" class="pilcrow">¶</a>
 </li>
           </ul>
 </section>
@@ -2170,6 +2170,7 @@ with the following differences:<a href="#appendix-C.2-1" class="pilcrow">¶</a><
       </h2>
 <p id="appendix-D-1">The authors would like to acknowledge the work of Kyle Den Hartog, which was used as the foundation for this draft.
 We would also like to thank
+Vasilis Kalos,
 Emil Lundberg
 and
 David Waite
@@ -2183,7 +2184,11 @@ for their contributions to the specification.<a href="#appendix-D-1" class="pilc
       </h2>
 <p id="appendix-E-1">-09<a href="#appendix-E-1" class="pilcrow">¶</a></p>
 <ul class="compact">
-<li class="compact" id="appendix-E-2.1">Changed CDDL examples from map notation to struct notation.<a href="#appendix-E-2.1" class="pilcrow">¶</a>
+<li class="compact" id="appendix-E-2.1">Clarified which point is encoded as "x".<a href="#appendix-E-2.1" class="pilcrow">¶</a>
+</li>
+        <li class="compact" id="appendix-E-2.2">Made "d" fixed length.<a href="#appendix-E-2.2" class="pilcrow">¶</a>
+</li>
+        <li class="compact" id="appendix-E-2.3">Changed CDDL examples from map notation to struct notation.<a href="#appendix-E-2.3" class="pilcrow">¶</a>
 </li>
       </ul>
 <p id="appendix-E-3">-08<a href="#appendix-E-3" class="pilcrow">¶</a></p>
