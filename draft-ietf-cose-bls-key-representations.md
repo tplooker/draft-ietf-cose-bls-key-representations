@@ -379,11 +379,11 @@ Below is the above CBOR represented as CDDL.
 <!-- GENERATED CONTENT: Use examples directory -- BLS12381G1:0:cddl -->
 ```
 {
-  1 => 1,
-  -1 => 13,
-  -2 => h'890e60d7414b0bc5485f86f48e3375a1fbe34ad2d4d6d2f4c4dfbf0a970734f8
-          90313eaab64f2160199bc9ebd95aee72',
-  -4 => h'72c9c6b30bafb45e252c9e60ef17651516ce288d4ded768f84574b65ce34f095',
+  1: 1,
+  -1: 13,
+  -2: h'890e60d7414b0bc5485f86f48e3375a1fbe34ad2d4d6d2f4c4dfbf0a970734f8
+        90313eaab64f2160199bc9ebd95aee72',
+  -4: h'72c9c6b30bafb45e252c9e60ef17651516ce288d4ded768f84574b65ce34f095',
 }
 ```
 <!-- END GENERATED CONTENT: Use examples directory -- BLS12381G1:0:cddl -->
@@ -403,11 +403,11 @@ Below is the above CBOR represented as CDDL.
 <!-- GENERATED CONTENT: Use examples directory -- BLS12381G1:1:cddl -->
 ```
 {
-  1 => 1,
-  -1 => 13,
-  -2 => h'aba1ab30cbe5278e8f29e6a3f88a1306dafd303a4e463984f2b42350d3a0b185
-          c805161984c9f45d608774d5b2668b3f',
-  -4 => h'1fef904fc2100973079581c4541cba676c94e2310d48f72607a795bdc3960c72',
+  1: 1,
+  -1: 13,
+  -2: h'aba1ab30cbe5278e8f29e6a3f88a1306dafd303a4e463984f2b42350d3a0b185
+        c805161984c9f45d608774d5b2668b3f',
+  -4: h'1fef904fc2100973079581c4541cba676c94e2310d48f72607a795bdc3960c72',
 }
 ```
 <!-- END GENERATED CONTENT: Use examples directory -- BLS12381G1:1:cddl -->
@@ -428,12 +428,12 @@ Below is the above CBOR represented as CDDL.
 <!-- GENERATED CONTENT: Use examples directory -- BLS12381G2:0:cddl -->
 ```
 {
-  1 => 1,
-  -1 => 13,
-  -2 => h'a550f6e4cdc26b48ce0661e2cde8ff630b9538421a764e38bab41c4100f7ba12
-          13b168f92dd8119a34e47ed0a67bd2901117947f9ca8c4f8bba430f1e1476499
-          35edcee6882a6f5863670ea53e5d3b6eadb414b39de404505847a4cdec75499f',
-  -4 => h'5dd5ced0e39ce98ad54ca10f211e899a64d20c3039639a710b26394d12349397',
+  1: 1,
+  -1: 13,
+  -2: h'a550f6e4cdc26b48ce0661e2cde8ff630b9538421a764e38bab41c4100f7ba12
+        13b168f92dd8119a34e47ed0a67bd2901117947f9ca8c4f8bba430f1e1476499
+        35edcee6882a6f5863670ea53e5d3b6eadb414b39de404505847a4cdec75499f',
+  -4: h'5dd5ced0e39ce98ad54ca10f211e899a64d20c3039639a710b26394d12349397',
 }
 ```
 <!-- END GENERATED CONTENT: Use examples directory -- BLS12381G2:0:cddl -->
@@ -454,12 +454,12 @@ Below is the above CBOR represented as CDDL.
 <!-- GENERATED CONTENT: Use examples directory -- BLS12381G2:1:cddl -->
 ```
 {
-  1 => 1,
-  -1 => 13,
-  -2 => h'a3ec3a18fb5b66e886ee9119ec97a5c3ddb9a62ac7408ba74ce9cbcbe17af074
-          acdc0d9e8dcba464579893258eb15c880d92a4112ebd997d1406151ec8723f0d
-          a64cbf761b4acffd435631b49567e2e6a7784ca4005b5327209287603a1f54bb',
-  -4 => h'32937d305e86ea99a265a24de963a358cd8b42dd3b06581bed678941bb0ac566',
+  1: 1,
+  -1: 13,
+  -2: h'a3ec3a18fb5b66e886ee9119ec97a5c3ddb9a62ac7408ba74ce9cbcbe17af074
+        acdc0d9e8dcba464579893258eb15c880d92a4112ebd997d1406151ec8723f0d
+        a64cbf761b4acffd435631b49567e2e6a7784ca4005b5327209287603a1f54bb',
+  -4: h'32937d305e86ea99a265a24de963a358cd8b42dd3b06581bed678941bb0ac566',
 }
 ```
 <!-- END GENERATED CONTENT: Use examples directory -- BLS12381G2:1:cddl -->
@@ -486,14 +486,14 @@ Below is the above CBOR represented as CDDL.
 <!-- GENERATED CONTENT: Use examples directory -- BLS48581G1:0:cddl -->
 ```
 {
-  1 => 1,
-  -1 => 14,
-  -2 => h'8ca8fc426be2e762e4cb7557ad568aeeb1235b9945062986a6271a1173dcb18a
-          cacd38d5e6b457630b54a20dd0a98f146da13b7060f6a69417b51d8a59f2ba0e
-          91d65f2d87686592e2',
-  -4 => h'10a17abf86545033cba79d8c5b3a664d483e4bff9ed35474f137121ffc125059
-          03e10b5e45b0b5dcb1091345bb686248562d41a0b2da01cb936c9c7023fd6a01
-          bb',
+  1: 1,
+  -1: 14,
+  -2: h'8ca8fc426be2e762e4cb7557ad568aeeb1235b9945062986a6271a1173dcb18a
+        cacd38d5e6b457630b54a20dd0a98f146da13b7060f6a69417b51d8a59f2ba0e
+        91d65f2d87686592e2',
+  -4: h'10a17abf86545033cba79d8c5b3a664d483e4bff9ed35474f137121ffc125059
+        03e10b5e45b0b5dcb1091345bb686248562d41a0b2da01cb936c9c7023fd6a01
+        bb',
 }
 ```
 <!-- END GENERATED CONTENT: Use examples directory -- BLS48581G1:0:cddl -->
@@ -515,14 +515,14 @@ Below is the above CBOR represented as CDDL.
 <!-- GENERATED CONTENT: Use examples directory -- BLS48581G1:1:cddl -->
 ```
 {
-  1 => 1,
-  -1 => 14,
-  -2 => h'abdc6a227c2f1a5eb05d421314540c5143f858a7557e6b93492f205eca1ef5db
-          3547bf0a476c4ca2874c63d893ad67037936253a215a442c6330a85d804c0edd
-          731b2809ea3db53240',
-  -4 => h'0caad8e078d8fc0f69111f68d3e619d8016aed56cd1448ec9d784657a78ace0a
-          2d6f670d0fef04e5b45bf336a149200d26a5c749391aed102cc14fbc7e9ae7d2
-          fd',
+  1: 1,
+  -1: 14,
+  -2: h'abdc6a227c2f1a5eb05d421314540c5143f858a7557e6b93492f205eca1ef5db
+        3547bf0a476c4ca2874c63d893ad67037936253a215a442c6330a85d804c0edd
+        731b2809ea3db53240',
+  -4: h'0caad8e078d8fc0f69111f68d3e619d8016aed56cd1448ec9d784657a78ace0a
+        2d6f670d0fef04e5b45bf336a149200d26a5c749391aed102cc14fbc7e9ae7d2
+        fd',
 }
 ```
 <!-- END GENERATED CONTENT: Use examples directory -- BLS48581G1:1:cddl -->
@@ -558,30 +558,30 @@ Below is the above CBOR represented as CDDL.
 <!-- GENERATED CONTENT: Use examples directory -- BLS48581G2:0:cddl -->
 ```
 {
-  1 => 1,
-  -1 => 14,
-  -2 => h'83b712ac378e91127959724ccdbe4eb0b4966807957bcc97071a6b6514e5f48f
-          3bdb6035f4d5c24bc891df16d393ed556a6f1d6386415764f37885894fbf4664
-          d0b6693b2ea7e5af4b0aad07c83269f1ad217774552624037029428b054c9a2a
-          ae8daf324e5802e14a32f0f355a291ebace6094e9e2cf7a258a894b283b157c8
-          3b548a39a7a2b16fdfb0afafcc5440362df50c8f579c65755fd7b5c892f02dd7
-          888351656bf1ba2e40e4c60f4d164baa357733e969c7df653777f76f39a38b0d
-          a45b4e0f6451cc74a6fe29ac60cec1f5ce5da74140ade7b63a6fe10ba6d81c1c
-          dd8229c38bce273850afd56cd16f9ec7cb4b68b3c058ff727e4e4ef45d2ffbad
-          e9fb394cae41dd4658bc2180cbc72056fb9b104ea716136cfe3f398a8d943929
-          0789c0e40ee54f972321b2c79e3f78567f87c057cb6ba8a613acf0b7b15a205f
-          5bc28dd151dc0e9ff01fef969f66cc59eb16c39dd382c6e1cad2b0dcf1343d8d
-          9e2614eaa4e9034a97af5dabc710a1ce9e667949d03883d7fd90506cad47c3c3
-          2be6bbe265ebcdf639d7189f86ae9b455ab561d9674e4fda7c530d21fea12c5d
-          a9fcb728c0727dd36fbed2450d50dce6632630d88a140888ebbe7244daac0528
-          3e80b1ea10d7c9b78b58de1bafe2f4a5d3f101fdb3e5a7a7b870bf8f70048af6
-          7573a8f880774f98cb9b684a9bfc397b618944a69b9b99d276be4bd98086030a
-          eea4bcb7be8d8a14f5135f67afa7321a5386b8e793728163646b9f6d86df9070
-          1e2ce492ba5fc87e9bdf4d6e7e3080902e1e8da0f53483c942bb97b509564c76
-          ac472441f3e3d9fb',
-  -4 => h'0cc100b29e5806266f9b3c67999680e1b6927ea739f942bfb490652423f6fe28
-          39644ab40bb5c0848ea3847657d32d875d9524f7fcbd408ffaf1d030ba0a20ba
-          1d',
+  1: 1,
+  -1: 14,
+  -2: h'83b712ac378e91127959724ccdbe4eb0b4966807957bcc97071a6b6514e5f48f
+        3bdb6035f4d5c24bc891df16d393ed556a6f1d6386415764f37885894fbf4664
+        d0b6693b2ea7e5af4b0aad07c83269f1ad217774552624037029428b054c9a2a
+        ae8daf324e5802e14a32f0f355a291ebace6094e9e2cf7a258a894b283b157c8
+        3b548a39a7a2b16fdfb0afafcc5440362df50c8f579c65755fd7b5c892f02dd7
+        888351656bf1ba2e40e4c60f4d164baa357733e969c7df653777f76f39a38b0d
+        a45b4e0f6451cc74a6fe29ac60cec1f5ce5da74140ade7b63a6fe10ba6d81c1c
+        dd8229c38bce273850afd56cd16f9ec7cb4b68b3c058ff727e4e4ef45d2ffbad
+        e9fb394cae41dd4658bc2180cbc72056fb9b104ea716136cfe3f398a8d943929
+        0789c0e40ee54f972321b2c79e3f78567f87c057cb6ba8a613acf0b7b15a205f
+        5bc28dd151dc0e9ff01fef969f66cc59eb16c39dd382c6e1cad2b0dcf1343d8d
+        9e2614eaa4e9034a97af5dabc710a1ce9e667949d03883d7fd90506cad47c3c3
+        2be6bbe265ebcdf639d7189f86ae9b455ab561d9674e4fda7c530d21fea12c5d
+        a9fcb728c0727dd36fbed2450d50dce6632630d88a140888ebbe7244daac0528
+        3e80b1ea10d7c9b78b58de1bafe2f4a5d3f101fdb3e5a7a7b870bf8f70048af6
+        7573a8f880774f98cb9b684a9bfc397b618944a69b9b99d276be4bd98086030a
+        eea4bcb7be8d8a14f5135f67afa7321a5386b8e793728163646b9f6d86df9070
+        1e2ce492ba5fc87e9bdf4d6e7e3080902e1e8da0f53483c942bb97b509564c76
+        ac472441f3e3d9fb',
+  -4: h'0cc100b29e5806266f9b3c67999680e1b6927ea739f942bfb490652423f6fe28
+        39644ab40bb5c0848ea3847657d32d875d9524f7fcbd408ffaf1d030ba0a20ba
+        1d',
 }
 ```
 <!-- END GENERATED CONTENT: Use examples directory -- BLS48581G2:0:cddl -->
@@ -617,30 +617,30 @@ Below is the above CBOR represented as CDDL.
 <!-- GENERATED CONTENT: Use examples directory -- BLS48581G2:1:cddl -->
 ```
 {
-  1 => 1,
-  -1 => 14,
-  -2 => h'a58397f10c010f7d91b387ef106b2458de45c5b9b541858394638831f0d2201a
-          f5949174aa3e149ca66782b1ef8c841e1d21df12333cfb5679c6f8e87a10fb9c
-          3a6cd0911542faf67a0e04106e5a4672fc179b88a3640d744c7069d2a38cdbbc
-          b48be98c5fe5067a2acbe459c8c1923e920cc479c93263b6560b436147edd56b
-          95cab2238852030520a772161aef7e0857b3036dbc83a1f067425e0b17b427e6
-          62adfabf9646601fd2087fc44516e5dd43f5788b13782822a7f088a528e00a0c
-          d809304050a6e9d226cc94407f938c070377536ba8f8b78230a5d90c3b320116
-          9d4ffcf36e10f06328b39e31ecb3138d8ae918db97571d0d4d396ff8a30d1823
-          53b7d1af0a1805be9fa48d53878b217a385396e5aa9bb8d7cf69ae8c6351e99e
-          13f4e8f5032a0da6b1c7e9ebfc7cf891b13615d54f112aa57a92c6706a5137b3
-          3f055399f86ffdc0f8966c16ce8cacb4af078c77d784b3b140b75907b4c14dbe
-          eaf6738ae758c17fa7e699b3b00b4f6692976b545553997129b6e701ecea6965
-          48ea8c7c27f0fda16288e9dde40a2f5c800f242847d2524be5bf898b4f8aa623
-          9803ddb1d30f4ff8906ef5312d261913821f6a7036fb0700b8dc126f7e815f17
-          ec4f3700b665847ff3ecda8eec11819c2b210d752c82152ceb8ec9e19d6cf1bb
-          24c75a26b4ee6d5ea20f1931f71e36cc3fcdbdbf9fd054db93fb98bb14f72810
-          466e60fd673e78385bc77a5e3576606d1621ea52dc726dbdddef5387799cafc6
-          ef1be8b319db62698d5cd18dad65f790a22c07c101d3031f2c70604f1aff88f5
-          a74669ecac87181f',
-  -4 => h'08721519408fb0b634188c7d0e03999719891c8598aeea6c5edb8a2d99852c2b
-          b97af231c31acaa3479d4d7b9c87bb9c378dfb203ce9e0fe7e58a62d55c58552
-          b5',
+  1: 1,
+  -1: 14,
+  -2: h'a58397f10c010f7d91b387ef106b2458de45c5b9b541858394638831f0d2201a
+        f5949174aa3e149ca66782b1ef8c841e1d21df12333cfb5679c6f8e87a10fb9c
+        3a6cd0911542faf67a0e04106e5a4672fc179b88a3640d744c7069d2a38cdbbc
+        b48be98c5fe5067a2acbe459c8c1923e920cc479c93263b6560b436147edd56b
+        95cab2238852030520a772161aef7e0857b3036dbc83a1f067425e0b17b427e6
+        62adfabf9646601fd2087fc44516e5dd43f5788b13782822a7f088a528e00a0c
+        d809304050a6e9d226cc94407f938c070377536ba8f8b78230a5d90c3b320116
+        9d4ffcf36e10f06328b39e31ecb3138d8ae918db97571d0d4d396ff8a30d1823
+        53b7d1af0a1805be9fa48d53878b217a385396e5aa9bb8d7cf69ae8c6351e99e
+        13f4e8f5032a0da6b1c7e9ebfc7cf891b13615d54f112aa57a92c6706a5137b3
+        3f055399f86ffdc0f8966c16ce8cacb4af078c77d784b3b140b75907b4c14dbe
+        eaf6738ae758c17fa7e699b3b00b4f6692976b545553997129b6e701ecea6965
+        48ea8c7c27f0fda16288e9dde40a2f5c800f242847d2524be5bf898b4f8aa623
+        9803ddb1d30f4ff8906ef5312d261913821f6a7036fb0700b8dc126f7e815f17
+        ec4f3700b665847ff3ecda8eec11819c2b210d752c82152ceb8ec9e19d6cf1bb
+        24c75a26b4ee6d5ea20f1931f71e36cc3fcdbdbf9fd054db93fb98bb14f72810
+        466e60fd673e78385bc77a5e3576606d1621ea52dc726dbdddef5387799cafc6
+        ef1be8b319db62698d5cd18dad65f790a22c07c101d3031f2c70604f1aff88f5
+        a74669ecac87181f',
+  -4: h'08721519408fb0b634188c7d0e03999719891c8598aeea6c5edb8a2d99852c2b
+        b97af231c31acaa3479d4d7b9c87bb9c378dfb203ce9e0fe7e58a62d55c58552
+        b5',
 }
 ```
 <!-- END GENERATED CONTENT: Use examples directory -- BLS48581G2:1:cddl -->
@@ -742,6 +742,11 @@ David Waite
 for their contributions to the specification.
 
 # Document History
+
+-09
+
+* Changed CDDL examples from map notation to struct notation.
+
 
 -08
 
