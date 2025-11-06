@@ -684,6 +684,12 @@ for their contributions to the specification.
 
 # Document History
 
+-09
+
+* Clarified which point is encoded as "x".
+* Made "d" fixed length.
+
+
 -08
 
 * Use ZCash compressed point format defined normatively in Appendix B of [@BBS].
