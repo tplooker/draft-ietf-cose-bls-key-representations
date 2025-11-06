@@ -193,6 +193,20 @@ impl<'d, 'x> Serialize for CoseBlsKey<'d, 'x> {
     }
 }
 
+fn wrap_indent(mut s: &str, width: usize, indent: usize) -> String {
+    let mut lines: Vec<&str> = Vec::with_capacity(s.len() / width + 1);
+    while s.len() > width {
+        lines.push(&s[..width]);
+        s = &s[width..];
+    }
+    lines.push(s);
+    let sep = format!(
+        "\n{}",
+        std::iter::repeat(' ').take(indent).collect::<String>()
+    );
+    lines.join(&sep)
+}
+
 fn print_example<
     const SCALAR_LEN: usize,
     const COORD_LEN: usize,
@@ -202,6 +216,7 @@ fn print_example<
     crv_name: &str,
     crv_id: i64,
     hkdf_salt: u8,
+    format: &str,
 ) -> Result<(), serde_cbor::Error> {
     let mut dbig = ECP::BIG::frombytes(&hkdf::<SCALAR_LEN, COORD_LEN>(hkdf_salt, crv_name));
     dbig.rmod(&ECP::order());
@@ -209,53 +224,91 @@ fn print_example<
     let d = &dbig.to_bytes()[COORD_LEN - SCALAR_LEN..];
     let pk = ECP::generator().mul(&dbig);
     let x = pk.to_ietf_bytes();
-    println!(
-        r#"{{
+
+    match format {
+        "jwk" => {
+            println!(
+                r#"
+```
+{{
   "kty": "OKP",
   "crv": "{crv}",
-  "x": "{x}",
-  "d": "{d}"
-}}"#,
-        crv = crv_name,
-        x = BASE64_URL_SAFE_NO_PAD.encode(&x),
-        d = BASE64_URL_SAFE_NO_PAD.encode(d),
-    );
+{x}",
+{d}"
+}}
+```"#,
+                crv = crv_name,
+                x = wrap_indent(
+                    &format!("  \"x\": \"{}", BASE64_URL_SAFE_NO_PAD.encode(&x)),
+                    72,
+                    0
+                ),
+                d = wrap_indent(
+                    &format!("  \"d\": \"{}", BASE64_URL_SAFE_NO_PAD.encode(d)),
+                    72,
+                    0
+                ),
+            );
+        }
 
-    println!(
-        "CBOR: h'{}'",
-        to_hex(&serde_cbor::to_vec(&CoseBlsKey {
-            crv: crv_id,
-            d,
-            x: x.as_slice()
-        })?)
-    );
-    println!(
-        r#"CDDL:
+        "cwk" => {
+            println!(
+                "```\n{}\n```",
+                wrap_indent(
+                    &to_hex(&serde_cbor::to_vec(&CoseBlsKey {
+                        crv: crv_id,
+                        d,
+                        x: x.as_slice()
+                    })?),
+                    72,
+                    0
+                ),
+            );
+        }
+
+        "cddl" => {
+            println!(
+                r#"```
 {{
   1 => 1,
   -1 => {crv_id},
   -2 => h'{x}',
   -4 => h'{d}',
-}}"#,
-        crv_id = crv_id,
-        x = to_hex(x),
-        d = to_hex(d)
-    );
+}}
+```"#,
+                crv_id = crv_id,
+                x = wrap_indent(&to_hex(x), 64, 10),
+                d = wrap_indent(&to_hex(d), 64, 10),
+            );
+        }
+
+        _ => panic!("Unknown example format: {}", format),
+    }
+
     Ok(())
 }
 
 fn main() -> Result<(), serde_cbor::Error> {
-    print_example::<32, 48, 48, bls12381::ecp::ECP>("BLS12381G1", 13, 0)?;
-    print_example::<32, 48, 48, bls12381::ecp::ECP>("BLS12381G1", 13, 1)?;
-
-    print_example::<32, 48, 96, bls12381::ecp2::ECP2>("BLS12381G2", 13, 0)?;
-    print_example::<32, 48, 96, bls12381::ecp2::ECP2>("BLS12381G2", 13, 1)?;
-
-    print_example::<65, 73, 73, bls48581::ecp::ECP>("BLS48581G1", 14, 0)?;
-    print_example::<65, 73, 73, bls48581::ecp::ECP>("BLS48581G1", 14, 1)?;
-
-    print_example::<65, 73, 584, bls48581::ecp8::ECP8>("BLS48581G2", 14, 0)?;
-    print_example::<65, 73, 584, bls48581::ecp8::ECP8>("BLS48581G2", 14, 1)?;
+    use bls12381::ecp::ECP as BLS12ECP1;
+    use bls12381::ecp2::ECP2 as BLS12ECP2;
+    use bls48581::ecp::ECP as BLS48ECP1;
+    use bls48581::ecp8::ECP8 as BLS48ECP8;
+    for arg in std::env::args() {
+        if let Some((crv, salt, format)) = arg
+            .split_once(':')
+            .and_then(|(head, tail)| tail.split_once(':').map(|(h, t)| (head, h, t)))
+        {
+            if let Ok(salt) = salt.parse::<u8>() {
+                match crv {
+                    "BLS12381G1" => print_example::<32, 48, 48, BLS12ECP1>(crv, 13, salt, format)?,
+                    "BLS12381G2" => print_example::<32, 48, 96, BLS12ECP2>(crv, 13, salt, format)?,
+                    "BLS48581G1" => print_example::<65, 73, 73, BLS48ECP1>(crv, 14, salt, format)?,
+                    "BLS48581G2" => print_example::<65, 73, 584, BLS48ECP8>(crv, 14, salt, format)?,
+                    _ => {}
+                }
+            }
+        }
+    }
     Ok(())
 }
 
