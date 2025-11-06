@@ -743,6 +743,11 @@ for their contributions to the specification.
 
 # Document History
 
+-09
+
+* Changed CDDL examples from map notation to struct notation.
+
+
 -08
 
 * Use ZCash compressed point format defined normatively in Appendix B of [@BBS].
