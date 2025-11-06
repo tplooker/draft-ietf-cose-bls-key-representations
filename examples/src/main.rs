@@ -34,6 +34,12 @@ fn to_hex<T: AsRef<[u8]>>(bytes: T) -> String {
         .collect()
 }
 
+fn into_new_array<const LEN: usize, F: FnOnce(&mut [u8; LEN]) -> ()>(f: F) -> [u8; LEN] {
+    let mut bytes = [0; LEN];
+    f(&mut bytes);
+    bytes
+}
+
 trait Big<const LEN: usize> {
     fn frombytes(bytes: &[u8]) -> Self;
     fn rmod(&mut self, m: &Self);
@@ -48,9 +54,7 @@ impl Big<48> for bls12381::big::BIG {
         self.rmod(m);
     }
     fn to_bytes(&self) -> [u8; 48] {
-        let mut bytes = [0; 48];
-        self.tobytes(&mut bytes);
-        bytes
+        into_new_array(|bytes| self.tobytes(bytes))
     }
 }
 impl Big<73> for bls48581::big::BIG {
@@ -61,15 +65,13 @@ impl Big<73> for bls48581::big::BIG {
         self.rmod(m);
     }
     fn to_bytes(&self) -> [u8; 73] {
-        let mut bytes = [0; 73];
-        self.tobytes(&mut bytes);
-        bytes
+        into_new_array(|bytes| self.tobytes(bytes))
     }
 }
 
 trait ECPExtensions<const COORD_LEN: usize, const PK_LEN: usize> {
     type BIG: Big<COORD_LEN>;
-    fn to_ietf_bytes(&self) -> [u8; PK_LEN];
+    fn to_bytes(&self) -> [u8; PK_LEN];
     fn generator() -> Self;
     fn mul(&self, scalar: &Self::BIG) -> Self;
     fn order() -> Self::BIG;
@@ -86,10 +88,8 @@ impl ECPExtensions<48, 48> for bls12381::ecp::ECP {
     fn order() -> Self::BIG {
         Self::BIG::new_ints(&bls12381::rom::CURVE_ORDER)
     }
-    fn to_ietf_bytes(&self) -> [u8; 48] {
-        let mut bytes = [0; 48];
-        self.tobytes(&mut bytes, true);
-        bytes
+    fn to_bytes(&self) -> [u8; 48] {
+        into_new_array(|bytes| self.tobytes(bytes, true))
     }
 }
 
@@ -104,10 +104,8 @@ impl ECPExtensions<48, 96> for bls12381::ecp2::ECP2 {
     fn order() -> Self::BIG {
         Self::BIG::new_ints(&bls12381::rom::CURVE_ORDER)
     }
-    fn to_ietf_bytes(&self) -> [u8; 96] {
-        let mut bytes = [0; 96];
-        self.tobytes(&mut bytes, true);
-        bytes
+    fn to_bytes(&self) -> [u8; 96] {
+        into_new_array(|bytes| self.tobytes(bytes, true))
     }
 }
 
@@ -122,10 +120,8 @@ impl ECPExtensions<73, 73> for bls48581::ecp::ECP {
     fn order() -> Self::BIG {
         Self::BIG::new_ints(&bls48581::rom::CURVE_ORDER)
     }
-    fn to_ietf_bytes(&self) -> [u8; 73] {
-        let mut bytes = [0; 73];
-        self.tobytes(&mut bytes, true);
-        bytes
+    fn to_bytes(&self) -> [u8; 73] {
+        into_new_array(|bytes| self.tobytes(bytes, true))
     }
 }
 
@@ -140,10 +136,8 @@ impl ECPExtensions<73, 584> for bls48581::ecp8::ECP8 {
     fn order() -> Self::BIG {
         Self::BIG::new_ints(&bls48581::rom::CURVE_ORDER)
     }
-    fn to_ietf_bytes(&self) -> [u8; 584] {
-        let mut bytes = [0; 584];
-        self.tobytes(&mut bytes, true);
-        bytes
+    fn to_bytes(&self) -> [u8; 584] {
+        into_new_array(|bytes| self.tobytes(bytes, true))
     }
 }
 
@@ -197,7 +191,7 @@ fn print_example<
 
     let d = &dbig.to_bytes()[COORD_LEN - SCALAR_LEN..];
     let pk = ECP::generator().mul(&dbig);
-    let x = pk.to_ietf_bytes();
+    let x = pk.to_bytes();
 
     match format {
         "jwk" => {
@@ -296,10 +290,10 @@ mod tests {
         const EXPECT_X: &str = "l_HTpzGX15QmlWOMT6msD8NojE-XdLkFoU46PxcbrFhsVeg_-Xoa7_s68ArbIsa7";
         let g = bls12381::ecp::ECP::generator();
         assert_eq!(
-            &g.to_ietf_bytes(),
+            &g.to_bytes(),
             BASE64_URL_SAFE_NO_PAD.decode(EXPECT_X)?.as_slice(),
         );
-        assert_eq!(BASE64_URL_SAFE_NO_PAD.encode(g.to_ietf_bytes()), EXPECT_X);
+        assert_eq!(BASE64_URL_SAFE_NO_PAD.encode(g.to_bytes()), EXPECT_X);
         Ok(())
     }
 
@@ -308,10 +302,10 @@ mod tests {
         const EXPECT_X: &str = "pXLL6pBNZ0aICMjrUKlFDJch2zCRKAElQ5AtCsNYpirij3W7jxx8QsOajFUpvw9O";
         let g = bls12381::ecp::ECP::generator().mul(&bls12381::big::BIG::new_int(2));
         assert_eq!(
-            &g.to_ietf_bytes(),
+            &g.to_bytes(),
             BASE64_URL_SAFE_NO_PAD.decode(EXPECT_X)?.as_slice(),
         );
-        assert_eq!(BASE64_URL_SAFE_NO_PAD.encode(g.to_ietf_bytes()), EXPECT_X);
+        assert_eq!(BASE64_URL_SAFE_NO_PAD.encode(g.to_bytes()), EXPECT_X);
         Ok(())
     }
 
@@ -320,10 +314,10 @@ mod tests {
         const EXPECT_X: &str = "k-ArYFJxn2B9rNOgiCdPZVlr0NCZILYatdphu9x_UEkzTPESE5RdV-WsfQVdBCt-AkqisvCPCpEmCAUnLcUQUcbketT6QDsCtFELZHrj0XcLrAMmqAW779SAVsjBIb24";
         let g = bls12381::ecp2::ECP2::generator();
         assert_eq!(
-            &g.to_ietf_bytes(),
+            &g.to_bytes(),
             BASE64_URL_SAFE_NO_PAD.decode(EXPECT_X)?.as_slice(),
         );
-        assert_eq!(BASE64_URL_SAFE_NO_PAD.encode(g.to_ietf_bytes()), EXPECT_X);
+        assert_eq!(BASE64_URL_SAFE_NO_PAD.encode(g.to_bytes()), EXPECT_X);
         Ok(())
     }
 
@@ -332,10 +326,10 @@ mod tests {
         const EXPECT_X: &str = "qk7e-cHtf3KfUg5HcwoST9cGYqkEuhB0coEU0QMeFXLGyIb2tX7HKmF4KIxHwzV3FjhTOVfVQKnSNw8XzH7VhjvAuZW4gl4O4eoeHk0A266B8UsL82EbeMlSqsq4J6BT";
         let g = bls12381::ecp2::ECP2::generator().mul(&bls12381::big::BIG::new_int(2));
         assert_eq!(
-            &g.to_ietf_bytes(),
+            &g.to_bytes(),
             BASE64_URL_SAFE_NO_PAD.decode(EXPECT_X)?.as_slice(),
         );
-        assert_eq!(BASE64_URL_SAFE_NO_PAD.encode(g.to_ietf_bytes()), EXPECT_X);
+        assert_eq!(BASE64_URL_SAFE_NO_PAD.encode(g.to_bytes()), EXPECT_X);
         Ok(())
     }
 
@@ -352,10 +346,10 @@ mod tests {
         });
         let x = bls12381::ecp2::ECP2::generator().mul(&d);
         assert_eq!(
-            &x.to_ietf_bytes(),
+            &x.to_bytes(),
             BASE64_URL_SAFE_NO_PAD.decode(EXPECT_X)?.as_slice(),
         );
-        assert_eq!(BASE64_URL_SAFE_NO_PAD.encode(x.to_ietf_bytes()), EXPECT_X);
+        assert_eq!(BASE64_URL_SAFE_NO_PAD.encode(x.to_bytes()), EXPECT_X);
         Ok(())
     }
 
@@ -372,10 +366,10 @@ mod tests {
         });
         let x = bls12381::ecp2::ECP2::generator().mul(&d);
         assert_eq!(
-            &x.to_ietf_bytes(),
+            &x.to_bytes(),
             BASE64_URL_SAFE_NO_PAD.decode(EXPECT_X)?.as_slice(),
         );
-        assert_eq!(BASE64_URL_SAFE_NO_PAD.encode(x.to_ietf_bytes()), EXPECT_X);
+        assert_eq!(BASE64_URL_SAFE_NO_PAD.encode(x.to_bytes()), EXPECT_X);
         Ok(())
     }
 
@@ -392,10 +386,10 @@ mod tests {
         });
         let x = bls12381::ecp2::ECP2::generator().mul(&d);
         assert_eq!(
-            &x.to_ietf_bytes(),
+            &x.to_bytes(),
             BASE64_URL_SAFE_NO_PAD.decode(EXPECT_X)?.as_slice(),
         );
-        assert_eq!(BASE64_URL_SAFE_NO_PAD.encode(x.to_ietf_bytes()), EXPECT_X);
+        assert_eq!(BASE64_URL_SAFE_NO_PAD.encode(x.to_bytes()), EXPECT_X);
         Ok(())
     }
 }
