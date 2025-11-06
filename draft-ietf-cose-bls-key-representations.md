@@ -677,6 +677,7 @@ with the following differences:
 
 The authors would like to acknowledge the work of Kyle Den Hartog, which was used as the foundation for this draft.
 We would also like to thank
+Vasilis Kalos,
 Emil Lundberg
 and
 David Waite
