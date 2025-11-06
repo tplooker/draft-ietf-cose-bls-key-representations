@@ -5,8 +5,8 @@
 COSE                                                           T. Looker
 Internet-Draft                                                     Mattr
 Intended status: Standards Track                                M. Jones
-Expires: 8 May 2026                               Self-Issued Consulting
-                                                         4 November 2025
+Expires: 10 May 2026                              Self-Issued Consulting
+                                                         6 November 2025
 
 
 Barreto-Lynn-Scott Elliptic Curve Key Representations for JOSE and COSE
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 May 2026.
+   This Internet-Draft will expire on 10 May 2026.
 
 Copyright Notice
 
@@ -514,10 +514,10 @@ A.2.  BLS48581 Key Pairs
 {
   "kty": "OKP",
   "crv": "BLS48581G1",
-  "x": "jKj8Qmvi52Lky3VXrVaK7rEjW5lFBimGpicaEXPcsYrKzTjV5rRXYwtUog3QqY8Ub
-aE7cGD2ppQXtR2KWfK6DpHWXy2HaGWS4g",
-  "d": "EKF6v4ZUUDPLp52MWzpmTUg-S_-e01R08TcSH_wSUFkD4QteRbC13LEJE0W7aGJIV
-i1BoLLaAcuTbJxwI_1qAbs"
+  "x": "jKj8Qmvi52Lky3VXrVaK7rEjW5lFBimGpicaEXPcsYrKzTjV5rRXYwtUog3QqY8U
+baE7cGD2ppQXtR2KWfK6DpHWXy2HaGWS4g",
+  "d": "EKF6v4ZUUDPLp52MWzpmTUg-S_-e01R08TcSH_wSUFkD4QteRbC13LEJE0W7aGJI
+Vi1BoLLaAcuTbJxwI_1qAbs"
 }
 
    Another example of a different JWK for the BLS48581 curve where the
