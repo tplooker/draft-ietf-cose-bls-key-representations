@@ -30,7 +30,7 @@ inject() {
 
 if [[ "$1" == "--check" ]]; then
   if ! git diff --exit-code --stat -- "${DOCFILE}"; then
-    echo "Cannot check if test vectors are up to date. Please commit or revert changes to ${DOC_FILE_NAME} first."
+    echo "Cannot check if generated content are up to date. Please commit or revert changes to ${DOC_FILE_NAME} first."
     exit 1
   fi
 fi
